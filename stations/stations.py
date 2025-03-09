@@ -55,7 +55,7 @@ class gacha_station(base_task):
         if (berry_station and (time_between > 4*60*60)) or time_between > 4*60*60: # if time is greater than 4 hours since the last time you went to berry station 
             ark.teleport_not_default(berry_metadata)                    # or if berry station is true( when you go to tekpod and drop all ) and the time between has been longer than 30 mins since youve last been 
             if settings.external_berry: 
-                discordbot.logger("sleeping for 20 seconds as external")
+                discordbot.gachalogs.debug("sleeping for 20 seconds as external")
                 time.sleep(20)#letting station spawn in if you have to tp away
             gacha.berry_station()
             last_berry = time.time()
@@ -65,7 +65,7 @@ class gacha_station(base_task):
         ark.teleport_not_default(iguanadon_metadata) # iguanadon is a centeral tp
         
         if settings.external_berry and temp: # quick fix for level 1 bug
-            discordbot.logger("reconnecting because of level 1 bug - you chose external berry")
+            discordbot.gachalogs.info("reconnecting because of level 1 bug - you chose external berry")
             ark.console_write("reconnect")
             time.sleep(60) # takes a while for the reonnect to actually go into action
 
@@ -99,7 +99,7 @@ class pego_station(base_task):
             ark.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
             deposit.deposit_all(dropoff_metadata)
         else:
-            discordbot.logger(f"no crystals in hotbar not dropping off")
+            discordbot.gachalogs.info(f"no crystals in hotbar skipping deposit step")
 
     def get_priority_level(self):
         return 2 # highest prio level as we cant have these get capped 

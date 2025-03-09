@@ -94,9 +94,9 @@ def check_template(item:str, threshold:float) -> bool:
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.logger(f"{item} found:{max_val}")
+        #discordbot.gachalogs.debug(f"{item} found:{max_val}")
         return True
-    #discordbot.logger(f"{item} not found:{max_val} threshold:{threshold}")
+    #discordbot.gachalogs.debug(f"{item} not found:{max_val} threshold:{threshold}")
     return False
 
 def check_template_no_bounds(item:str, threshold:float) -> bool:
@@ -125,9 +125,9 @@ def check_template_no_bounds(item:str, threshold:float) -> bool:
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.logger(f"{item} found:{max_val}")
+        #discordbot.gachalogs.debugf"{item} found:{max_val}")
         return True
-    #discordbot.logger(f"{item} not found:{max_val} threshold:{threshold}")
+    #discordbot.gachalogs.debugf"{item} not found:{max_val} threshold:{threshold}")
     return False
 
 def teleport_icon(threshold:float) -> bool:
@@ -155,9 +155,9 @@ def teleport_icon(threshold:float) -> bool:
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.logger(f"teleporter_icon found:{max_val}")
+        #discordbot.gachalogs.debug(f"teleporter_icon found:{max_val}")
         return True
-    #discordbot.logger(f"teleporter_icon not found:{max_val} threshold:{threshold}")
+    #discordbot.gachalogs.debug(f"teleporter_icon not found:{max_val} threshold:{threshold}")
     return False
 
 def inventory_first_slot(item:str,threshold:float) -> bool:
@@ -186,9 +186,9 @@ def inventory_first_slot(item:str,threshold:float) -> bool:
 
 
     if max_val > threshold:
-        #discordbot.logger(f"{item} found:{max_val}")
+        #discordbot.gachalogs.debug(f"{item} found:{max_val}")
         return True
-    #discordbot.logger(f"{item} not found:{max_val} threshold:{threshold}")
+    #discordbot.gachalogs.debug(f"{item} not found:{max_val} threshold:{threshold}")
     return False
 
 def check_buffs(buff,threshold):
@@ -216,9 +216,9 @@ def check_buffs(buff,threshold):
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.logger(f"{buff} found:{max_val}")
+        #discordbot.gachalogs.debug(f"{buff} found:{max_val}")
         return True
-    #discordbot.logger(f"{buff} not found:{max_val} threshold:{threshold}")
+    #discordbot.gachalogs.debug(f"{buff} not found:{max_val} threshold:{threshold}")
     return False
 
 if __name__ == "__main__":

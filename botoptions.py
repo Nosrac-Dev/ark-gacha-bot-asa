@@ -10,7 +10,7 @@ async def run_blocking(blocking_func: typing.Callable, *args, **kwargs) -> typin
     return await asyncio.to_thread(func)
 
 async def task_manager_start():
-    discordbot.logger(f"task_manager_start initiated")
+    discordbot.gachalogs.debug(f"task_manager_start initiated")
     await run_blocking(task_manager.main)
 
 

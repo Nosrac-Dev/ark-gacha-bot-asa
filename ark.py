@@ -54,61 +54,66 @@ class station_metadata():
 
 def open_tribelog():
     count = 0
+    discordbot.gachalogs.debug("trying to open up the tribe logs")
     while template.check_template_no_bounds("tribelog_check",0.8) == False and count < 100: # stopping inf loops 
         utils.press_key("ShowTribeManager") # tribelog doesnt close if you spam the key 
         time.sleep(0.1)
         count += 1
 
 def close_tribelog():
+    discordbot.gachalogs.debug("trying to close out of the tribe logs")
     if template.check_template_no_bounds("tribelog_check",0.8):
         time.sleep(0.2)
         windows.click(variables.get_pixel_loc("close_inv_x"),variables.get_pixel_loc("close_inv_y")) # now ready to do whatever we need to 
         
         if template.window_still_open_no_bounds("tribelog_check",0.8,2):
+            discordbot.gachalogs.warning("tribe log failed to close retrying in 3 seconds(timer maybe?)")
             time.sleep(3) # guessing its timer
             windows.click(variables.get_pixel_loc("close_inv_x"),variables.get_pixel_loc("close_inv_y"))
             time.sleep(2)
     time.sleep(0.2)
 
 def close_teleporter():
+    discordbot.gachalogs.debug("trying to close out of the teleporter screen")
     if template.check_template_no_bounds("teleporter_title",0.7):
         time.sleep(0.2)
         windows.click(variables.get_pixel_loc("back_button_tp_x"),variables.get_pixel_loc("back_button_tp_y")) # now ready to do whatever we need to 
         
         if template.window_still_open_no_bounds("teleporter_title",0.7,2):
+            discordbot.gachalogs.warning("teleporter failed to close retrying in 3 seconds(timer maybe?)")
             time.sleep(3) # guessing its timer
             windows.click(variables.get_pixel_loc("back_button_tp_x"),variables.get_pixel_loc("back_button_tp_y"))
             time.sleep(2)
 
 def open_inventory():
+    discordbot.gachalogs.debug("trying to open up the charecters inventory")
     if not template.check_template("inventory",0.7):
         utils.press_key("ShowMyInventory")
     if template.template_sleep("inventory",0.7,2) == False:
-        discordbot.logger("inventory didnt open retrying")
+        discordbot.gachalogs.warning("inventory failed to open retrying now")
         utils.press_key("AccessInventory")
         template.template_sleep("inventory",0.7,2)
 
-    discordbot.logger("inventory opening")
 
 def close_inventory():
+    discordbot.gachalogs.debug("trying to close the charecters inventory")
     if template.check_template("inventory",0.7):
         windows.click(variables.get_pixel_loc("close_inv_x"), variables.get_pixel_loc("close_inv_y"))
     else:
-        discordbot.logger("inventory is already closed")
+        discordbot.gachalogs.debug("inventory is already closed")
         return
     if template.window_still_open("inventory", 0.7, 2):
         windows.click(variables.get_pixel_loc("close_inv_x"), variables.get_pixel_loc("close_inv_y"))
         if template.window_still_open("inventory", 0.7, 2):
+            discordbot.gachalogs.warning("inventory failed to close retrying in 3 seconds(timer maybe?)")
             time.sleep(3)  # Guessing timer hit
             windows.click(variables.get_pixel_loc("close_inv_x"), variables.get_pixel_loc("close_inv_y"))
 
-    time.sleep(0.4)
-    discordbot.logger("inventory is closed")
-
 def open_structure():
+    discordbot.gachalogs.debug("trying to open up the charecters inventory")
     utils.press_key("AccessInventory")
     if template.template_sleep("inventory",0.7,2) == False:
-        discordbot.logger("object didnt open retrying")
+        discordbot.gachalogs.warning("object didnt open retrying")
         utils.press_key("AccessInventory")
         template.template_sleep("inventory",0.7,2)
     if settings.singleplayer == False: # in single player i havent had the issue of the waiting screen
@@ -117,14 +122,14 @@ def open_structure():
     
 def dedi_withdraw(amount:int):
     time.sleep(0.1)
-    discordbot.logger(f"withdrawing {amount} from the dedi") 
+    discordbot.gachalogs.debug(f"withdrawing {amount} from the dedi") 
     for x in range(amount):
         time.sleep(0.5)
         windows.click(variables.get_pixel_loc("dedi_withdraw_x"),variables.get_pixel_loc("dedi_withdraw_y"))
     time.sleep(0.1)
     
 def search_in_object(item:str): 
-    discordbot.logger(f"searching in structure/dino for {item}")
+    discordbot.gachalogs.debug(f"searching in structure/dino for {item}")
     time.sleep(0.2)
     windows.click(variables.get_pixel_loc("search_object_x"),variables.get_pixel_loc("transfer_all_y"))
     utils.ctrl_a() 
@@ -133,7 +138,7 @@ def search_in_object(item:str):
     time.sleep(0.1)
 
 def search_in_inventory(item:str):
-    discordbot.logger(f"searching in inventory for {item}")
+    discordbot.gachalogs.debug(f"searching in inventory for {item}")
     time.sleep(0.2)
     windows.click(variables.get_pixel_loc("search_inventory_x"),variables.get_pixel_loc("transfer_all_y")) 
     utils.ctrl_a()  
@@ -142,25 +147,25 @@ def search_in_inventory(item:str):
     time.sleep(0.1)
 
 def drop_all_inv():  
-    discordbot.logger(f"dropping all items")
+    discordbot.gachalogs.debug(f"dropping all items from our inventory ")
     time.sleep(0.2)
     windows.click(variables.get_pixel_loc("drop_all_x"),variables.get_pixel_loc("transfer_all_y")) 
     time.sleep(0.1)
 
 def drop_all_obj():
-    discordbot.logger(f"dropping all items")
+    discordbot.gachalogs.debug(f"dropping all items from object")
     time.sleep(0.2)
     windows.click(variables.get_pixel_loc("drop_all_obj_x"),variables.get_pixel_loc("transfer_all_y")) 
     time.sleep(0.1)
 
 def transfer_all_from(): 
-    discordbot.logger(f"transfering all from object")
+    discordbot.gachalogs.debug(f"transfering all from object")
     time.sleep(0.2)
     windows.click(variables.get_pixel_loc("transfer_all_from_x"), variables.get_pixel_loc("transfer_all_y"))
     time.sleep(0.1)
 
 def transfer_all_inventory(): 
-    discordbot.logger(f"transfering all in inventory")
+    discordbot.gachalogs.debug(f"transfering all in inventory")
     time.sleep(0.2)
     windows.click(variables.get_pixel_loc("transfer_all_inventory_x"),variables.get_pixel_loc("transfer_all_y"))
     time.sleep(0.1)
@@ -178,11 +183,11 @@ def buffs():
         close_inventory()
         return 2 
     elif template.check_buffs("starving",0.7):
-        discordbot.logger("char is starving")
+        discordbot.gachalogs.debug("char is starving")
         close_inventory()
         return 3
     elif template.check_buffs("dehydration",0.7):
-        discordbot.logger("char is dehydrated")
+        discordbot.gachalogs.debug("char is dehydrated")
         close_inventory()
         return 4
     else:
@@ -193,10 +198,10 @@ def check_disconected():
     rejoin = reconnect.start.reconnect(str(settings.server_number))
     
     if rejoin.check_disconected():
-        discordbot.logger("we are disconnected from the server")
+        discordbot.gachalogs.critical("we are disconnected from the server")
         rejoin.rejoin_server()
         close_tribelog()
-        discordbot.logger("joined back into the server waiting 30 seconds to render everything ")
+        discordbot.gachalogs.critical("joined back into the server waiting 60 seconds to render everything ") # not critical but it is important info
         time.sleep(60)
         utils.set_yaw(settings.station_yaw)    
         
@@ -233,17 +238,17 @@ def check_state():
 
         # if starving.....
         if type == 3 or type == 4:
-            discordbot.logger("tping back to render bed to replenish")
+            discordbot.gachalogs.warning(f"tping back to render bed to replenish food and water | 3= food 4 = water | reason:{type}")
             time.sleep(1)
             teleport_not_default(settings.bed_spawn)
             render.enter_tekpod()
             time.sleep(30) #idk easy way to ensure that the food goes to the top
-            render.leave_tekpod()
+            render.leave_tekpod() 
             time.sleep(1)
             clear = False
 
     if loopcount >= 4:
-        discordbot.logger("State could not be corrected")
+        discordbot.gachalogs.warning("state could not be corrected")
 
     return
 
@@ -305,8 +310,7 @@ def popcorn_inventory(item):
     close_inventory()
 
 def implant_eat():
-    if template.check_template("inventory", 0.7) == False:
-        utils.press_key("ShowMyInventory")
+    open_inventory()
         
     if template.template_sleep("inventory",0.7,2) == False:
     
@@ -320,19 +324,18 @@ def implant_eat():
         utils.press_key("ShowMyInventory")
         
     time.sleep(1)
-    utils.press_key("ShowMyInventory")
+    close_inventory()
     time.sleep(1.5)
     pyautogui.keyDown("s")
     time.sleep(1)        # walking back to avoid suiciding on parts needing to be accessed
     pyautogui.keyUp("s")
     time.sleep(0.2)
-    utils.press_key("ShowMyInventory")
+    open_inventory()
     time.sleep(1.5)
     pyautogui.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
     time.sleep(10) # acouting for lag on high ping 
     utils.press_key("Use")
-    while template.check_template("death_regions",0.7) == False:
-        time.sleep(0.2)
+    template.template_sleep("death_regions",0.7,10)
     time.sleep(1)
 
 
@@ -344,14 +347,20 @@ def white_flash():
     return percentage_255 >= 80
 
 
-def console_ccc():
+def console_ccc(attempt=0):
+    if attempt >= 3:
+        discordbot.gachalogs.warning("Max retries reached. Exiting.")
+        return None
     if template.check_template("inventory",0.7):
+        discordbot.gachalogs.debug("inventory found in CCC check")
         close_inventory()
     if template.check_template("teleporter_title",0.7):
+        discordbot.gachalogs.debug("teleporter title found in CCC check")
         windows.click(variables.get_pixel_loc("search_bar_bed_alive_x")-200,variables.get_pixel_loc("search_bar_bed_y"))
         template.window_still_open("teleporter_title",0.7,2)
         time.sleep(0.4)
     if template.check_template("beds_title",0.7):
+        discordbot.gachalogs.debug("bed_title found in CCC check")
         windows.click(variables.get_pixel_loc("search_bar_bed_alive_x")-200,variables.get_pixel_loc("search_bar_bed_y")) # this is the back button in the bed screen/tp screen
         template.window_still_open("beds_title",0.7,2)
         time.sleep(0.4)
@@ -364,6 +373,7 @@ def console_ccc():
             break
         time.sleep(0.2)
         if count % 10 == 0 and count != 0:
+            discordbot.gachalogs.warning("console could not be found")
             utils.press_key("ConsoleKeys")
         count += 1
     if template.check_template_no_bounds("console",0.55):
@@ -375,7 +385,9 @@ def console_ccc():
         data = win32clipboard.GetClipboardData()
         win32clipboard.CloseClipboard()
         if data == None:
-            console_ccc()
+            discordbot.gachalogs.warning(f"data returned is none retrying {attempt + 1} / 3")
+            return console_ccc(attempt + 1)
+        
         ccc_data = data.split()
         return ccc_data
     
@@ -398,13 +410,16 @@ def console_write(info:str):
 def bed_spawn_in(bed_name:str):
 
     if template.check_template("beds_title",0.7) == False:
+        discordbot.gachalogs.debug("bed_title not found SUICIDING")
         implant_eat()
     
     if template.check_template("death_regions",0.7) == True:
+        discordbot.gachalogs.debug("in the death screen")
         windows.click(variables.get_pixel_loc("search_bar_bed_dead_x"),variables.get_pixel_loc("search_bar_bed_y"))
         utils.ctrl_a()
         utils.write(bed_name)
     else:
+        discordbot.gachalogs.debug("in the fast travel screen")
         windows.click(variables.get_pixel_loc("search_bar_bed_alive_x"),variables.get_pixel_loc("search_bar_bed_y"))
         utils.ctrl_a()
         utils.write(bed_name)
@@ -415,12 +430,13 @@ def bed_spawn_in(bed_name:str):
         pass # maybe use ocr to see when bed is ready    
 
     windows.click(variables.get_pixel_loc("spawn_button_x"),variables.get_pixel_loc("spawn_button_y"))
-
+   
+    discordbot.gachalogs.debug("checking for white flash")
     while white_flash() == False: # waiting for white flash to be true
         time.sleep(0.1)
     while white_flash() == True: # now waiting till its false
         time.sleep(0.1)
-
+    discordbot.gachalogs.debug("white flash over waiting for the spawn animation to finish")
     time.sleep(10) # animation spawn in is about 7 seconds 
     count = 0
     while template.check_template("tribelog_check",0.8) == False and count < 100: # stopping inf loops 
@@ -453,7 +469,7 @@ def teleport_not_default(arg):
     utils.press_key("Use")
 
     if template.template_sleep("teleporter_title",0.7,2) == False:
-        discordbot.logger("teleporter screen not found")
+        discordbot.gachalogs.warning("teleporter screen not found retrying now")
         check_state()
         utils.pitch_zero()
         utils.set_yaw(stationdata.yaw)
@@ -464,6 +480,7 @@ def teleport_not_default(arg):
 
     time.sleep(0.5)
     if template.teleport_icon(0.55) == False: # checking to see if we have the bed bug causing crashes 
+        discordbot.gachalogs.warning("we found beds when opening up tp waiting 10 seconds to prevent crashes")
         time.sleep(10)
     
     windows.click(variables.get_pixel_loc("search_bar_bed_alive_x"),variables.get_pixel_loc("search_bar_bed_y"))
@@ -477,12 +494,11 @@ def teleport_not_default(arg):
     count = 0
     while white_flash() == False and count < 20:
         count += 1
-        time.sleep(0.1)          
-    while white_flash() == True:    
+        time.sleep(0.1)
+    count = 0          
+    while white_flash() == True and count < 100:    
         time.sleep(0.1)          # would cause a inf loop
     count = 0
-
-    
 
     while template.check_template_no_bounds("tribelog_check",0.8) == False and count < 100: # stopping inf loops 
         utils.press_key("ShowTribeManager")
@@ -535,8 +551,7 @@ def teleport_default(teleporter_name): # param teleporter_name incase of unable 
 
 if __name__ == "__main__":
     time.sleep(2)
-    pyautogui.keyDown("~")
-    #utils.press_key_scan_code("consolekeys")
+    render.enter_tekpod()
     pass
 
 

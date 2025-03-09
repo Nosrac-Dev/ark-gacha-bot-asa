@@ -8,6 +8,10 @@ import discordbot
 import time 
 import windows
 from reconnect import recon_utils
+import logging
+
+reconnectlogs = logging.getLogger("Reconnect")
+logging.basicConfig(filename="txt_files/logs.txt",level=logging_level,format="%(asctime)s - %(levelname)s - %(message)s",datefmt="%H:%M:%S")= logging.getLogger("reconect")
 
 class crash():
     def __init__(self,hwnd):
@@ -28,13 +32,13 @@ class crash():
             process = psutil.Process(pid)
 
             process.terminate()
-            discordbot.logger(f"game with pid {pid} terminated")
+            reconnectlogs.critical(f"game with pid {pid} terminated")
         except psutil.NoSuchProcess:
-            discordbot.logger("process not found")
+            reconnectlogs.critical("process not found")
         except psutil.AccessDenied:
-            discordbot.logger("no permissions to terminate")
+            reconnectlogs.critical("no permissions to terminate")
         except Exception as e:
-            discordbot.logger(f"error: {e}")
+            reconnectlogs.critical(f"error: {e}")
 
 
     def launch_game_with_steam(self):
@@ -43,9 +47,9 @@ class crash():
         if os.path.exists(steam_path):
         
             subprocess.run([steam_path, f"steam://run/{self.appid}"])
-            discordbot.logger(f"launching game with appid {self.appid} via steam")
+            reconnectlogs.critical(f"launching game with appid {self.appid} via steam")
         else:
-            discordbot.logger("steam exe not found at the expected location cannot relaunch game")
+            reconnectlogs.critical("steam exe not found at the expected location cannot relaunch game")
             
 
     def crash_rejoin(self):

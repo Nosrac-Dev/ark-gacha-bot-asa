@@ -64,6 +64,7 @@ def vault_deposit(items, metadata):
     time.sleep(0.5)
     ark.open_structure()
     if template.template_sleep("vault",0.7,1) == False:
+        discordbot.gachalogs.warning("vault was not opened retrying now ")
         ark.close_inventory()
         utils.zero()
         utils.set_yaw(metadata.yaw)
@@ -87,7 +88,7 @@ def vault_deposit(items, metadata):
     time.sleep(0.5)
 
 def drop_useless():
-    discordbot.logger("dropping all useless things")
+    discordbot.gachalogs.debug("dropping all useless things")
     utils.press_key("ShowMyInventory")
     
     if template.template_sleep("inventory",0.7,2):
@@ -104,6 +105,7 @@ def depo_grinder(metadata):
     ark.open_structure()
     time.sleep(0.2)
     if template.template_sleep("grinder",0.7,1) == False:
+        discordbot.gachalogs.warning("grinder didnt open retrying")
         ark.close_inventory()
         utils.zero()
         utils.set_yaw(metadata.yaw)
@@ -132,6 +134,7 @@ def collect_grindables(metadata):
     ark.open_structure()
     time.sleep(0.4)
     if template.template_sleep("grinder",0.7,1) == False:
+        discordbot.gachalogs.warning("grinder didnt open retrying")
         ark.close_inventory()
         utils.zero()
         utils.set_yaw(metadata.yaw)
@@ -162,24 +165,24 @@ def vaults(metadata):
         side = entry_vaults["side"]
         items = entry_vaults["items"]
         metadata.side = side
-        discordbot.logger(f"openening up {name} on the {side} side to depo{items}")
+        discordbot.gachalogs.debug(f"openening up {name} on the {side} side to depo{items}")
         vault_deposit(items,metadata)
 
 def deposit_all(metadata):
     time.sleep(0.5)
     utils.pitch_zero()
     utils.set_yaw(metadata.yaw)
-    discordbot.logger("opening crystals")
+    discordbot.gachalogs.debug("opening crystals")
     open_crystals()
-    discordbot.logger("depositing in ele dedi")
+    discordbot.gachalogs.debug("depositing in ele dedi")
     dedi_deposit(settings.height_ele)
     vaults(metadata)
     if settings.height_grind != 0:
-        discordbot.logger("depositing in grinder")
+        discordbot.gachalogs.debug("depositing in grinder")
         depo_grinder(metadata)
         grindables_metadata = ark.get_station_metadata(settings.grindables)
         ark.teleport_not_default(grindables_metadata)
-        discordbot.logger("collecting grindables")
+        discordbot.gachalogs.debug("collecting grindables")
         collect_grindables(grindables_metadata)
     else:
         drop_useless()

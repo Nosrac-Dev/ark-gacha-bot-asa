@@ -64,10 +64,11 @@ class priority_queue_prio:
 
 class task_scheduler(metaclass=SingletonMeta):
     def __init__(self):
-       if not hasattr(self, 'initialized'):  
+        if not hasattr(self, 'initialized'):  
             self.active_queue = priority_queue_prio() 
             self.waiting_queue = priority_queue_exc()  
             self.initialized = True 
+            self.prev_task_name = ""
 
     def add_task(self, task):
         
@@ -81,28 +82,6 @@ class task_scheduler(metaclass=SingletonMeta):
         self.waiting_queue.add(task, task.get_priority_level(), next_execution_time)
         print(f"Added task {task.name} to waiting queue ") # might need to remove this if you have LOADS OF stations causing long messages
 
-    def print_waiting_queue(self):
-        if self.waiting_queue.is_empty():
-            discordbot.queue_write("waiting_queue is empty.", "wait")
-        else:
-            discordbot.queue_write("Current waiting_queue:", "wait")
-            for i, (exec_time, _, priority, task) in enumerate(self.waiting_queue.queue):
-                if i >= 5: # preventing the limit on discord message length
-                    discordbot.queue_write(f"...and {len(self.waiting_queue.queue) - 5} more tasks.", "wait")
-                    break
-                discordbot.queue_write(f"Task {i+1} Name: {task.name} Priority: {priority} Next Execution Time: <t:{int(exec_time)}:R>","wait")
-
-    def print_active_queue(self):
-        if self.active_queue.is_empty():
-            discordbot.queue_write(" active_queue is empty.","active")
-        else:
-            discordbot.queue_write("Current active_queue:","active")
-            
-            for i, (priority,exec_time,  _,task) in enumerate(self.active_queue.queue):  
-                if i >= 5: # preventing the limit on discord message length
-                    discordbot.queue_write(f"...and {len(self.active_queue.queue) - 5} more tasks.", "active")
-                    break
-                discordbot.queue_write(f"Task {i+1} Name: {task.name} Priority: {priority} Currently waiting for execution","active")
             
     def run(self):
         while True:
@@ -110,8 +89,6 @@ class task_scheduler(metaclass=SingletonMeta):
 
             self.move_ready_tasks_to_active_queue(current_time)
             
-            self.print_active_queue()
-            self.print_waiting_queue()
             if not self.active_queue.is_empty():
                 self.execute_task(current_time)
             else:
@@ -136,9 +113,12 @@ class task_scheduler(metaclass=SingletonMeta):
         exec_time,priority , _, task = task_tuple
 
         if exec_time <= current_time:
-            discordbot.logger(f"Executing task: {task.name}")
+            
+            if task.name != self.prev_task_name:
+                discordbot.gachalogs.info(f"Executing task: {task.name}")
             task.execute()  
-    
+            
+            self.prev_task_name = task.name
             if task.name != "pause":
                 self.move_to_waiting_queue(task)
             else:
@@ -148,7 +128,7 @@ class task_scheduler(metaclass=SingletonMeta):
             self.active_queue.add(task, priority, exec_time)
 
     def move_to_waiting_queue(self, task):
-        discordbot.logger(f"adding {task.name} to waiting queue" ) 
+        discordbot.gachalogs.debug(f"adding {task.name} to waiting queue" ) 
         next_execution_time = time.time() + task.get_requeue_delay()
         priority_level = task.get_priority_level()
         self.waiting_queue.add(task,priority_level , next_execution_time)
@@ -160,7 +140,7 @@ def load_resolution_data(file_path):
         with open(file_path, 'r') as file:
             data = file.read().strip()
             if not data:
-                discordbot.logger(f"warning: {file_path} is empty no tasks added.")
+                discordbot.gachalogs.warning(f"warning: {file_path} is empty no tasks added.")
                 return []
             return json.loads(data)
     except (json.JSONDecodeError, FileNotFoundError) as e:
@@ -194,7 +174,7 @@ def main():
         scheduler.add_task(task)
         
     scheduler.add_task(stations.render_station())
-    discordbot.logger("scheduler now running")
+    discordbot.gachalogs.info("scheduler now running")
     scheduler.run()
 
 if __name__ == "__main__":

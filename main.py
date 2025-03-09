@@ -28,34 +28,6 @@ def save_json(json_file:str,data):
     with open(json_file, 'w') as f:
         json.dump(data, f, indent=4)
 
-async def wait_queue():
-    log_channel = bot.get_channel(settings.log_wait_queue)
-    last_position = 0
-    while True:
-        
-        with open("txt_files/wait.txt","r") as file:
-            file.seek(last_position)
-            queue = file.read()
-            if queue:
-                await log_channel.purge()
-                await log_channel.send(queue)
-                last_position = file.tell()
-        await asyncio.sleep(5)
-
-async def active_queue():
-    log_channel = bot.get_channel(settings.log_active_queue)
-    last_position = 0
-    while True:
-        
-        with open("txt_files/active.txt","r") as file:
-            file.seek(last_position)
-            queue = file.read()
-            if queue:
-                await log_channel.purge()
-                await log_channel.send(queue)
-                last_position = file.tell()
-        await asyncio.sleep(5)
-
 async def send_new_logs():
     log_channel = bot.get_channel(settings.log_channel_gacha)
     last_position = 0
@@ -160,7 +132,7 @@ async def embed_send(queue_type):
         embed_msg = await discordbot.embed_create(queue_type)
         await log_channel.purge()
         await log_channel.send(embed = embed_msg)
-        await asyncio.sleep(5)
+        await asyncio.sleep(30)
 
 @bot.tree.command()
 async def start(interaction: discord.Interaction):

@@ -23,7 +23,7 @@ def enter_tekpod():
     retry = 0  
     while retry < 3: 
         if retry == 2:
-            discordbot.logger("killing ourselfs and respawning")
+            discordbot.gachalogs.info("killing ourselfs and respawning")
             ark.implant_eat()
             ark.check_state()
         utils.press_key("Run") # incase player is crouched somehow
@@ -35,7 +35,7 @@ def enter_tekpod():
         pyautogui.keyDown(local_player.get_input_settings("Use"))
         
         if not template.template_sleep_no_bounds("bed_radical", 0.6,2):
-            discordbot.logger("cannot find the bed radical")
+            discordbot.gachalogs.warning("cannot find the bed radical")
             pyautogui.keyUp(local_player.get_input_settings("Use"))
             time.sleep(1)
             utils.zero()
@@ -50,18 +50,18 @@ def enter_tekpod():
             pyautogui.keyUp(local_player.get_input_settings("Use"))
         time.sleep(1)
         if ark.buffs() == 2:
-            discordbot.logger("NOW RENDERING STATION")
+            discordbot.gachalogs.info("NOW RENDERING STATION")
             utils.current_pitch = 0
             render_flag = True
             time.sleep(0.5)
             return  
         else:
-            discordbot.logger(f"failed to get into the tekpod. attempt {retry + 1}/3. retrying in 10 seconds")
+            discordbot.gachalogs.warning(f"failed to get into the tekpod. attempt {retry + 1}/3. retrying in 10 seconds")
             time.sleep(10)
             ark.check_state()
             retry += 1 
 
-    discordbot.logger("Failed to enter the tekpod after 3 attempts.")
+    discordbot.gachalogs.error("Failed to enter the tekpod after 3 attempts.")
 
 
 def leave_tekpod():

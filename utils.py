@@ -3,7 +3,7 @@ import time
 import local_player
 import windows
 import ark 
-
+import discordbot
 """
 FUNCTIONS FOR KEYBOARD 
 """
@@ -90,7 +90,7 @@ def set_yaw(yaw):
     try:
         current_yaw = float(ark.console_ccc()[3])
     except Exception as e:
-        print(e)
+        discordbot.gachalogs.error(f"error processing ccc_data[3]: {e}")
 
     diff = ((yaw - current_yaw) + 180) % 360 - 180
     if diff < 0:
@@ -120,7 +120,7 @@ def yaw_zero(ccc_data = None):
             turn_right(-float(ccc_data[3]))
         current_yaw = 0
     except Exception as e:
-        print(f"error processing ccc_data[3]: {e}")
+        discordbot.gachalogs.error(f"error processing ccc_data[3]: {e}")
         #ark.check_state()
 
 def pitch_zero(ccc_data = None):
@@ -135,7 +135,7 @@ def pitch_zero(ccc_data = None):
             turn_up(-float(ccc_data[4]))
         current_pitch = 0
     except Exception as e:
-        print(f"error processing ccc_data[4]: {e}")
+        discordbot.gachalogs.error(f"error processing ccc_data[4]: {e}")
         #ark.check_state()
 
 def zero():

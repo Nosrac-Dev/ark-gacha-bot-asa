@@ -6,13 +6,14 @@ import windows
 import template
 import settings
 import pyautogui
+import discordbot
 
 def berry_collection():
     time.sleep(0.5)
     ark.open_structure()
-    template.template_sleep("inventory",0.7,2)
-    ark.transfer_all_from()
-    ark.close_inventory()
+    if template.template_sleep("inventory",0.7,2):
+        ark.transfer_all_from()
+        ark.close_inventory()
     time.sleep(0.5)
 
 def berry_station():
@@ -28,6 +29,7 @@ def iguanadon(metadata):
     time.sleep(0.2)
     ark.open_structure()
     if template.check_template("inventory",0.7) == False:
+        discordbot.gachalogs.warning("iguanadon failed to open retrying now")
         utils.zero()
         utils.set_yaw(metadata.yaw)
         time.sleep(0.2)
@@ -45,6 +47,7 @@ def iguanadon(metadata):
         ark.close_inventory()
     time.sleep(0.2)
     if template.template_sleep("seed_inv",0.7,2) == False :
+        discordbot.gachalogs.warning("iguanadon seeding hasnt been spotted re adding berries")
         ark.open_structure()
         ark.search_in_object(settings.berry_type)
         ark.transfer_all_from()
@@ -73,6 +76,7 @@ def gacha_dropoff(metadata):
     ark.open_structure()
     
     if template.check_template("inventory",0.7) == False: # assuming that the bot didnt turn properly
+        discordbot.gachalogs.warning("gacha failed to open retrying now")
         utils.zero()
         utils.set_yaw(metadata.yaw)
         if direction == "right":
@@ -116,7 +120,17 @@ def gacha_dropoff(metadata):
 
     time.sleep(0.3)
     ark.open_structure()
-    if template.template_sleep("crop_plot",0.7,2):
+    if not template.template_sleep("crop_plot",0.7,2):
+        discordbot.gachalogs.warning("could not open up the crop plot retrying now")
+        utils.zero()
+        utils.set_yaw(metadata.yaw)
+        if direction == "right":
+            utils.turn_right(130) 
+        else:
+            utils.turn_left(130)
+        time.sleep(0.2)
+        ark.open_structure()
+    if template.check_template("crop_plot",0.7):
         ark.transfer_all_from()
         time.sleep(0.2)
         ark.transfer_all_inventory() #take out all input all # refreshing owl pelletes
@@ -157,6 +171,7 @@ def gacha_collection(metadata): # this is used for gachas that have snails or ph
     ark.open_structure()
 
     if template.check_template("inventory",0.7) == False: # assuming that the bot didnt turn properly
+        discordbot.gachalogs.warning("gacha failed to open retrying now")
         utils.zero()
         utils.set_yaw(metadata.yaw)
         if direction == "right":
