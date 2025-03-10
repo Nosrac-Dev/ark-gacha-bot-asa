@@ -103,7 +103,7 @@ def depo_grinder(metadata):
     utils.turn_right(180)
     time.sleep(0.5*settings.sleep_constant)
     ark.open_structure()
-    time.sleep(0.*settings.sleep_constant2)
+    time.sleep(0.2*settings.sleep_constant)
     if template.template_sleep("grinder",0.7,1) == False:
         discordbot.gachalogs.warning("grinder didnt open retrying")
         ark.close_inventory()
