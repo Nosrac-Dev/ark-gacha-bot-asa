@@ -52,7 +52,13 @@ class crash():
         else:
             reconnectlogs.critical("steam exe not found at the expected location cannot relaunch game")
             
-
+    def re_open_game(self):
+        self.close_game()
+        time.sleep(10)
+        self.launch_game_with_steam()
+        recon_utils.template_sleep_no_bounds("join_last_session",0.7,60)
+        windows.hwnd = windows.find_window_by_title("ArkAscended") # new process ID as game as relaunced
+        
     def crash_rejoin(self):
         if self.detect_crash():
             self.close_game()

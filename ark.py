@@ -556,7 +556,7 @@ def teleport_default(teleporter_name): # param teleporter_name incase of unable 
 
 if __name__ == "__main__":
     time.sleep(2)
-    render.enter_tekpod()
+    check_disconected()
     pass
 
 

@@ -18,6 +18,7 @@ async def embed_create(queue_type):
             return embed
         
         if isinstance(queue,task_manager.priority_queue_prio):
+            priority, exec_time, _, task = entry
             embed.add_field(
                 name = "Current Task",
                 value = f"{task.name}",

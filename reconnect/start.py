@@ -1,7 +1,7 @@
-from reconnect import join_menu , main_menu , multiplayer_menu , recon_utils , crash
+from reconnect import join_menu , main_menu , multiplayer_menu , recon_utils , crash as rec
 
 import template
-
+import windows
 class reconnect():
 
     def __init__(self,server):
@@ -13,6 +13,10 @@ class reconnect():
              
     def rejoin_server(self):
         joined = False
+
+        crash = rec.crash(windows.hwnd)
+        crash.re_open_game()
+
         while not joined:
             main_menu.enter_menu()
             join_menu.enter_menu()
