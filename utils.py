@@ -88,6 +88,7 @@ def normalize_yaw(yaw):
 def set_yaw(yaw):
     global current_yaw
     try:
+        discordbot.gachalogs.debug(f"setting yaw as {float(ark.console_ccc()[3])}")
         current_yaw = float(ark.console_ccc()[3])
     except Exception as e:
         discordbot.gachalogs.error(f"error processing ccc_data[3]: {e}")
@@ -139,6 +140,7 @@ def pitch_zero(ccc_data = None):
         #ark.check_state()
 
 def zero():
+    discordbot.gachalogs.debug("setting view angles back to 0")
     global current_yaw
     global current_pitch
     ccc_data = ark.console_ccc()    

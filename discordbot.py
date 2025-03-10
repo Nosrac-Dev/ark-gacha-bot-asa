@@ -2,11 +2,12 @@ import discord
 import task_manager
 import logging
 
-logging_level = logging.INFO
+logging_level = logging.DEBUG
 
 gachalogs = logging.getLogger("Gacha")
 logging.basicConfig(filename="txt_files/logs.txt",level=logging_level,format="%(asctime)s - %(levelname)s - %(message)s",datefmt="%H:%M:%S")
-    
+gachalogs = logging.setLevel(logging_level)
+
 async def embed_create(queue_type):
     try:
         embed = discord.Embed(title=f"{queue_type}")

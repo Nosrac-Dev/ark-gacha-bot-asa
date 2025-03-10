@@ -182,7 +182,7 @@ def gacha_collection(metadata): # this is used for gachas that have snails or ph
         ark.open_structure()
 
     ark.transfer_all_from()
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     ark.close_inventory() 
 
     if direction == "right":

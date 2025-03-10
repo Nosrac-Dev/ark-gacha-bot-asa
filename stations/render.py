@@ -15,7 +15,7 @@ def open_inv_dropall():
     utils.press_key("ShowMyInventory")
     if template.template_sleep("inventory", 0.7, 2):
         ark.drop_all_inv()
-        time.sleep(0.4)
+        time.sleep(0.4*settings.sleep_constant)
         ark.close_inventory()
 
 def enter_tekpod():
@@ -66,15 +66,15 @@ def enter_tekpod():
 
 def leave_tekpod():
     ark.close_tribelog()
-    time.sleep(0.4)
+    time.sleep(0.4*settings.sleep_constant)
     pyautogui.press(local_player.get_input_settings("Use"))
-    time.sleep(1)
+    time.sleep(1*settings.sleep_constant)
     if ark.buffs() == 2: # long time for big timers 
         pyautogui.press(local_player.get_input_settings("Use"))
-    time.sleep(1)
+    time.sleep(1*settings.sleep_constant)
     utils.current_yaw = settings.render_pushout
     utils.set_yaw(settings.station_yaw)
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     global render_flag
     render_flag = False
 
