@@ -64,7 +64,7 @@ def vault_deposit(items, metadata):
     time.sleep(0.5)
     ark.open_structure()
     if template.template_sleep("vault",0.7,1) == False:
-        discordbot.gachalogs.warning("vault was not opened retrying now ")
+        discordbot.gachalogs.warning(f"{side} vault was not opened retrying now ")
         ark.close_inventory()
         utils.zero()
         utils.set_yaw(metadata.yaw)

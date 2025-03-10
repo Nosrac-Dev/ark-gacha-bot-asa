@@ -206,7 +206,7 @@ def check_disconected():
         utils.set_yaw(settings.station_yaw)    
         
 def check_state():
-    
+    discordbot.gachalogs.debug(f"currently checking the state of the bot")
     crash = reconnect.crash.crash(windows.hwnd)
     crash.crash_rejoin()  # wecheck the crash before disconected as we can rejoin back with disconect 
     check_disconected()
@@ -217,28 +217,33 @@ def check_state():
         clear = True
         loopcount += 1
         if template.check_template("beds_title",0.7):
+            discordbot.gachalogs.debug(f"check_state")
             bed_spawn_in(settings.bed_spawn)
             time.sleep(0.5)
             utils.set_yaw(settings.station_yaw)
             clear = False
     
         if template.check_template_no_bounds("tribelog_check",0.7):
+            discordbot.gachalogs.debug(f"check_state")
             close_tribelog()
             clear = False
         if template.check_template("inventory",0.7):
+            discordbot.gachalogs.debug(f"check_state")
             close_inventory()
             clear = False
         if template.check_template("teleporter_title",0.7):
+            discordbot.gachalogs.debug(f"check_state")
             close_teleporter()
             
         type = buffs() 
         if type == 2 or render.render_flag:
+            discordbot.gachalogs.debug(f"render flag : {render.render_flag} type {type} leaving tekpod now")
             render.leave_tekpod()
             clear = False
 
         # if starving.....
         if type == 3 or type == 4:
-            discordbot.gachalogs.warning(f"tping back to render bed to replenish food and water | 3= food 4 = water | reason:{type}")
+            discordbot.gachalogs.debug(f"tping back to render bed to replenish food and water | 3= food 4 = water | reason:{type}")
             time.sleep(1)
             teleport_not_default(settings.bed_spawn)
             render.enter_tekpod()

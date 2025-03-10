@@ -17,6 +17,12 @@ async def embed_create(queue_type):
             embed.add_field(name=queue_type, value="empty")
             return embed
         
+        if isinstance(queue,task_manager.priority_queue_prio):
+            embed.add_field(
+                name = "Current Task",
+                value = f"{task.name}",
+                inline = False
+            )
         count = 0
         for i, entry in enumerate(queue.queue):
             if count >= 5:

@@ -11,7 +11,8 @@ from reconnect import recon_utils
 import logging
 
 reconnectlogs = logging.getLogger("Reconnect")
-logging.basicConfig(filename="txt_files/logs.txt",level=logging_level,format="%(asctime)s - %(levelname)s - %(message)s",datefmt="%H:%M:%S")= logging.getLogger("reconect")
+logging_level = logging.INFO
+logging.basicConfig(filename="txt_files/logs.txt",level=logging_level,format="%(asctime)s - %(levelname)s - %(message)s",datefmt="%H:%M:%S")
 
 class crash():
     def __init__(self,hwnd):

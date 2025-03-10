@@ -65,7 +65,7 @@ class gacha_station(base_task):
         ark.teleport_not_default(iguanadon_metadata) # iguanadon is a centeral tp
         
         if settings.external_berry and temp: # quick fix for level 1 bug
-            discordbot.gachalogs.info("reconnecting because of level 1 bug - you chose external berry")
+            discordbot.gachalogs.debug("reconnecting because of level 1 bug - you chose external berry")
             ark.console_write("reconnect")
             time.sleep(60) # takes a while for the reonnect to actually go into action
 
@@ -99,7 +99,7 @@ class pego_station(base_task):
             ark.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
             deposit.deposit_all(dropoff_metadata)
         else:
-            discordbot.gachalogs.info(f"no crystals in hotbar skipping deposit step")
+            discordbot.gachalogs.debug(f"no crystals in hotbar skipping deposit step")
 
     def get_priority_level(self):
         return 2 # highest prio level as we cant have these get capped 

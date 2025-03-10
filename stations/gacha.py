@@ -76,7 +76,7 @@ def gacha_dropoff(metadata):
     ark.open_structure()
     
     if template.check_template("inventory",0.7) == False: # assuming that the bot didnt turn properly
-        discordbot.gachalogs.warning("gacha failed to open retrying now")
+        discordbot.gachalogs.warning(f"the {direction} gacha at {metadata.name}tp failed to open retrying now")
         utils.zero()
         utils.set_yaw(metadata.yaw)
         if direction == "right":
@@ -121,7 +121,7 @@ def gacha_dropoff(metadata):
     time.sleep(0.3)
     ark.open_structure()
     if not template.template_sleep("crop_plot",0.7,2):
-        discordbot.gachalogs.warning("could not open up the crop plot retrying now")
+        discordbot.gachalogs.warning(f"the {direction} crop plot at {metadata.name}tp failed to open retrying now")
         utils.zero()
         utils.set_yaw(metadata.yaw)
         if direction == "right":
@@ -171,7 +171,7 @@ def gacha_collection(metadata): # this is used for gachas that have snails or ph
     ark.open_structure()
 
     if template.check_template("inventory",0.7) == False: # assuming that the bot didnt turn properly
-        discordbot.gachalogs.warning("gacha failed to open retrying now")
+        discordbot.gachalogs.warning(f"the {direction} gacha at {metadata.name}tp failed to open retrying now")
         utils.zero()
         utils.set_yaw(metadata.yaw)
         if direction == "right":

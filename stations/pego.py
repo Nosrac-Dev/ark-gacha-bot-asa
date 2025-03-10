@@ -12,7 +12,7 @@ def pego_pickup(metadata):
     time.sleep(0.5)
     ark.open_structure()
     if template.template_sleep("inventory",0.7,2) == False:
-        discordbot.gachalogs.warning("pego didnt open retrying now")
+        discordbot.gachalogs.warning(f"the pego at {metadata.name} didnt open retrying now")
         utils.zero()
         utils.set_yaw(metadata.yaw)
         utils.press_key("Run")
