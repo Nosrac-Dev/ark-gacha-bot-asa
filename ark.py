@@ -63,7 +63,7 @@ def open_tribelog():
 def close_tribelog():
     discordbot.gachalogs.debug("trying to close out of the tribe logs")
     if template.check_template_no_bounds("tribelog_check",0.8):
-        time.sleep(0.2)
+        time.sleep(0.2*settings.sleep_constant)
         windows.click(variables.get_pixel_loc("close_inv_x"),variables.get_pixel_loc("close_inv_y")) # now ready to do whatever we need to 
         
         if template.window_still_open_no_bounds("tribelog_check",0.8,2):
@@ -71,12 +71,12 @@ def close_tribelog():
             time.sleep(3) # guessing its timer
             windows.click(variables.get_pixel_loc("close_inv_x"),variables.get_pixel_loc("close_inv_y"))
             time.sleep(2)
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
 
 def close_teleporter():
     discordbot.gachalogs.debug("trying to close out of the teleporter screen")
     if template.check_template_no_bounds("teleporter_title",0.7):
-        time.sleep(0.2)
+        time.sleep(0.2*settings.sleep_constant)
         windows.click(variables.get_pixel_loc("back_button_tp_x"),variables.get_pixel_loc("back_button_tp_y")) # now ready to do whatever we need to 
         
         if template.window_still_open_no_bounds("teleporter_title",0.7,2):
@@ -121,64 +121,64 @@ def open_structure():
             template.window_still_open("waiting_inv",0.8,5) # if server is laggy might take a while to get the data from the object
     
 def dedi_withdraw(amount:int):
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
     discordbot.gachalogs.debug(f"withdrawing {amount} from the dedi") 
     for x in range(amount):
-        time.sleep(0.5)
+        time.sleep(0.5*settings.sleep_constant)
         windows.click(variables.get_pixel_loc("dedi_withdraw_x"),variables.get_pixel_loc("dedi_withdraw_y"))
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
     
 def search_in_object(item:str): 
     discordbot.gachalogs.debug(f"searching in structure/dino for {item}")
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("search_object_x"),variables.get_pixel_loc("transfer_all_y"))
     utils.ctrl_a() 
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     utils.write(item)
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
 
 def search_in_inventory(item:str):
     discordbot.gachalogs.debug(f"searching in inventory for {item}")
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("search_inventory_x"),variables.get_pixel_loc("transfer_all_y")) 
     utils.ctrl_a()  
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     utils.write(item)
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
 
 def drop_all_inv():  
     discordbot.gachalogs.debug(f"dropping all items from our inventory ")
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("drop_all_x"),variables.get_pixel_loc("transfer_all_y")) 
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
 
 def drop_all_obj():
     discordbot.gachalogs.debug(f"dropping all items from object")
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("drop_all_obj_x"),variables.get_pixel_loc("transfer_all_y")) 
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
 
 def transfer_all_from(): 
     discordbot.gachalogs.debug(f"transfering all from object")
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("transfer_all_from_x"), variables.get_pixel_loc("transfer_all_y"))
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
 
 def transfer_all_inventory(): 
     discordbot.gachalogs.debug(f"transfering all in inventory")
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("transfer_all_inventory_x"),variables.get_pixel_loc("transfer_all_y"))
-    time.sleep(0.1)
+    time.sleep(0.1*settings.sleep_constant)
 
 def buffs():
     open_inventory()
     count = 0
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     while template.check_template("show_buff",0.7) and count < 10:
         windows.click(variables.get_pixel_loc("buff_button_x"),variables.get_pixel_loc("buff_button_y"))
         time.sleep(0.2)
         count += 1
-    time.sleep(0.4)
+    time.sleep(0.4*settings.sleep_constant)
     if template.check_buffs("tek_pod_buff",0.7):
         close_inventory()
         return 2 
@@ -219,7 +219,7 @@ def check_state():
         if template.check_template("beds_title",0.7):
             discordbot.gachalogs.debug(f"check_state")
             bed_spawn_in(settings.bed_spawn)
-            time.sleep(0.5)
+            time.sleep(0.2*settings.sleep_constant)
             utils.set_yaw(settings.station_yaw)
             clear = False
     
@@ -244,12 +244,12 @@ def check_state():
         # if starving.....
         if type == 3 or type == 4:
             discordbot.gachalogs.debug(f"tping back to render bed to replenish food and water | 3= food 4 = water | reason:{type}")
-            time.sleep(1)
+            time.sleep(0.2*settings.sleep_constant)
             teleport_not_default(settings.bed_spawn)
             render.enter_tekpod()
             time.sleep(30) #idk easy way to ensure that the food goes to the top
             render.leave_tekpod() 
-            time.sleep(1)
+            time.sleep(0.2*settings.sleep_constant)
             clear = False
 
     if loopcount >= 4:
@@ -303,14 +303,14 @@ def popcorn_inventory(item):
     if template.check_template("inventory",0.7) == False:
         utils.press_key("ShowMyInventory")
         template.template_sleep("inventory",0.7,2)
-        time.sleep(0.5)
+        time.sleep(0.5*settings.sleep_constant)
     search_in_inventory(item)
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
 
     while template.inventory_first_slot(item,0.35):
         pyautogui.click(variables.get_pixel_loc("inv_slot_start_x")+30,variables.get_pixel_loc("inv_slot_start_y")+30)
         utils.press_key("DropItem")
-        time.sleep(0.2)
+        time.sleep(0.2*settings.sleep_constant)
 
     close_inventory()
 
@@ -363,12 +363,12 @@ def console_ccc(attempt=0):
         discordbot.gachalogs.debug("teleporter title found in CCC check")
         windows.click(variables.get_pixel_loc("search_bar_bed_alive_x")-200,variables.get_pixel_loc("search_bar_bed_y"))
         template.window_still_open("teleporter_title",0.7,2)
-        time.sleep(0.4)
+        time.sleep(0.4*settings.sleep_constant)
     if template.check_template("beds_title",0.7):
         discordbot.gachalogs.debug("bed_title found in CCC check")
         windows.click(variables.get_pixel_loc("search_bar_bed_alive_x")-200,variables.get_pixel_loc("search_bar_bed_y")) # this is the back button in the bed screen/tp screen
         template.window_still_open("beds_title",0.7,2)
-        time.sleep(0.4)
+        time.sleep(0.4*settings.sleep_constant)
 
     time.sleep(0.1)
     utils.press_key("ConsoleKeys")
@@ -383,9 +383,9 @@ def console_ccc(attempt=0):
         count += 1
     if template.check_template_no_bounds("console",0.55):
         pyautogui.write("ccc") # for some reason utils.write doesnt register
-        time.sleep(0.3)
+        time.sleep(0.3*settings.sleep_constant)
         utils.press_key("Enter")
-        time.sleep(0.6) # slow to try and prevent opening clipboard to empty data
+        time.sleep(0.6*settings.sleep_constant) # slow to try and prevent opening clipboard to empty data
         win32clipboard.OpenClipboard()
         data = win32clipboard.GetClipboardData()
         win32clipboard.CloseClipboard()
@@ -429,7 +429,7 @@ def bed_spawn_in(bed_name:str):
         utils.ctrl_a()
         utils.write(bed_name)
 
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
     if template.template_sleep("ready_clicked_bed",0.7,1) == False:
         pass # maybe use ocr to see when bed is ready    
@@ -449,7 +449,7 @@ def bed_spawn_in(bed_name:str):
         time.sleep(0.1)
         count += 1
     
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     close_tribelog()
 
     global first_run
@@ -468,9 +468,9 @@ def teleport_not_default(arg):
 
     teleporter_name = stationdata.name
 
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     utils.turn_down(80)    # include the looking down part into the teleport as it is common for everytime
-    time.sleep(0.3)
+    time.sleep(0.3*settings.sleep_constant)
     utils.press_key("Use")
 
     if template.template_sleep("teleporter_title",0.7,2) == False:
@@ -483,7 +483,7 @@ def teleport_not_default(arg):
         utils.press_key("Use")
         template.template_sleep("teleporter_title",0.7,2)
 
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     if template.teleport_icon(0.55) == False: # checking to see if we have the bed bug causing crashes 
         discordbot.gachalogs.warning("we found beds when opening up tp waiting 10 seconds to prevent crashes")
         time.sleep(10)
@@ -492,9 +492,9 @@ def teleport_not_default(arg):
     utils.ctrl_a()
     utils.write(teleporter_name)
 
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("spawn_button_x"),variables.get_pixel_loc("spawn_button_y"))
     count = 0
     while white_flash() == False and count < 20:
@@ -512,14 +512,14 @@ def teleport_not_default(arg):
 
     close_tribelog()
     
-    time.sleep(0.4)
+    time.sleep(0.4*settings.sleep_constant)
     if settings.singleplayer: # correcting for singleplayers wierd tp mechanics
         utils.current_pitch = 0
         utils.turn_down(80)
     utils.turn_up(80)
     utils.set_yaw(stationdata.yaw)
     #utils.pitch_zero() # correcting pitch back to 0 from looking down at the tp
-    time.sleep(0.4)
+    time.sleep(0.4*settings.sleep_constant)
     utils.press_key("Run")
 
 def teleport_default(teleporter_name): # param teleporter_name incase of unable to default

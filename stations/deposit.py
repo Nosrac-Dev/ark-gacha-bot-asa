@@ -61,7 +61,7 @@ def vault_deposit(items, metadata):
         utils.turn_left(90)
     else:
         utils.turn_right(90)
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     ark.open_structure()
     if template.template_sleep("vault",0.7,1) == False:
         discordbot.gachalogs.warning(f"{side} vault was not opened retrying now ")
@@ -93,24 +93,24 @@ def drop_useless():
     
     if template.template_sleep("inventory",0.7,2):
         ark.drop_all_inv()
-        time.sleep(0.4)
+        time.sleep(0.4*settings.sleep_constant)
         ark.close_inventory()
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     utils.turn_down(80)
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
 
 def depo_grinder(metadata):
     utils.turn_right(180)
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     ark.open_structure()
-    time.sleep(0.2)
+    time.sleep(0.*settings.sleep_constant2)
     if template.template_sleep("grinder",0.7,1) == False:
         discordbot.gachalogs.warning("grinder didnt open retrying")
         ark.close_inventory()
         utils.zero()
         utils.set_yaw(metadata.yaw)
         utils.turn_right(180)
-        time.sleep(0.5)
+        time.sleep(0.5*settings.sleep_constant)
         ark.open_structure()
 
     if template.template_sleep("inventory",0.7,2) == False:
@@ -128,20 +128,20 @@ def depo_grinder(metadata):
     utils.turn_right(180)
 
 def collect_grindables(metadata):
-    time.sleep(0.4)
+    time.sleep(0.4*settings.sleep_constant)
     utils.turn_right(90)
-    time.sleep(0.8)
+    time.sleep(0.8*settings.sleep_constant)
     ark.open_structure()
-    time.sleep(0.4)
+    time.sleep(0.4*settings.sleep_constant)
     if template.template_sleep("grinder",0.7,1) == False:
         discordbot.gachalogs.warning("grinder didnt open retrying")
         ark.close_inventory()
         utils.zero()
         utils.set_yaw(metadata.yaw)
         utils.turn_right(90)
-        time.sleep(0.5)
+        time.sleep(0.5*settings.sleep_constant)
         ark.open_structure()
-        time.sleep(0.4)
+        time.sleep(0.4*settings.sleep_constant)
     if template.template_sleep("inventory",0.7,2) == False:
         time.sleep(2)
         ark.open_structure()
@@ -150,11 +150,11 @@ def collect_grindables(metadata):
         ark.transfer_all_from()
         time.sleep(0.2)
         ark.close_inventory()
-    time.sleep(0.5)
+    time.sleep(0.5*settings.sleep_constant)
     utils.turn_left(90)
-    time.sleep(0.5) # stopping hitting E on the fabricator
+    time.sleep(0.5*settings.sleep_constant) # stopping hitting E on the fabricator
     dedi_deposit(settings.height_grind)
-    time.sleep(0.2)
+    time.sleep(0.2*settings.sleep_constant)
     drop_useless()
 
 

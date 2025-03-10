@@ -46,7 +46,7 @@ def enter_tekpod():
         time.sleep(1)
         if template.check_template_no_bounds("bed_radical", 0.6):
             windows.move_mouse(variables.get_pixel_loc("radical_laydown_x"), variables.get_pixel_loc("radical_laydown_y"))
-            time.sleep(0.5)
+            time.sleep(0.5*settings.sleep_constant)
             pyautogui.keyUp(local_player.get_input_settings("Use"))
         time.sleep(1)
         if ark.buffs() == 2:
