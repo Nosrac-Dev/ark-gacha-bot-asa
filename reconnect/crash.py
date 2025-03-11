@@ -13,7 +13,7 @@ import logging
 reconnectlogs = logging.getLogger("Reconnect")
 logging_level = logging.INFO
 logging.basicConfig(filename="txt_files/logs.txt",level=logging_level,format="%(asctime)s - %(levelname)s - %(message)s",datefmt="%H:%M:%S")
-reconnectlogs = logging.setLevel(logging_level)
+reconnectlogs.setLevel(logging_level)
 
 class crash():
     def __init__(self,hwnd):
