@@ -142,11 +142,11 @@ def collect_grindables(metadata):
         time.sleep(0.5*settings.sleep_constant)
         ark.open_structure()
         time.sleep(0.4*settings.sleep_constant)
-    if template.template_sleep("inventory",0.7,2) == False:
+    if template.template_sleep("grinder",0.7,2) == False:
         time.sleep(2)
         ark.open_structure()
         time.sleep(0.4)
-    if template.check_template("inventory",0.7):
+    if template.check_template("grinder",0.7):
         ark.transfer_all_from()
         time.sleep(0.2*settings.sleep_constant)
         ark.close_inventory()
