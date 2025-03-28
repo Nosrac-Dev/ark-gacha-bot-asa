@@ -33,7 +33,7 @@ async def send_new_logs():
     last_position = 0
     
     while True:
-        with open("txt_files/logs.txt", 'r') as file:
+        with open("logs/logs.txt", 'r') as file:
             file.seek(last_position)
             new_logs = file.read()
             if new_logs:
@@ -142,12 +142,8 @@ async def start(interaction: discord.Interaction):
         await logchn.send(f'bot starting up now')
     
     # resetting log files
-    with open("txt_files/logs.txt", 'w') as file:
+    with open("logs/logs.txt", 'w') as file:
         file.write(f"")
-    with open("txt_files/wait.txt", 'w') as wait:
-        wait.write(f"")
-    with open("txt_files/active.txt", 'w') as active:
-        active.write(f"")
     running_tasks.append(bot.loop.create_task(send_new_logs()))
     
     
