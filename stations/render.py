@@ -6,7 +6,7 @@ import windows
 import utils
 import settings
 import local_player
-import discordbot
+import logs.discordbot as discordbot
 import ark
 global render_flag
 render_flag = False #starts as false as obviously we are not rendering anything

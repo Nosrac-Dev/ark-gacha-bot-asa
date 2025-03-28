@@ -14,8 +14,8 @@ class reconnect():
     def rejoin_server(self):
         joined = False
 
-        crash = rec.crash(windows.hwnd)
-        crash.re_open_game()
+        #crash = rec.crash(windows.hwnd)
+        #crash.re_open_game()
 
         while not joined:
             main_menu.enter_menu()

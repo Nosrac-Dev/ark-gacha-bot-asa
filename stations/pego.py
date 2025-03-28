@@ -5,7 +5,7 @@ import windows
 import ark
 import variables
 import settings
-import discordbot
+import logs.discordbot as discordbot
 
 def pego_pickup(metadata):
     utils.turn_up(15)

@@ -4,7 +4,7 @@ import settings
 from stations import render
 import time
 import template
-import discordbot
+import logs.discordbot as discordbot
 from stations import pego 
 from stations import deposit
 from abc import ABC ,abstractmethod

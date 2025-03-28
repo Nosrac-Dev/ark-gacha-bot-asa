@@ -3,7 +3,7 @@ import pyautogui
 import numpy as np
 import time
 import screen
-import discordbot
+import logs.discordbot as discordbot
 import variables
 import settings
 import utils
@@ -91,7 +91,7 @@ def open_inventory():
         utils.press_key("ShowMyInventory")
     if template.template_sleep("inventory",0.7,2) == False:
         discordbot.gachalogs.warning("inventory failed to open retrying now")
-        utils.press_key("AccessInventory")
+        utils.press_key("ShowMyInventory")
         template.template_sleep("inventory",0.7,2)
 
 
@@ -553,12 +553,15 @@ def teleport_default(teleporter_name): # param teleporter_name incase of unable 
         teleport_not_default(teleporter_name)
 
         
-
+import ASA.strucutres.teleporter
+import ASA.stations.custom_stations
 if __name__ == "__main__":
     time.sleep(2)
-    check_disconected()
+    start = time.time()
+    pego_metadata = ASA.stations.custom_stations.get_station_metadata("pego1")
+    ASA.strucutres.teleporter.teleport_not_default(pego_metadata)
+    print(time.time() - start)
     pass
 
 
 
-   

@@ -4,7 +4,7 @@ import win32process
 import subprocess
 import os
 import local_player
-import discordbot
+import logs.discordbot as discordbot
 import time 
 import windows
 from reconnect import recon_utils

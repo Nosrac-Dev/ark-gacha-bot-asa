@@ -2,12 +2,12 @@ import discord
 from discord.ext import commands
 from typing import Callable
 import asyncio
-import botoptions
+import logs.botoptions as botoptions
 import pyautogui
 import settings
 import json
 import time
-import discordbot
+import logs.discordbot as discordbot
 import stations.stations as station
 import task_manager
 

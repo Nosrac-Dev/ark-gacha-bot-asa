@@ -3,7 +3,7 @@ import numpy as np
 import settings
 import screen
 import time 
-import discordbot
+import logs.discordbot as discordbot
 
 location = {
     "accept":{"start_x":1220, "start_y":958 ,"width":100 ,"height":30},

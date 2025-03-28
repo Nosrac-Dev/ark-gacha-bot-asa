@@ -1,9 +1,8 @@
 import heapq
 import time
 import json
-import stations.stations as stations
-import discordbot
-import datetime
+import bot.stations as stations
+import logs.gachalogs as logs
 from threading import Lock, Thread 
 
 global scheduler
@@ -115,7 +114,7 @@ class task_scheduler(metaclass=SingletonMeta):
         if exec_time <= current_time:
             
             if task.name != self.prev_task_name:
-                discordbot.gachalogs.info(f"Executing task: {task.name}")
+                logs.logger.info(f"Executing task: {task.name}")
             task.execute()  
             
             self.prev_task_name = task.name
@@ -128,7 +127,7 @@ class task_scheduler(metaclass=SingletonMeta):
             self.active_queue.add(task, priority, exec_time)
 
     def move_to_waiting_queue(self, task):
-        discordbot.gachalogs.debug(f"adding {task.name} to waiting queue" ) 
+        logs.logger.debug(f"adding {task.name} to waiting queue" ) 
         next_execution_time = time.time() + task.get_requeue_delay()
         priority_level = task.get_priority_level()
         self.waiting_queue.add(task,priority_level , next_execution_time)
@@ -140,7 +139,7 @@ def load_resolution_data(file_path):
         with open(file_path, 'r') as file:
             data = file.read().strip()
             if not data:
-                discordbot.gachalogs.warning(f"warning: {file_path} is empty no tasks added.")
+                logs.logger.warning(f"warning: {file_path} is empty no tasks added.")
                 return []
             return json.loads(data)
     except (json.JSONDecodeError, FileNotFoundError) as e:
@@ -174,7 +173,7 @@ def main():
         scheduler.add_task(task)
         
     scheduler.add_task(stations.render_station())
-    discordbot.gachalogs.info("scheduler now running")
+    logs.logger.info("scheduler now running")
     scheduler.run()
 
 if __name__ == "__main__":

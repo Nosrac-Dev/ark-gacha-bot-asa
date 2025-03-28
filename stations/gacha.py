@@ -6,7 +6,7 @@ import windows
 import template
 import settings
 import pyautogui
-import discordbot
+import logs.discordbot as discordbot
 
 def berry_collection():
     time.sleep(0.5)

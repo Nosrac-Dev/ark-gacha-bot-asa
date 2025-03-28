@@ -1,7 +1,7 @@
 import screen
 import numpy as np
 import cv2
-import discordbot
+import logs.gachalogs as logs
 import settings
 import time
 
@@ -29,47 +29,28 @@ roi_regions = {
     "first_slot" :{"start_x": 220, "start_y": 305, "width": 130, "height": 130},
     "player_stats": {"start_x":1120, "start_y":240 ,"width":300 ,"height":900},
     "show_buff":{"start_x":1200, "start_y":1150 ,"width":200 ,"height":50},
-    "snow_owl_pellet":{"start_x":200, "start_y":150 ,"width":600 ,"height":600}
+    "snow_owl_pellet":{"start_x":200, "start_y":150 ,"width":600 ,"height":600},
+    "orange":{"start_x":705, "start_y":290 ,"width":1 ,"height":1}
 }
-
-def template_sleep(template:str,threshold:float,sleep_amount:float) -> bool:
+def template_await_true(func,sleep_amount:float,*args) -> bool:
     count = 0 
-    while check_template(template,threshold) == False:
-        if count >= sleep_amount * 10 : #  seconds of sleep
+    while func(*args) == False:
+        if count >= sleep_amount * 20 : 
             break    
-        time.sleep(0.1)
+        time.sleep(0.05)
         count += 1
-    return check_template(template,threshold)
+    return func(*args)
 
-def template_sleep_no_bounds(template:str,threshold:float,sleep_amount:float) -> bool:
+def template_await_false(func,sleep_amount:float,*args) -> bool:
     count = 0 
-    while check_template_no_bounds(template,threshold) == False:
-        if count >= sleep_amount * 10 : #  seconds of sleep
+    while func(*args) == True:
+        if count >= sleep_amount * 20 : 
             break    
-        time.sleep(0.1)
+        time.sleep(0.05)
         count += 1
-    return check_template_no_bounds(template,threshold)
-
-def window_still_open(template:str,threshold:float,sleep_amount:float) -> bool: # oposite of the function above mainly to check if inventory is still open
-    count = 0
-    while check_template(template,threshold) == True:
-        if count >= sleep_amount * 10 : #  seconds of sleep
-            break    
-        time.sleep(0.1)
-        count += 1
-    return check_template(template,threshold)
-
-def window_still_open_no_bounds(template:str,threshold:float,sleep_amount:float) -> bool: # oposite of the function above mainly to check if inventory is still open
-    count = 0
-    while check_template_no_bounds(template,threshold) == True:
-        if count >= sleep_amount * 10 : #  seconds of sleep
-            break    
-        time.sleep(0.1)
-        count += 1
-    return check_template_no_bounds(template,threshold)
+    return func(*args)
 
 def check_template(item:str, threshold:float) -> bool:
-    
     region = roi_regions[item]
     if screen.screen_resolution == 1440:
         roi = screen.get_screen_roi(region["start_x"], region["start_y"], region["width"], region["height"])
@@ -94,13 +75,12 @@ def check_template(item:str, threshold:float) -> bool:
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.gachalogs.debug(f"{item} found:{max_val}")
+        logs.logger.template(f"{item} found:{max_val}")
         return True
-    #discordbot.gachalogs.debug(f"{item} not found:{max_val} threshold:{threshold}")
+    logs.logger.template(f"{item} not found:{max_val} threshold:{threshold}")
     return False
 
 def check_template_no_bounds(item:str, threshold:float) -> bool:
-    
     region = roi_regions[item]
     if screen.screen_resolution == 1440:
         roi = screen.get_screen_roi(region["start_x"], region["start_y"], region["width"], region["height"])
@@ -125,9 +105,9 @@ def check_template_no_bounds(item:str, threshold:float) -> bool:
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.gachalogs.debugf"{item} found:{max_val}")
+        logs.logger.template(f"{item} found:{max_val}")
         return True
-    #discordbot.gachalogs.debugf"{item} not found:{max_val} threshold:{threshold}")
+    logs.logger.template(f"{item} not found:{max_val} threshold:{threshold}")
     return False
 
 def teleport_icon(threshold:float) -> bool:
@@ -155,9 +135,9 @@ def teleport_icon(threshold:float) -> bool:
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.gachalogs.debug(f"teleporter_icon found:{max_val}")
+        logs.logger.template(f"teleporter_icon found:{max_val}")
         return True
-    #discordbot.gachalogs.debug(f"teleporter_icon not found:{max_val} threshold:{threshold}")
+    logs.logger.template(f"teleporter_icon not found:{max_val} threshold:{threshold}")
     return False
 
 def inventory_first_slot(item:str,threshold:float) -> bool:
@@ -186,9 +166,9 @@ def inventory_first_slot(item:str,threshold:float) -> bool:
 
 
     if max_val > threshold:
-        #discordbot.gachalogs.debug(f"{item} found:{max_val}")
+        logs.logger.template(f"{item} found:{max_val}")
         return True
-    #discordbot.gachalogs.debug(f"{item} not found:{max_val} threshold:{threshold}")
+    logs.logger.template(f"{item} not found:{max_val} threshold:{threshold}")
     return False
 
 def check_buffs(buff,threshold):
@@ -216,12 +196,36 @@ def check_buffs(buff,threshold):
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 
     if max_val > threshold:
-        #discordbot.gachalogs.debug(f"{buff} found:{max_val}")
+        logs.logger.template(f"{buff} found:{max_val}")
         return True
-    #discordbot.gachalogs.debug(f"{buff} not found:{max_val} threshold:{threshold}")
+    logs.logger.template(f"{buff} not found:{max_val} threshold:{threshold}")
     return False
 
+def check_teleporter_orange():
+    region = roi_regions["orange"]
+    if screen.screen_resolution == 1440:
+        roi = screen.get_screen_roi(region["start_x"], region["start_y"], region["width"], region["height"])
+    else:
+        roi = screen.get_screen_roi(int(region["start_x"] * 0.75), int(region["start_y"] * 0.75), int(region["width"]), int(region["height"]))
+
+    lower_boundary = np.array([5,211,88])
+    upper_boundary = np.array([25,255,168])
+
+    hsv = cv2.cvtColor(roi,cv2.COLOR_BGR2HSV)
+    pixel_hsv = hsv[0, 0]
+    logs.logger.template(f"check orange {np.all(pixel_hsv >= lower_boundary) and np.all(pixel_hsv <= upper_boundary)}")
+    return np.all(pixel_hsv >= lower_boundary) and np.all(pixel_hsv <= upper_boundary)
+
+def white_flash():
+    roi = screen.get_screen_roi(500,500,100,100)
+    total_pixels = roi.size
+    num_255_pixels = np.count_nonzero(roi == 255)
+    percentage_255 = (num_255_pixels / total_pixels) * 100
+    logs.logger.template(f"white flash {percentage_255 >= 80}")
+    return percentage_255 >= 80
+
 if __name__ == "__main__":
+    template_await_true(check_teleporter_orange,10)
     pass
     
     

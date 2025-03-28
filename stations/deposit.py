@@ -6,7 +6,7 @@ import windows
 import variables
 import json
 import settings
-import discordbot
+import logs.discordbot as discordbot
 
 def load_resolution_data(file_path):
     with open(file_path, 'r') as file:
