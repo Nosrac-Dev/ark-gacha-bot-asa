@@ -12,7 +12,7 @@ height_ele = 2
 height_grind = 3
 command_prefix = "%"
 singleplayer = False
-server_number = 2396
+server_number = 2390
 crafting = False
 
 # you need to put in you channel IDs and your bot API
