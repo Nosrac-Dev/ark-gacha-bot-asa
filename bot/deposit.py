@@ -177,7 +177,7 @@ def deposit_all(metadata):
     if settings.height_grind != 0:
         logs.logger.debug("depositing in grinder")
         depo_grinder(metadata)
-        grindables_metadata = ASA.stations.custom_stations(settings.grindables)
+        grindables_metadata = ASA.stations.custom_stations.get_station_metadata(settings.grindables)
         ASA.strucutres.teleporter.teleport_not_default(grindables_metadata)
         logs.logger.debug("collecting grindables")
         collect_grindables(grindables_metadata)
