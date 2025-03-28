@@ -114,6 +114,7 @@ def depo_grinder(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.grinder_attempts:
             logs.logger.error(f"while trying to deposit we couldnt access grinder")
+            break
 
     if template.check_template("grinder",0.7):
         ASA.player.player_inventory.transfer_all_inventory()
@@ -141,6 +142,7 @@ def collect_grindables(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.grinder_attempts:
             logs.logger.error(f"while trying to deposit we couldnt access grinder")
+            break
 
     if template.check_template("grinder",0.7):
         ASA.strucutres.inventory.transfer_all_from()

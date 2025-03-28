@@ -70,6 +70,7 @@ def iguanadon_open(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.iguanadon_attempts:
             logs.logger.error(f"the iguanadon at {metadata.name} could not be accesssed after {attempt} attempts")
+            break
     
 def drop_seeds():
     utils.press_key("Crouch")

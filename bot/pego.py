@@ -26,6 +26,7 @@ def pego_pickup(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.pego_attempts:
             logs.logger.error(f"the pego at {metadata.name} could not be accesssed after {attempt} attempts")
+            break
 
     if ASA.strucutres.inventory.is_open():# prevents pego being FLUNG
         ASA.player.player_inventory.drop_all_inv()

@@ -33,6 +33,7 @@ def drop_off(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.gacha_attempts:
             logs.logger.error(f"the {direction} gacha at {metadata.name} could not be accesssed after {attempt} attempts")
+            break
 
     if ASA.strucutres.inventory.is_open():
         ASA.strucutres.inventory.transfer_all_from()
