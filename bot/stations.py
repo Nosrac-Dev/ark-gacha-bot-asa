@@ -143,7 +143,7 @@ class snail_pheonix(base_task):
 
         player_state.check_state()
         teleporter.teleport_not_default(gacha_metadata)
-        gacha.gacha_collection(gacha_metadata)
+        gacha.collection(gacha_metadata)
         teleporter.teleport_not_default(self.depo_tp)
         deposit.dedi_deposit(settings.height_ele)
         
