@@ -82,10 +82,11 @@ def vault_deposit(items, metadata):
         time.sleep(0.2*settings.sleep_constant)
         ASA.strucutres.inventory.open()
     if template.template_await_true(template.check_template,1,"inventory",0.7):
+        time.sleep(0.1*settings.sleep_constant)
         for x in range(len(items)):
             ASA.player.player_inventory.search_in_inventory(items[x])
             ASA.player.player_inventory.transfer_all_inventory()
-            time.sleep(0.4*settings.sleep_constant)
+            time.sleep(0.3*settings.sleep_constant)
         ASA.strucutres.inventory.close()
         time.sleep(0.2*settings.sleep_constant)
     utils.turn_left(90*turn_constant)
