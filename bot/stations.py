@@ -4,7 +4,7 @@ import template
 import logs.gachalogs as logs
 import bot.render
 from ASA.strucutres import bed , teleporter , inventory
-from ASA.player import buffs , console , player_state , tribelog 
+from ASA.player import buffs , console , player_state , tribelog , player_inventory
 from ASA.stations import custom_stations
 from bot import config , deposit , gacha , iguanadon , pego 
 from abc import ABC ,abstractmethod
@@ -116,12 +116,13 @@ class render_station(base_task):
     def execute(self):
         global berry_station 
         berry_station = True # setting to true as we will be away for mostlikly for a few hours
-        player_state.reset_state()
         if bot.render.render_flag == False:
             player_state.reset_state()
             teleporter.teleport_not_default(settings.bed_spawn)
             bot.render.enter_tekpod()
-            bot.render.open_inv_dropall()
+            player_inventory.open()
+            player_inventory.drop_all_inv()
+            player_inventory.close()
             tribelog.open()
     def get_priority_level(self):
         return 8

@@ -28,7 +28,7 @@ def check_state(): # mainliy checked at the start of every task to check for foo
     buffs = ASA.player.buffs.check_buffs()
     type = buffs.check_buffs()
     if type == 1 or bot.render.render_flag: #type 1 is when char is in the tekpod
-        logs.logger.debug(f"tekpod buff found on screen leaving tekpod now reason | 1 = type true = bot.render.render_flag {type} {bot.render.render_flag}")
+        logs.logger.debug(f"tekpod buff found on screen leaving tekpod now reason | type : {type} render flag : {bot.render.render_flag}")
         bot.render.leave_tekpod()
     elif type == 2 or type == 3:
         logs.logger.warning(f"tping back to render bed to replenish food and water | 2= food 3= water | reason:{type}")
