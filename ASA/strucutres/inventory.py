@@ -29,7 +29,7 @@ def open():
         if attempts >= ASA.config.inventory_open_attempts:
             logs.logger.error(f"unable to open up the objects inventory")
             break
-    time.sleep(0.2*settings.sleep_constant)    
+    time.sleep(0.3*settings.sleep_constant)    
 def close():
     attempts = 0
     while is_open():
@@ -43,7 +43,7 @@ def close():
             logs.logger.error(f"unable to close the objects inventory after {attempts} attempts") 
             #check state of the char the reason we can do it now is that the latter should spam click close inv 
             break
-    time.sleep(0.2*settings.sleep_constant)    
+    time.sleep(0.3*settings.sleep_constant)    
 #these functions assume that the inventory is already open
 def search_in_object(item:str): 
     logs.logger.debug(f"searching in structure/dino for {item}")

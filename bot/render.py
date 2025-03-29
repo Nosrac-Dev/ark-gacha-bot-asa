@@ -31,28 +31,29 @@ def enter_tekpod():
         utils.press_key(local_player.get_input_settings("Run")) #uncrouching char just in case
         utils.zero()
         utils.set_yaw(settings.station_yaw)
-        utils.turn_down(10)
+        utils.turn_down(15)
         time.sleep(0.3*settings.sleep_constant)
         pyautogui.keyDown(local_player.get_input_settings("Use"))
         
-        if template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+        if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
             pyautogui.keyUp(local_player.get_input_settings("Use"))
             time.sleep(0.5*settings.sleep_constant)    
             utils.press_key(local_player.get_input_settings("Run")) 
             utils.zero()
             utils.set_yaw(settings.station_yaw)
-            utils.turn_down(10)
+            utils.turn_down(15)
             time.sleep(0.3*settings.sleep_constant)
             pyautogui.keyDown(local_player.get_input_settings("Use"))   
             time.sleep(0.5*settings.sleep_constant)
 
         if template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+            time.sleep(0.2*settings.sleep_constant)
             windows.move_mouse(variables.get_pixel_loc("radical_laydown_x"), variables.get_pixel_loc("radical_laydown_y"))
             time.sleep(0.5*settings.sleep_constant)
             pyautogui.keyUp(local_player.get_input_settings("Use"))
             time.sleep(1)
 
-        if buffs.check_buffs == 1:
+        if buffs.check_buffs() == 1:
             logs.logger.critical(f"bot is now in the render pod rendering the station after {attempts} attempts")
             render_flag = True
             utils.current_pitch = 0 # resetting the pitch for when char leaves the tekpod

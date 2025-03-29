@@ -83,6 +83,14 @@ def drop_off(metadata):
     utils.turn_left(90*turn_constant)
     time.sleep(0.2*settings.sleep_constant)
     ASA.strucutres.inventory.open()
+    if template.check_template("crop_plot",0.7):
+        logs.logger.debug("failed to turn away from the crop plot retrying now")
+        ASA.strucutres.inventory.close()
+        time.sleep(0.5*settings.sleep_constant)
+        utils.turn_left(90*turn_constant)
+        time.sleep(0.3*settings.sleep_constant)
+        ASA.strucutres.inventory.open()
+        time.sleep(0.3*settings.sleep_constant)
     if ASA.strucutres.inventory.is_open():
         ASA.player.player_inventory.search_in_inventory("seed")
         time.sleep(0.2*settings.sleep_constant)
