@@ -11,7 +11,7 @@ import ASA.strucutres.inventory
 import ASA.player.player_inventory
 import bot.config
     
-def drop_off(metadata):
+def drop_off(metadata): #drop off for 150 stacks of seeds
     direction = metadata.side
     if direction == "right":
         turn_constant = 1
@@ -96,6 +96,14 @@ def drop_off(metadata):
         time.sleep(0.2*settings.sleep_constant)
         ASA.player.player_inventory.transfer_all_inventory()
         time.sleep(0.2*settings.sleep_constant)
+        if settings.seeds_230:
+            ASA.strucutres.inventory.search_in_object("pell")
+            time.sleep(0.2*settings.sleep_constant)
+            ASA.strucutres.inventory.drop_all_obj()
+            ASA.player.player_inventory.search_in_inventory("seed")
+            time.sleep(0.2*settings.sleep_constant)
+            ASA.player.player_inventory.transfer_all_inventory()
+            time.sleep(0.2*settings.sleep_constant)
         ASA.player.player_inventory.search_in_inventory("pell")
         time.sleep(0.2*settings.sleep_constant)
         ASA.player.player_inventory.transfer_all_inventory()

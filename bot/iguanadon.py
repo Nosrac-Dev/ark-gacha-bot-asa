@@ -98,12 +98,11 @@ def pickup_seeds():
 
 def iguanadon(metadata):
     iguanadon_open(metadata)
-    #seed(1)
-    #drop_seeds()
-    #iguanadon_open(metadata)
-    seed(2)
-    #pickup_seeds()
-
-    #if you want to use 300 stacks then uncomment out the eddited part
-
-
+    if settings.seeds_230:  
+        seed(1)
+        drop_seeds()
+        iguanadon_open(metadata)
+        seed(2)
+        pickup_seeds()
+    else:
+        seed(2)

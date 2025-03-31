@@ -14,6 +14,7 @@ command_prefix = "%"
 singleplayer = False
 server_number = 0
 crafting = False
+seeds_230 = False
 
 # you need to put in you channel IDs and your bot API
 log_channel_gacha = 111111111111111
