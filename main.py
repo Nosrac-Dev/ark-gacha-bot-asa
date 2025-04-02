@@ -155,10 +155,11 @@ async def start(interaction: discord.Interaction):
 @bot.tree.command()
 async def stop(interaction: discord.Integration):
     global running_tasks
+    await interaction.response.send_message(f"Trying to stop the gacha bot from running now")
     for task in running_tasks:
         if not task.done():
             task.cancel()
-            print(running_tasks)
+            await interaction.response.send_message(running_tasks)
             try:
                 await task
             except asyncio.CancelledError:
