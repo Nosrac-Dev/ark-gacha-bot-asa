@@ -159,7 +159,7 @@ async def stop(interaction: discord.Integration):
     for task in running_tasks:
         if not task.done():
             task.cancel()
-            await interaction.response.send_message(running_tasks)
+            print(running_tasks)
             try:
                 await task
             except asyncio.CancelledError:
