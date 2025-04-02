@@ -8,7 +8,7 @@ import settings
 import json
 import time
 import logs.discordbot as discordbot
-import stations.stations as station
+import bot.stations 
 import task_manager
 
 intents = discord.Intents.default()
@@ -42,7 +42,6 @@ async def send_new_logs():
         await asyncio.sleep(5)
 
 @bot.tree.command(name="add_gacha", description="add a new gacha station to the data")
-
 async def add_gacha(interaction: discord.Interaction, name: str, teleporter: str, resource_type: str ,direction: str):
     data = load_json("json_files/gacha.json")
 
@@ -118,7 +117,7 @@ async def list_pego(interaction: discord.Interaction):
 @bot.tree.command(name="pause", description="sends the bot back to render bed for X amount of seconds")
 async def reset(interaction: discord.Interaction,time:int):
     task = task_manager.scheduler
-    pause = station.pause(time)
+    pause = bot.stations.pause(time)
     task.add_task(pause)
     await interaction.response.send_message(f"pause task added will now pause for {time} seconds once the next task finishes")
     
@@ -136,7 +135,7 @@ async def embed_send(queue_type):
 
 @bot.tree.command()
 async def start(interaction: discord.Interaction):
-
+    global running_tasks
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot starting up now')
@@ -153,6 +152,19 @@ async def start(interaction: discord.Interaction):
     running_tasks.append(bot.loop.create_task(embed_send("active_queue")))
     running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))
     
+@bot.tree.command()
+async def stop(interaction: discord.Integration):
+    global running_tasks
+    for task in running_tasks:
+        if not task.done():
+            task.cancel()
+            print(running_tasks)
+            try:
+                await task
+            except asyncio.CancelledError:
+                ...
+        running_tasks.clear()
+
 @bot.event
 async def on_ready():
     await bot.tree.sync()

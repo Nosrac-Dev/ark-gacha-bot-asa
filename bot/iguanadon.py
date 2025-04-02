@@ -87,11 +87,11 @@ def pickup_seeds():
     time.sleep(0.2*settings.sleep_constant)
     utils.press_key("crouch")
     utils.turn_down(80)
-    time.sleep(0.1*settings.sleep_constant)
+    time.sleep(0.2*settings.sleep_constant)
     ASA.strucutres.inventory.open()
     if ASA.strucutres.inventory.is_open():
         ASA.strucutres.inventory.transfer_all_from() #this should also cause us to get out of bag
-        if template.template_await_false(template.check_template,1,"inventory",0.7):
+        if not template.template_await_false(template.check_template,1,"inventory",0.7):
             ... # popcorn the bag lateron ( will be due to inv being capped )
     for x in range(3):
         utils.press_key("Run")

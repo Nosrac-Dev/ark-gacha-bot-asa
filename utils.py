@@ -2,7 +2,6 @@ import ctypes
 import time
 import local_player
 import windows
-import ark 
 import logs.gachalogs as logs
 import ASA.player.console
 import ASA.player.player_state
