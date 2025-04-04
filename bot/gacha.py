@@ -34,10 +34,9 @@ def drop_off(metadata): #drop off for 150 stacks of seeds
         if attempt >= bot.config.gacha_attempts:
             logs.logger.error(f"the {direction} gacha at {metadata.name} could not be accesssed after {attempt} attempts")
             break
-
+    temp = False
     if ASA.strucutres.inventory.is_open():
         ASA.strucutres.inventory.transfer_all_from()
-        temp = False
         if template.template_await_true(template.check_template_no_bounds,1,"slot_capped",0.7):
             logs.logger.debug(f"player is overcapped")
             ASA.strucutres.inventory.drop_all_obj() # as our player is overcapped the gacha will also be overcapped + we have seeds in our inventory which is more important than pellets

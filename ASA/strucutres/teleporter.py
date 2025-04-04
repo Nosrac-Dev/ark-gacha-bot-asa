@@ -90,8 +90,9 @@ def teleport_not_default(arg):
             ASA.player.tribelog.close()
         time.sleep(0.5*settings.sleep_constant)
         if settings.singleplayer: # single player for some reason changes view angles when you tp 
-            utils.current_yaw = 0
+            utils.current_pitch = 0
             utils.turn_down(80)
+            time.sleep(0.2)
         utils.turn_up(80)
         time.sleep(0.2) 
         utils.set_yaw(stationdata.yaw)

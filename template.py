@@ -224,8 +224,25 @@ def white_flash():
     logs.logger.template(f"white flash {percentage_255 >= 80}")
     return percentage_255 >= 80
 
+def console_strip():
+    if screen.screen_resolution == 1440:
+        roi = screen.get_screen_roi(0,1419,2560,2)
+    else:
+        roi = screen.get_screen_roi(0,1059,1080,2)
+
+    gray_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+    lower_bound = 130
+    upper_bound = 150
+    gray_mask = (gray_roi >= lower_bound) & (gray_roi <= upper_bound)
+    num_gray_pixels = np.count_nonzero(gray_mask)
+
+    total_pixels = gray_roi.size
+    percentage_gray = (num_gray_pixels / total_pixels) * 100
+    logs.logger.template(f"percentage gray {percentage_gray}")
+    return percentage_gray >= 80
+
 if __name__ == "__main__":
-    template_await_true(check_teleporter_orange,10)
+    console_strip()
     pass
     
     
