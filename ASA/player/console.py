@@ -15,7 +15,7 @@ import win32clipboard
 last_command = ""
 
 def is_open():
-    return template.check_template_no_bounds("console",0.55)
+    return template.console_strip()
 
 def enter_data(data:str):
     global last_command
@@ -42,7 +42,7 @@ def console_ccc():
         while not is_open():
             count += 1
             utils.press_key("ConsoleKeys")
-            template.template_await_true(template.check_template_no_bounds,1,"console",0.55)
+            template.template_await_true(template.console_strip,1)
             if count >= ASA.config.console_open_attempts:
                 logs.logger.error(f"console didnt open after {count} attempts")
                 break
@@ -69,7 +69,7 @@ def console_write(text:str):
     while not is_open():
         attempts += 1
         utils.press_key("ConsoleKeys")
-        template.template_await_true(template.check_template_no_bounds,1,"console",0.55)
+        template.template_await_true(template.console_strip,1)
         if attempts >= ASA.config.console_open_attempts:
             logs.logger.error(f"console didnt open after {attempts} attempts unable to input {text}")
             break
