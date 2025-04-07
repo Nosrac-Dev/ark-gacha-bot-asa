@@ -241,8 +241,8 @@ def console_strip():
     logs.logger.template(f"percentage gray {percentage_gray}")
     return percentage_gray >= 80
 
+
 if __name__ == "__main__":
-    console_strip()
     pass
     
     

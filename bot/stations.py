@@ -80,7 +80,7 @@ class gacha_station(base_task):
         if settings.seeds_230:
             delay = 10700  # should take about this amount of time to do 230 slots of seeds 
         else:
-            delay = 6600    # delay can be static as it will be the same for all gachas 142 stacks took 110 mins
+            delay = 6600    # delay can be constant as it will be the same for all gachas 142 stacks took 110 mins
         return delay 
 
 class pego_station(base_task):

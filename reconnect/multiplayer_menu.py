@@ -77,7 +77,8 @@ def join_server(server_name):
         return 
     
     time.sleep(0.5)
-    windows.click(get_pixel_loc("refresh_x"), get_pixel_loc("refresh_y")) #if it cant see we refresh the page
+    #windows.click(get_pixel_loc("refresh_x"), get_pixel_loc("refresh_y")) #if it cant see we refresh the page
+    windows.click(get_pixel_loc("back_x"), get_pixel_loc("back_y"))
     if recon_utils.template_sleep_no_bounds("searching",0.7,0.5):
         recon_utils.window_still_open_no_bounds("searching",0.7,10)
         time.sleep(2)

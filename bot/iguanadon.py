@@ -92,7 +92,16 @@ def pickup_seeds():
     if ASA.strucutres.inventory.is_open():
         ASA.strucutres.inventory.transfer_all_from() #this should also cause us to get out of bag
         if not template.template_await_false(template.check_template,1,"inventory",0.7):
-            ... # popcorn the bag lateron ( will be due to inv being capped )
+            logs.logger.warning(f"the bag we dropped on the floor for 230 seeds couldnt be fully picked up popcorning now")
+            attempts = 0
+            while template.check_template("inventory",0.7):
+                attempts += 1
+                ASA.strucutres.inventory.popcorn_top_row()
+                if  attempts >= 60 : 
+                    logs.logger.error("bot got stuck in the popcorning the bag inventory mostlikly broken")
+                    break
+
+            # popcorn the bag lateron ( will be due to inv being capped )
     for x in range(3):
         utils.press_key("Run")
 

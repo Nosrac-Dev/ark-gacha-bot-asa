@@ -6,7 +6,12 @@ import variables
 import time 
 import settings
 import ASA.config 
-
+import screen
+inv_slots = { 
+    "x" : 1660,
+    "y" : 320,
+    "distance" : 125
+}
 def is_open():
     return template.check_template("inventory",0.7)
     
@@ -65,3 +70,17 @@ def transfer_all_from():
     time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("transfer_all_from_x"), variables.get_pixel_loc("transfer_all_y"))
     time.sleep(0.1*settings.sleep_constant)
+
+def popcorn_top_row():
+    for x in range(5):
+        time.sleep(0.1*settings.sleep_constant)
+        x = inv_slots["x"] + (x *inv_slots["distance"]) + 30
+        y = inv_slots["y"] + 30
+        if screen.screen_resolution == 1080:
+            windows.move_mouse(x * 0.75,y * 0.75)
+        else:
+            windows.move_mouse(x,y)
+        time.sleep(0.1*settings.sleep_constant)
+        utils.press_key("DropItem")
+
+ 

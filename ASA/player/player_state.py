@@ -12,9 +12,20 @@ import ASA.strucutres.teleporter
 import ASA.player.player_inventory
 import ASA.player.buffs
 import bot.render
+import reconnect.start
+
+def check_disconnected():
+    rejoin = reconnect.start.reconnect(str(settings.server_number))
+    
+    if rejoin.check_disconected():
+        logs.logger.critical("we are disconnected from the server")
+        rejoin.rejoin_server()
+        ASA.player.tribelog.close()
+        logs.logger.critical("joined back into the server waiting 30 seconds to render everything ")
+        time.sleep(60)
+        utils.set_yaw(settings.station_yaw)
 
 def reset_state():
-    #check for DC then 
     logs.logger.debug(f"resetting char state now")
     ASA.player.player_inventory.close()
     ASA.strucutres.teleporter.close()
