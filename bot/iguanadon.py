@@ -91,7 +91,7 @@ def pickup_seeds():
     ASA.strucutres.inventory.open()
     if ASA.strucutres.inventory.is_open():
         ASA.strucutres.inventory.transfer_all_from() #this should also cause us to get out of bag
-        if not template.template_await_false(template.check_template,1,"inventory",0.7):
+        if template.template_await_false(template.check_template,1,"inventory",0.7):
             logs.logger.warning(f"the bag we dropped on the floor for 230 seeds couldnt be fully picked up popcorning now")
             attempts = 0
             while template.check_template("inventory",0.7):
