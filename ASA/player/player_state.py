@@ -44,3 +44,8 @@ def check_state(): # mainliy checked at the start of every task to check for foo
     elif type == 2 or type == 3:
         logs.logger.warning(f"tping back to render bed to replenish food and water | 2= food 3= water | reason:{type}")
         ASA.strucutres.teleporter.teleport_not_default(settings.bed_spawn)
+        bot.render.enter_tekpod()
+        time.sleep(30) # assuming 30 seconds should replenish the player back to 100/100
+        bot.render.leave_tekpod()
+        time.sleep(1)
+

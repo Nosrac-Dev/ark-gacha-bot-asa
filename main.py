@@ -8,8 +8,12 @@ import settings
 import json
 import time
 import logs.discordbot as discordbot
-import bot.stations 
+import bot.stations as stations
 import task_manager
+import win32gui
+import win32con
+import sys
+import pygetwindow as gw
 
 intents = discord.Intents.default()
 pyautogui.FAILSAFE = False
@@ -117,8 +121,8 @@ async def list_pego(interaction: discord.Interaction):
 @bot.tree.command(name="pause", description="sends the bot back to render bed for X amount of seconds")
 async def reset(interaction: discord.Interaction,time:int):
     task = task_manager.scheduler
-    pause = bot.stations.pause(time)
-    task.add_task(pause)
+    pause_task = stations.pause(time)
+    task.add_task(pause_task)
     await interaction.response.send_message(f"pause task added will now pause for {time} seconds once the next task finishes")
     
 async def embed_send(queue_type):
@@ -153,18 +157,24 @@ async def start(interaction: discord.Interaction):
     running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))
     
 @bot.tree.command()
-async def stop(interaction: discord.Integration):
-    global running_tasks
-    await interaction.response.send_message(f"Trying to stop the gacha bot from running now")
-    for task in running_tasks:
-        if not task.done():
-            task.cancel()
-            print(running_tasks)
-            try:
-                await task
-            except asyncio.CancelledError:
-                ...
-        running_tasks.clear()
+async def shutdown(interaction: discord.Interaction):
+    await interaction.response.send_message("Shutting down script...")
+    print("Shutting down script...")
+    cmd_windows = [win for win in gw.getAllWindows() if "cmd" in win.title.lower() or "system32" in win.title.lower()]
+
+    if cmd_windows:
+        cmd_window = cmd_windows[0]  
+        hwnd = cmd_window._hWnd  
+
+        win32gui.ShowWindow(hwnd, win32con.SW_RESTORE) 
+        win32gui.SetForegroundWindow(hwnd)  
+        time.sleep(1)         
+        win32gui.PostMessage(hwnd, win32con.WM_CLOSE, 0, 0)
+        print("Shutting down...")
+        sys.exit() 
+    else:
+        print("No CMD window found.")
+
 
 @bot.event
 async def on_ready():
