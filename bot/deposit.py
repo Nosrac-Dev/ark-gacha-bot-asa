@@ -26,9 +26,11 @@ def open_crystals():
         for x in range(10):
             utils.press_key(f"UseItem{x+1}")
             count += 1
+    logs.logger.debug("Finished Opening Crystals") #Bitbucket
 
 def dedi_deposit(height):
     if height == 3:
+        logs.logger.debug("Deposit top row") #Bitbucket
         utils.turn_up(15)
         utils.turn_left(10)
         time.sleep(0.3*settings.sleep_constant)
@@ -42,6 +44,7 @@ def dedi_deposit(height):
         utils.turn_down(15)
         time.sleep(0.3*settings.sleep_constant)
 
+    logs.logger.debug("Deposit middle row") #Bitbucket
     utils.turn_left(10)
     utils.press_key("Crouch")
     time.sleep(0.3*settings.sleep_constant)
@@ -51,6 +54,7 @@ def dedi_deposit(height):
     time.sleep(0.3*settings.sleep_constant)
     utils.press_key("Use")
     time.sleep(0.3*settings.sleep_constant)
+    logs.logger.debug("Deposit bottom row") #Bitbucket
     utils.turn_down(30)
     time.sleep(0.3*settings.sleep_constant)
     utils.press_key("Use")
@@ -65,6 +69,8 @@ def dedi_deposit(height):
     time.sleep(0.1*settings.sleep_constant)
 
 def vault_deposit(items, metadata):
+    logs.logger.debug("Deposit in vaults") #Bitbucket
+
     side = metadata.side
     if side == "right":
         turn_constant = 1
@@ -100,6 +106,8 @@ def drop_useless():
     ASA.player.player_inventory.close()
 
 def depo_grinder(metadata):
+    logs.logger.debug("Deposit Grinder") #Bitbucket
+
     utils.turn_right(180)
     time.sleep(0.5*settings.sleep_constant)
     ASA.strucutres.inventory.open()
