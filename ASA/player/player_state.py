@@ -34,7 +34,7 @@ def reset_state():
         ASA.strucutres.bed.spawn_in(settings.bed_spawn) #guessing the char died will respawn it if the char hasnt died and it just in a tekpod screen it will just exit when it cant find its target bed
     
 def check_state(): # mainliy checked at the start of every task to check for food / water on the char
-   
+    check_disconnected()
     reset_state()
     buffs = ASA.player.buffs.check_buffs()
     type = buffs.check_buffs()

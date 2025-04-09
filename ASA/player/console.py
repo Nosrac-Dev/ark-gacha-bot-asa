@@ -1,4 +1,3 @@
-import ASA.player
 import ASA.player.player_inventory
 import ASA.player.player_state
 import template
@@ -12,10 +11,12 @@ import ASA.config
 import pyautogui
 import win32clipboard
 
+
+
 last_command = ""
 
 def is_open():
-    return template.console_strip()
+    return template.console_strip_check(template.console_strip_bottom()) or template.console_strip_check(template.console_strip_middle())
 
 def enter_data(data:str):
     global last_command
@@ -42,7 +43,7 @@ def console_ccc():
         while not is_open():
             count += 1
             utils.press_key("ConsoleKeys")
-            template.template_await_true(template.console_strip,1)
+            template.template_await_true(is_open,1)
             if count >= ASA.config.console_open_attempts:
                 logs.logger.error(f"console didnt open after {count} attempts")
                 break
@@ -69,7 +70,7 @@ def console_write(text:str):
     while not is_open():
         attempts += 1
         utils.press_key("ConsoleKeys")
-        template.template_await_true(template.console_strip,1)
+        template.template_await_true(is_open,1)
         if attempts >= ASA.config.console_open_attempts:
             logs.logger.error(f"console didnt open after {attempts} attempts unable to input {text}")
             break
