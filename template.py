@@ -4,6 +4,10 @@ import cv2
 import logs.gachalogs as logs
 import settings
 import time
+import ASA.player.console
+import json
+
+
 
 roi_regions = {
     "bed_radical": {"start_x":1120, "start_y":345 ,"width":250 ,"height":250},
@@ -224,16 +228,52 @@ def white_flash():
     logs.logger.template(f"white flash {percentage_255 >= 80}")
     return percentage_255 >= 80
 
-def console_strip():
+def get_file():
+    file_path = "json_files/console.json"
+    try:
+        with open(file_path, 'r') as file:
+            data = file.read().strip()
+            if not data:
+                return []
+            return json.loads(data)
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        return []
+    
+def get_bounds():
+    bounds = get_file()
+    return bounds
+
+def set_bounds(lower_bound: int, upper_bound: int):
+    file_path = "json_files/console.json"
+    new_bounds = [{
+        "upper_bound": upper_bound,
+        "lower_bound": lower_bound
+    }]
+
+    with open(file_path, 'w') as file:
+        json.dump(new_bounds, file, indent=4)
+
+bounds = get_bounds()
+upper_console_bound = bounds["upper_bound"]
+lower_console_bound = bounds["lower_bound"]
+
+def console_strip_bottom():
     if screen.screen_resolution == 1440:
         roi = screen.get_screen_roi(0,1419,2560,2)
     else:
-        roi = screen.get_screen_roi(0,1059,1080,2)
+        roi = screen.get_screen_roi(0,1059,1920,2)
+    return roi
 
+def console_strip_middle():
+    if screen.screen_resolution == 1440:
+        roi = screen.get_screen_roi(0,1065,2560,2)
+    else:
+        roi = screen.get_screen_roi(0,795,1920,2)
+    return roi 
+
+def console_strip_check(roi):
     gray_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-    lower_bound = 130
-    upper_bound = 150
-    gray_mask = (gray_roi >= lower_bound) & (gray_roi <= upper_bound)
+    gray_mask = (gray_roi >= lower_console_bound) & (gray_roi <= upper_console_bound)
     num_gray_pixels = np.count_nonzero(gray_mask)
 
     total_pixels = gray_roi.size
@@ -241,8 +281,19 @@ def console_strip():
     logs.logger.template(f"percentage gray {percentage_gray}")
     return percentage_gray >= 80
 
+def check_both_strips():
+    roi1 = console_strip_bottom()
+    roi2 = console_strip_middle()
+    return console_strip_check(roi1) or console_strip_check(roi2)
+
+
+def change_console_mask():
+    gray_roi = cv2.cvtColor(console_strip_bottom(), cv2.COLOR_BGR2GRAY)
+    average = np.mean(gray_roi)
+    set_bounds((average - 5), (average + 5))
 
 if __name__ == "__main__":
+    time.sleep(2)
+    change_console_mask()
     pass
-    
     
