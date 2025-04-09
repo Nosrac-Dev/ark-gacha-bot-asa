@@ -254,8 +254,8 @@ def set_bounds(lower_bound: int, upper_bound: int):
         json.dump(new_bounds, file, indent=4)
 
 bounds = get_bounds()
-upper_console_bound = bounds["upper_bound"]
-lower_console_bound = bounds["lower_bound"]
+upper_console_bound = bounds[0]["upper_bound"]
+lower_console_bound = bounds[0]["lower_bound"]
 
 def console_strip_bottom():
     if screen.screen_resolution == 1440:
