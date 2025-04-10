@@ -1,405 +1,1260 @@
-21:57:03 - DEBUG - task_manager_start - task_manager_start initiated
-21:57:03 - ERROR - embed_create - error in embed_create: module 'task_manager' has no attribute 'scheduler'
-21:57:03 - INFO - main - scheduler now running
-21:57:03 - INFO - execute_task - Executing task: pego2B
-21:57:03 - DEBUG - reset_state - resetting char state now
-21:57:04 - DEBUG - open - trying to open player inventory 1 / 3
-21:57:04 - DEBUG - open - inventory opened
-21:57:05 - DEBUG - open - trying to open up the buff menu 1 / 10
-21:57:05 - DEBUG - close - trying to close objects inventory 1 / 3
-21:57:05 - DEBUG - check_state - tekpod buff found on screen leaving tekpod now reason | type : 1 render flag : False
-21:57:05 - DEBUG - reset_state - resetting char state now
-21:57:07 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:07 - DEBUG - reset_state - resetting char state now
-21:57:10 - DEBUG - enter_data - using clipboard to put ccc into the console
-21:57:10 - ERROR - set_yaw - error processing ccc_data[3]: list index out of range
-21:57:12 - DEBUG - open - trying to open teleporter 1 / 3
-21:57:13 - DEBUG - open - teleporter opened
-21:57:14 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
-21:57:14 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.31680846214294434
-21:57:20 - WARNING - teleport_not_default - orange pixel for teleporter ready not found likely already on the tp we are just exiting the tp treating it as the tp we should be on
-21:57:20 - DEBUG - close - trying to close the teleporter 1 / 3
-21:57:20 - DEBUG - close - trying to close the teleporter 2 / 3
-21:57:21 - DEBUG - close - trying to close the teleporter 3 / 3
-21:57:21 - ERROR - close - unable to close the teleporter after 3 attempts
-21:57:21 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:21 - DEBUG - reset_state - resetting char state now
-21:57:23 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:24 - DEBUG - set_yaw - setting yaw as -18.43
-21:57:24 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:24 - DEBUG - reset_state - resetting char state now
-21:57:24 - DEBUG - console_ccc - trying to get ccc data 2 / 3
-21:57:24 - DEBUG - reset_state - resetting char state now
-21:57:25 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:26 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:57:30 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:57:34 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:57:37 - ERROR - open - unable to open up the objects inventory
-21:57:38 - DEBUG - pego_pickup - the pego at GTpego2B could not be accessed retrying 1 / 3
-21:57:38 - DEBUG - zero - setting view angles back to 0
-21:57:38 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:38 - DEBUG - reset_state - resetting char state now
-21:57:39 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:39 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:39 - DEBUG - reset_state - resetting char state now
-21:57:40 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:41 - DEBUG - set_yaw - setting yaw as -0.06
-21:57:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:41 - DEBUG - reset_state - resetting char state now
-21:57:42 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:42 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:57:46 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:57:50 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:57:54 - ERROR - open - unable to open up the objects inventory
-21:57:54 - DEBUG - pego_pickup - the pego at GTpego2B could not be accessed retrying 2 / 3
-21:57:54 - DEBUG - zero - setting view angles back to 0
-21:57:54 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:54 - DEBUG - reset_state - resetting char state now
-21:57:55 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:55 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:55 - DEBUG - reset_state - resetting char state now
-21:57:57 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:57 - DEBUG - set_yaw - setting yaw as -0.06
-21:57:57 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:57:57 - DEBUG - reset_state - resetting char state now
-21:57:58 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:57:59 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:58:03 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:58:06 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:58:10 - ERROR - open - unable to open up the objects inventory
-21:58:11 - DEBUG - pego_pickup - the pego at GTpego2B could not be accessed retrying 3 / 3
-21:58:11 - DEBUG - zero - setting view angles back to 0
-21:58:11 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:11 - DEBUG - reset_state - resetting char state now
-21:58:12 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:12 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:12 - DEBUG - reset_state - resetting char state now
-21:58:13 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:13 - DEBUG - set_yaw - setting yaw as -0.06
-21:58:13 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:13 - DEBUG - reset_state - resetting char state now
-21:58:14 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:15 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:58:19 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:58:23 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:58:26 - ERROR - open - unable to open up the objects inventory
-21:58:27 - ERROR - pego_pickup - the pego at GTpego2B could not be accesssed after 3 attempts
-21:58:27 - INFO - execute - bot has no crystals in hotbar we are skipping the deposit step
-21:58:27 - DEBUG - move_to_waiting_queue - adding pego2B to waiting queue
-21:58:27 - INFO - execute_task - Executing task: pego2C
-21:58:27 - DEBUG - reset_state - resetting char state now
-21:58:27 - DEBUG - open - trying to open player inventory 1 / 3
-21:58:28 - DEBUG - open - inventory opened
-21:58:28 - DEBUG - open - trying to open up the buff menu 1 / 10
-21:58:29 - DEBUG - open - trying to open up the buff menu 2 / 10
-21:58:29 - DEBUG - close - trying to close objects inventory 1 / 3
-21:58:30 - DEBUG - open - trying to open teleporter 1 / 3
-21:58:32 - DEBUG - open - teleporter opened
-21:58:32 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
-21:58:33 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.2896687984466553
-21:58:38 - WARNING - teleport_not_default - orange pixel for teleporter ready not found likely already on the tp we are just exiting the tp treating it as the tp we should be on
-21:58:38 - DEBUG - close - trying to close the teleporter 1 / 3
-21:58:39 - DEBUG - close - trying to close the teleporter 2 / 3
-21:58:40 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:40 - DEBUG - reset_state - resetting char state now
-21:58:41 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:41 - DEBUG - set_yaw - setting yaw as 74.13
-21:58:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:41 - DEBUG - reset_state - resetting char state now
-21:58:42 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:42 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:58:46 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:58:50 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:58:54 - ERROR - open - unable to open up the objects inventory
-21:58:54 - DEBUG - pego_pickup - the pego at GTpego2C could not be accessed retrying 1 / 3
-21:58:54 - DEBUG - zero - setting view angles back to 0
-21:58:54 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:54 - DEBUG - reset_state - resetting char state now
-21:58:55 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:55 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:55 - DEBUG - reset_state - resetting char state now
-21:58:56 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:57 - DEBUG - set_yaw - setting yaw as 74.13
-21:58:57 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:58:57 - DEBUG - reset_state - resetting char state now
-21:58:58 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:58:59 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:59:02 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:59:06 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:59:10 - ERROR - open - unable to open up the objects inventory
-21:59:10 - DEBUG - pego_pickup - the pego at GTpego2C could not be accessed retrying 2 / 3
-21:59:10 - DEBUG - zero - setting view angles back to 0
-21:59:10 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:10 - DEBUG - reset_state - resetting char state now
-21:59:11 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:12 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:12 - DEBUG - reset_state - resetting char state now
-21:59:13 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:13 - DEBUG - set_yaw - setting yaw as -0.06
-21:59:13 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:13 - DEBUG - reset_state - resetting char state now
-21:59:14 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:15 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:59:19 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:59:23 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:59:26 - ERROR - open - unable to open up the objects inventory
-21:59:27 - DEBUG - pego_pickup - the pego at GTpego2C could not be accessed retrying 3 / 3
-21:59:27 - DEBUG - zero - setting view angles back to 0
-21:59:27 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:27 - DEBUG - reset_state - resetting char state now
-21:59:28 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:28 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:28 - DEBUG - reset_state - resetting char state now
-21:59:29 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:29 - DEBUG - set_yaw - setting yaw as -0.06
-21:59:29 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:29 - DEBUG - reset_state - resetting char state now
-21:59:31 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:31 - DEBUG - open - trying to open strucuture inventory 1 / 3
-21:59:35 - DEBUG - open - trying to open strucuture inventory 2 / 3
-21:59:39 - DEBUG - open - trying to open strucuture inventory 3 / 3
-21:59:43 - ERROR - open - unable to open up the objects inventory
-21:59:43 - ERROR - pego_pickup - the pego at GTpego2C could not be accesssed after 3 attempts
-21:59:43 - INFO - execute - bot has no crystals in hotbar we are skipping the deposit step
-21:59:43 - DEBUG - move_to_waiting_queue - adding pego2C to waiting queue
-21:59:43 - INFO - execute_task - Executing task: pego2D
-21:59:43 - DEBUG - reset_state - resetting char state now
-21:59:44 - DEBUG - open - trying to open player inventory 1 / 3
-21:59:45 - DEBUG - open - inventory opened
-21:59:45 - DEBUG - open - trying to open up the buff menu 1 / 10
-21:59:45 - DEBUG - close - trying to close objects inventory 1 / 3
-21:59:47 - DEBUG - open - trying to open teleporter 1 / 3
-21:59:48 - DEBUG - open - teleporter opened
-21:59:49 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
-21:59:49 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.31852245330810547
-21:59:54 - DEBUG - open - trying to open up the tribelog screen
-21:59:55 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
-21:59:56 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:56 - DEBUG - reset_state - resetting char state now
-21:59:57 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:57 - DEBUG - set_yaw - setting yaw as -0.06
-21:59:57 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-21:59:57 - DEBUG - reset_state - resetting char state now
-21:59:58 - DEBUG - enter_data - using uparrow to put ccc into the console
-21:59:59 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:00:00 - DEBUG - open - inventory opened
-22:00:00 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:00:00 - DEBUG - open - 0.1535952091217041 seconds taken for the reciving remote inventory to go away
-22:00:00 - DEBUG - drop_all_inv - dropping all items from our inventory 
-22:00:01 - DEBUG - transfer_all_from - transfering all from object
-22:00:01 - DEBUG - close - trying to close objects inventory 1 / 3
-22:00:03 - DEBUG - open - trying to open teleporter 1 / 3
-22:00:05 - DEBUG - open - teleporter opened
-22:00:05 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
-22:00:05 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.293102502822876
-22:00:12 - DEBUG - open - trying to open up the tribelog screen
-22:00:13 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
-22:00:14 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:14 - DEBUG - reset_state - resetting char state now
-22:00:15 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:15 - DEBUG - set_yaw - setting yaw as 74.13
-22:00:15 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:15 - DEBUG - reset_state - resetting char state now
-22:00:16 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:17 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:17 - DEBUG - reset_state - resetting char state now
-22:00:17 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:18 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:18 - DEBUG - reset_state - resetting char state now
-22:00:19 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:19 - DEBUG - set_yaw - setting yaw as 74.13
-22:00:19 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:19 - DEBUG - reset_state - resetting char state now
-22:00:20 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:20 - DEBUG - deposit_all - opening crystals
-22:00:23 - DEBUG - open_crystals - Finished Opening Crystals
-22:00:23 - DEBUG - deposit_all - depositing in ele dedi
-22:00:23 - DEBUG - dedi_deposit - Deposit top row
-22:00:25 - DEBUG - dedi_deposit - Deposit middle row
-22:00:26 - DEBUG - dedi_deposit - Deposit bottom row
-22:00:28 - DEBUG - vaults - openening up vault1 on the left side to depo['fabricated', 'pump', 'assault', 'mine']
-22:00:28 - DEBUG - vault_deposit - Deposit in vaults
-22:00:28 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:00:29 - DEBUG - open - inventory opened
-22:00:29 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:00:29 - DEBUG - open - 0.15867066383361816 seconds taken for the reciving remote inventory to go away
-22:00:31 - ERROR - vault_deposit - left vault was not opened retrying now 
-22:00:31 - DEBUG - close - trying to close objects inventory 1 / 3
-22:00:32 - DEBUG - zero - setting view angles back to 0
-22:00:32 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:32 - DEBUG - reset_state - resetting char state now
-22:00:33 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:33 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:33 - DEBUG - reset_state - resetting char state now
-22:00:35 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:35 - DEBUG - set_yaw - setting yaw as 0.09
-22:00:35 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:00:35 - DEBUG - reset_state - resetting char state now
-22:00:36 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:00:36 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:00:38 - DEBUG - open - inventory opened
-22:00:38 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:00:38 - DEBUG - open - 0.31925010681152344 seconds taken for the reciving remote inventory to go away
-22:00:39 - DEBUG - search_in_inventory - searching in inventory for fabricated
-22:00:40 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:40 - DEBUG - search_in_inventory - searching in inventory for pump
-22:00:41 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:42 - DEBUG - search_in_inventory - searching in inventory for assault
-22:00:43 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:44 - DEBUG - search_in_inventory - searching in inventory for mine
-22:00:44 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:45 - DEBUG - close - trying to close objects inventory 1 / 3
-22:00:46 - DEBUG - vaults - openening up vault2 on the right side to depo['riot', 'cliff', 'tree', 'behe', 'sulf', 'dust']
-22:00:46 - DEBUG - vault_deposit - Deposit in vaults
-22:00:47 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:00:48 - DEBUG - open - inventory opened
-22:00:48 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:00:48 - DEBUG - open - 0.3455667495727539 seconds taken for the reciving remote inventory to go away
-22:00:49 - DEBUG - search_in_inventory - searching in inventory for riot
-22:00:50 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:50 - DEBUG - search_in_inventory - searching in inventory for cliff
-22:00:51 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:52 - DEBUG - search_in_inventory - searching in inventory for tree
-22:00:53 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:54 - DEBUG - search_in_inventory - searching in inventory for behe
-22:00:55 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:55 - DEBUG - search_in_inventory - searching in inventory for sulf
-22:00:57 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:57 - DEBUG - search_in_inventory - searching in inventory for dust
-22:00:58 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:00:59 - DEBUG - close - trying to close objects inventory 1 / 3
-22:01:00 - DEBUG - deposit_all - depositing in grinder
-22:01:00 - DEBUG - depo_grinder - Deposit Grinder
-22:01:01 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:01:02 - DEBUG - open - inventory opened
-22:01:02 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:01:02 - DEBUG - open - 0.4617154598236084 seconds taken for the reciving remote inventory to go away
-22:01:02 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
-22:01:03 - DEBUG - close - trying to close objects inventory 1 / 3
-22:01:05 - DEBUG - open - trying to open teleporter 1 / 3
-22:01:09 - WARNING - open - teleporter didnt open retrying now
-22:01:09 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:09 - DEBUG - reset_state - resetting char state now
-22:01:11 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:11 - DEBUG - open - trying to open teleporter 2 / 3
-22:01:12 - DEBUG - open - teleporter opened
-22:01:13 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
-22:01:13 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.3121297359466553
-22:01:19 - WARNING - teleport_not_default - orange pixel for teleporter ready not found likely already on the tp we are just exiting the tp treating it as the tp we should be on
-22:01:19 - DEBUG - close - trying to close the teleporter 1 / 3
-22:01:19 - DEBUG - close - trying to close the teleporter 2 / 3
-22:01:20 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:20 - DEBUG - reset_state - resetting char state now
-22:01:21 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:21 - DEBUG - set_yaw - setting yaw as 74.22
-22:01:21 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:21 - DEBUG - reset_state - resetting char state now
-22:01:22 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:23 - DEBUG - deposit_all - collecting grindables
-22:01:23 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:01:24 - DEBUG - open - inventory opened
-22:01:24 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:01:24 - DEBUG - open - 0.3374805450439453 seconds taken for the reciving remote inventory to go away
-22:01:26 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
-22:01:26 - DEBUG - close - trying to close objects inventory 1 / 3
-22:01:27 - DEBUG - zero - setting view angles back to 0
-22:01:27 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:27 - DEBUG - reset_state - resetting char state now
-22:01:28 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:28 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:28 - DEBUG - reset_state - resetting char state now
-22:01:29 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:30 - DEBUG - set_yaw - setting yaw as 0.03
-22:01:30 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:30 - DEBUG - reset_state - resetting char state now
-22:01:31 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:32 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:01:33 - DEBUG - open - inventory opened
-22:01:33 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:01:34 - DEBUG - open - 0.7184901237487793 seconds taken for the reciving remote inventory to go away
-22:01:36 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
-22:01:36 - DEBUG - close - trying to close objects inventory 1 / 3
-22:01:37 - DEBUG - zero - setting view angles back to 0
-22:01:37 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:37 - DEBUG - reset_state - resetting char state now
-22:01:38 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:38 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:38 - DEBUG - reset_state - resetting char state now
-22:01:39 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:39 - DEBUG - set_yaw - setting yaw as 0.03
-22:01:39 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:39 - DEBUG - reset_state - resetting char state now
-22:01:40 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:41 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:01:42 - DEBUG - open - inventory opened
-22:01:42 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:01:42 - DEBUG - open - 0.43186473846435547 seconds taken for the reciving remote inventory to go away
-22:01:45 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
-22:01:45 - DEBUG - close - trying to close objects inventory 1 / 3
-22:01:45 - DEBUG - zero - setting view angles back to 0
-22:01:45 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:45 - DEBUG - reset_state - resetting char state now
-22:01:46 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:46 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:46 - DEBUG - reset_state - resetting char state now
-22:01:47 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:48 - DEBUG - set_yaw - setting yaw as 0.03
-22:01:48 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:01:48 - DEBUG - reset_state - resetting char state now
-22:01:48 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:01:49 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:01:50 - DEBUG - open - inventory opened
-22:01:50 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:01:51 - DEBUG - open - 0.3519761562347412 seconds taken for the reciving remote inventory to go away
-22:01:51 - ERROR - collect_grindables - while trying to deposit we couldnt access grinder
-22:01:54 - DEBUG - dedi_deposit - Deposit top row
-22:01:55 - DEBUG - dedi_deposit - Deposit middle row
-22:01:57 - DEBUG - dedi_deposit - Deposit bottom row
-22:01:59 - DEBUG - drop_all_inv - dropping all items from our inventory 
-22:01:59 - DEBUG - close - trying to close objects inventory 1 / 3
-22:02:00 - DEBUG - move_to_waiting_queue - adding pego2D to waiting queue
-22:02:00 - INFO - execute_task - Executing task: pego2E
-22:02:00 - DEBUG - reset_state - resetting char state now
-22:02:01 - DEBUG - open - trying to open player inventory 1 / 3
-22:02:01 - DEBUG - open - inventory opened
-22:02:01 - DEBUG - open - trying to open up the buff menu 1 / 10
-22:02:02 - DEBUG - close - trying to close objects inventory 1 / 3
-22:02:03 - DEBUG - open - trying to open teleporter 1 / 3
-22:02:05 - DEBUG - open - teleporter opened
-22:02:05 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
-22:02:05 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.2863914966583252
-22:02:11 - WARNING - teleport_not_default - orange pixel for teleporter ready not found likely already on the tp we are just exiting the tp treating it as the tp we should be on
-22:02:11 - DEBUG - close - trying to close the teleporter 1 / 3
-22:02:11 - DEBUG - close - trying to close the teleporter 2 / 3
-22:02:12 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:02:12 - DEBUG - reset_state - resetting char state now
-22:02:13 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:02:14 - DEBUG - set_yaw - setting yaw as 0.03
-22:02:14 - DEBUG - console_ccc - trying to get ccc data 1 / 3
-22:02:14 - DEBUG - reset_state - resetting char state now
-22:02:15 - DEBUG - enter_data - using uparrow to put ccc into the console
-22:02:15 - DEBUG - open - trying to open strucuture inventory 1 / 3
-22:02:16 - DEBUG - open - inventory opened
-22:02:16 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
-22:02:17 - DEBUG - open - 0.24302172660827637 seconds taken for the reciving remote inventory to go away
-22:02:17 - DEBUG - drop_all_inv - dropping all items from our inventory 
-22:02:17 - DEBUG - transfer_all_from - transfering all from object
-22:02:18 - DEBUG - close - trying to close objects inventory 1 / 3
-22:02:19 - INFO - execute - bot has no crystals in hotbar we are skipping the deposit step
-22:02:19 - DEBUG - move_to_waiting_queue - adding pego2E to waiting queue
-22:02:19 - INFO - execute_task - Executing task: pego2F
-22:02:19 - DEBUG - reset_state - resetting char state now
-22:02:19 - DEBUG - open - trying to open player inventory 1 / 3
-22:02:20 - DEBUG - open - inventory opened
-22:02:20 - DEBUG - open - trying to open up the buff menu 1 / 10
-22:02:21 - DEBUG - close - trying to close objects inventory 1 / 3
-22:02:22 - DEBUG - open - trying to open teleporter 1 / 3
-22:02:24 - DEBUG - open - teleporter opened
-22:02:24 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
-22:02:25 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.3157813549041748
-22:04:25 - WARNING - __init__ - PyNaCl is not installed, voice will NOT be supported
-22:04:25 - DEBUG - event - on_ready has successfully been registered as an event
-22:04:25 - DEBUG - __init__ - Using proactor: IocpProactor
-22:04:25 - WARNING - _async_setup_hook - Privileged message content intent is missing, commands may not work as expected.
-22:04:25 - INFO - login - logging in using static token
-22:04:26 - INFO - received_message - Shard ID None has connected to Gateway (Session ID: 9dbe7394caa7293e2582b1435c463c16).
+22:21:02 - ERROR - on_error - Ignoring exception in command 'start'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\Gacha Test v2\venv\Lib\site-packages\discord\app_commands\commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\GitHub\Gacha Test v2\main.py", line 153, in start
+    await interaction.response.send_message(f"starting up bot now you have 5 seconds before start")
+  File "C:\Users\Administrator\Documents\GitHub\Gacha Test v2\venv\Lib\site-packages\discord\interactions.py", line 801, in send_message
+    await adapter.create_interaction_response(
+  File "C:\Users\Administrator\Documents\GitHub\Gacha Test v2\venv\Lib\site-packages\discord\webhook\async_.py", line 219, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\Gacha Test v2\venv\Lib\site-packages\discord\app_commands\tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Administrator\Documents\GitHub\Gacha Test v2\venv\Lib\site-packages\discord\app_commands\commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\GitHub\Gacha Test v2\venv\Lib\site-packages\discord\app_commands\commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+22:21:02 - DEBUG - open - trying to open player inventory 1 / 3
+22:21:03 - DEBUG - open - inventory opened
+22:21:03 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:21:03 - DEBUG - close - trying to close objects inventory 1 / 3
+22:21:04 - DEBUG - check_state - tekpod buff found on screen leaving tekpod now reason | type : 1 render flag : False
+22:21:04 - DEBUG - reset_state - resetting char state now
+22:21:06 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:21:06 - DEBUG - reset_state - resetting char state now
+22:21:13 - ERROR - console_ccc - console didnt open after 3 attempts
+22:21:13 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:21:13 - DEBUG - reset_state - resetting char state now
+22:21:21 - ERROR - console_ccc - console didnt open after 3 attempts
+22:21:21 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:21:21 - DEBUG - reset_state - resetting char state now
+22:21:28 - ERROR - console_ccc - console didnt open after 3 attempts
+22:21:28 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:21:28 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:21:29 - DEBUG - open - trying to open teleporter 1 / 3
+22:21:31 - DEBUG - open - teleporter opened
+22:21:31 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+22:21:32 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.3264954090118408
+22:21:38 - WARNING - teleport_not_default - orange pixel for teleporter ready not found likely already on the tp we are just exiting the tp treating it as the tp we should be on
+22:21:38 - DEBUG - close - trying to close the teleporter 1 / 3
+22:21:38 - DEBUG - close - trying to close the teleporter 2 / 3
+22:21:39 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:21:39 - DEBUG - reset_state - resetting char state now
+22:21:47 - ERROR - console_ccc - console didnt open after 3 attempts
+22:21:47 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:21:47 - DEBUG - reset_state - resetting char state now
+22:21:54 - ERROR - console_ccc - console didnt open after 3 attempts
+22:21:54 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:21:54 - DEBUG - reset_state - resetting char state now
+22:22:02 - ERROR - console_ccc - console didnt open after 3 attempts
+22:22:03 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:22:03 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:22:03 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:22:07 - DEBUG - open - trying to open strucuture inventory 2 / 3
+22:22:10 - DEBUG - open - trying to open strucuture inventory 3 / 3
+22:22:14 - ERROR - open - unable to open up the objects inventory
+22:22:14 - DEBUG - pego_pickup - the pego at GTpego2B could not be accessed retrying 1 / 3
+22:22:14 - DEBUG - zero - setting view angles back to 0
+22:22:14 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:22:14 - DEBUG - reset_state - resetting char state now
+22:22:22 - ERROR - console_ccc - console didnt open after 3 attempts
+22:22:22 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:22:22 - DEBUG - reset_state - resetting char state now
+22:22:30 - ERROR - console_ccc - console didnt open after 3 attempts
+22:22:30 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:22:30 - DEBUG - reset_state - resetting char state now
+22:22:38 - ERROR - console_ccc - console didnt open after 3 attempts
+22:22:38 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:22:38 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:22:38 - DEBUG - reset_state - resetting char state now
+22:22:46 - ERROR - console_ccc - console didnt open after 3 attempts
+22:22:46 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:22:46 - DEBUG - reset_state - resetting char state now
+22:22:54 - ERROR - console_ccc - console didnt open after 3 attempts
+22:22:54 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:22:54 - DEBUG - reset_state - resetting char state now
+22:23:02 - ERROR - console_ccc - console didnt open after 3 attempts
+22:23:02 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:23:02 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:23:02 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:23:02 - DEBUG - reset_state - resetting char state now
+22:23:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:23:09 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:23:09 - DEBUG - reset_state - resetting char state now
+22:23:17 - ERROR - console_ccc - console didnt open after 3 attempts
+22:23:17 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:23:17 - DEBUG - reset_state - resetting char state now
+22:23:25 - ERROR - console_ccc - console didnt open after 3 attempts
+22:23:25 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:23:25 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:23:25 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:23:25 - DEBUG - reset_state - resetting char state now
+22:23:33 - ERROR - console_ccc - console didnt open after 3 attempts
+22:23:33 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:23:33 - DEBUG - reset_state - resetting char state now
+22:23:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:23:41 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:23:41 - DEBUG - reset_state - resetting char state now
+22:23:48 - ERROR - console_ccc - console didnt open after 3 attempts
+22:23:48 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:23:48 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:23:49 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:23:53 - DEBUG - open - trying to open strucuture inventory 2 / 3
+22:23:56 - DEBUG - open - trying to open strucuture inventory 3 / 3
+22:24:00 - ERROR - open - unable to open up the objects inventory
+22:24:01 - DEBUG - pego_pickup - the pego at GTpego2B could not be accessed retrying 2 / 3
+22:24:01 - DEBUG - zero - setting view angles back to 0
+22:24:01 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:24:01 - DEBUG - reset_state - resetting char state now
+22:24:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:24:09 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:24:09 - DEBUG - reset_state - resetting char state now
+22:24:16 - ERROR - console_ccc - console didnt open after 3 attempts
+22:24:16 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:24:16 - DEBUG - reset_state - resetting char state now
+22:24:24 - ERROR - console_ccc - console didnt open after 3 attempts
+22:24:24 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:24:24 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:24:24 - DEBUG - reset_state - resetting char state now
+22:24:32 - ERROR - console_ccc - console didnt open after 3 attempts
+22:24:32 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:24:32 - DEBUG - reset_state - resetting char state now
+22:24:40 - ERROR - console_ccc - console didnt open after 3 attempts
+22:24:40 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:24:40 - DEBUG - reset_state - resetting char state now
+22:24:48 - ERROR - console_ccc - console didnt open after 3 attempts
+22:24:48 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:24:48 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:24:48 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:24:48 - DEBUG - reset_state - resetting char state now
+22:24:56 - ERROR - console_ccc - console didnt open after 3 attempts
+22:24:56 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:24:56 - DEBUG - reset_state - resetting char state now
+22:25:04 - ERROR - console_ccc - console didnt open after 3 attempts
+22:25:04 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:25:04 - DEBUG - reset_state - resetting char state now
+22:25:12 - ERROR - console_ccc - console didnt open after 3 attempts
+22:25:12 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:25:12 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:25:12 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:25:12 - DEBUG - reset_state - resetting char state now
+22:25:20 - ERROR - console_ccc - console didnt open after 3 attempts
+22:25:20 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:25:20 - DEBUG - reset_state - resetting char state now
+22:25:27 - ERROR - console_ccc - console didnt open after 3 attempts
+22:25:27 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:25:27 - DEBUG - reset_state - resetting char state now
+22:25:35 - ERROR - console_ccc - console didnt open after 3 attempts
+22:25:35 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:25:35 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:25:36 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:25:39 - DEBUG - open - trying to open strucuture inventory 2 / 3
+22:25:43 - DEBUG - open - trying to open strucuture inventory 3 / 3
+22:25:47 - ERROR - open - unable to open up the objects inventory
+22:25:47 - DEBUG - pego_pickup - the pego at GTpego2B could not be accessed retrying 3 / 3
+22:25:47 - DEBUG - zero - setting view angles back to 0
+22:25:47 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:25:47 - DEBUG - reset_state - resetting char state now
+22:25:55 - ERROR - console_ccc - console didnt open after 3 attempts
+22:25:55 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:25:55 - DEBUG - reset_state - resetting char state now
+22:26:03 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:03 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:26:03 - DEBUG - reset_state - resetting char state now
+22:26:11 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:11 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:26:11 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:26:11 - DEBUG - reset_state - resetting char state now
+22:26:18 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:18 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:26:18 - DEBUG - reset_state - resetting char state now
+22:26:26 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:26 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:26:26 - DEBUG - reset_state - resetting char state now
+22:26:34 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:34 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:26:34 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:26:34 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:26:34 - DEBUG - reset_state - resetting char state now
+22:26:42 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:42 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:26:42 - DEBUG - reset_state - resetting char state now
+22:26:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:50 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:26:50 - DEBUG - reset_state - resetting char state now
+22:26:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:26:58 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:26:58 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:26:58 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:26:58 - DEBUG - reset_state - resetting char state now
+22:27:06 - ERROR - console_ccc - console didnt open after 3 attempts
+22:27:06 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:27:06 - DEBUG - reset_state - resetting char state now
+22:27:14 - ERROR - console_ccc - console didnt open after 3 attempts
+22:27:14 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:27:14 - DEBUG - reset_state - resetting char state now
+22:27:22 - ERROR - console_ccc - console didnt open after 3 attempts
+22:27:22 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:27:22 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:27:22 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:27:26 - DEBUG - open - trying to open strucuture inventory 2 / 3
+22:27:30 - DEBUG - open - trying to open strucuture inventory 3 / 3
+22:27:33 - ERROR - open - unable to open up the objects inventory
+22:27:34 - ERROR - pego_pickup - the pego at GTpego2B could not be accesssed after 3 attempts
+22:27:34 - INFO - execute - bot has no crystals in hotbar we are skipping the deposit step
+22:27:34 - DEBUG - move_to_waiting_queue - adding pego2B to waiting queue
+22:27:34 - INFO - execute_task - Executing task: pego2C
+22:27:34 - DEBUG - reset_state - resetting char state now
+22:27:35 - DEBUG - open - trying to open player inventory 1 / 3
+22:27:35 - DEBUG - open - inventory opened
+22:27:36 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:27:36 - DEBUG - close - trying to close objects inventory 1 / 3
+22:27:37 - DEBUG - open - trying to open teleporter 1 / 3
+22:27:39 - DEBUG - open - teleporter opened
+22:27:39 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+22:27:40 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.3295900821685791
+22:27:46 - DEBUG - open - trying to open up the tribelog screen
+22:27:46 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+22:27:48 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:27:48 - DEBUG - reset_state - resetting char state now
+22:27:56 - ERROR - console_ccc - console didnt open after 3 attempts
+22:27:56 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:27:56 - DEBUG - reset_state - resetting char state now
+22:28:04 - ERROR - console_ccc - console didnt open after 3 attempts
+22:28:04 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:28:04 - DEBUG - reset_state - resetting char state now
+22:28:12 - ERROR - console_ccc - console didnt open after 3 attempts
+22:28:12 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:28:12 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:28:12 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:28:13 - DEBUG - open - inventory opened
+22:28:13 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:28:13 - DEBUG - open - 0.24623370170593262 seconds taken for the reciving remote inventory to go away
+22:28:14 - DEBUG - drop_all_inv - dropping all items from our inventory 
+22:28:14 - DEBUG - transfer_all_from - transfering all from object
+22:28:15 - DEBUG - close - trying to close objects inventory 1 / 3
+22:28:16 - DEBUG - open - trying to open teleporter 1 / 3
+22:28:18 - DEBUG - open - teleporter opened
+22:28:18 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+22:28:19 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.3948342800140381
+22:28:24 - DEBUG - open - trying to open up the tribelog screen
+22:28:25 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+22:28:26 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:28:26 - DEBUG - reset_state - resetting char state now
+22:28:34 - ERROR - console_ccc - console didnt open after 3 attempts
+22:28:34 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:28:34 - DEBUG - reset_state - resetting char state now
+22:28:42 - ERROR - console_ccc - console didnt open after 3 attempts
+22:28:42 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:28:42 - DEBUG - reset_state - resetting char state now
+22:28:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:28:50 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:28:50 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:28:50 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:28:50 - DEBUG - reset_state - resetting char state now
+22:28:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:28:58 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:28:58 - DEBUG - reset_state - resetting char state now
+22:29:06 - ERROR - console_ccc - console didnt open after 3 attempts
+22:29:06 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:29:06 - DEBUG - reset_state - resetting char state now
+22:29:14 - ERROR - console_ccc - console didnt open after 3 attempts
+22:29:14 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:29:14 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:29:14 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:29:14 - DEBUG - reset_state - resetting char state now
+22:29:22 - ERROR - console_ccc - console didnt open after 3 attempts
+22:29:22 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:29:22 - DEBUG - reset_state - resetting char state now
+22:29:30 - ERROR - console_ccc - console didnt open after 3 attempts
+22:29:30 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:29:30 - DEBUG - reset_state - resetting char state now
+22:29:38 - ERROR - console_ccc - console didnt open after 3 attempts
+22:29:38 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:29:38 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:29:38 - DEBUG - deposit_all - opening crystals
+22:29:43 - DEBUG - open_crystals - Finished Opening Crystals
+22:29:43 - DEBUG - deposit_all - depositing in ele dedi
+22:29:43 - DEBUG - dedi_deposit - Deposit top row
+22:29:45 - DEBUG - dedi_deposit - Deposit middle row
+22:29:46 - DEBUG - dedi_deposit - Deposit bottom row
+22:29:48 - DEBUG - vaults - openening up vault1 on the left side to depo['fabricated', 'pump', 'assault', 'mine']
+22:29:48 - DEBUG - vault_deposit - Deposit in vaults
+22:29:48 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:29:49 - DEBUG - open - inventory opened
+22:29:49 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:29:49 - DEBUG - open - 0.24550795555114746 seconds taken for the reciving remote inventory to go away
+22:29:50 - DEBUG - search_in_inventory - searching in inventory for fabricated
+22:29:51 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:29:52 - DEBUG - search_in_inventory - searching in inventory for pump
+22:29:52 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:29:53 - DEBUG - search_in_inventory - searching in inventory for assault
+22:29:54 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:29:55 - DEBUG - search_in_inventory - searching in inventory for mine
+22:29:55 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:29:56 - DEBUG - close - trying to close objects inventory 1 / 3
+22:29:57 - DEBUG - vaults - openening up vault2 on the right side to depo['riot', 'cliff', 'tree', 'behe', 'sulf', 'dust']
+22:29:57 - DEBUG - vault_deposit - Deposit in vaults
+22:29:58 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:29:59 - DEBUG - open - inventory opened
+22:29:59 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:29:59 - DEBUG - open - 0.3454737663269043 seconds taken for the reciving remote inventory to go away
+22:30:01 - ERROR - vault_deposit - right vault was not opened retrying now 
+22:30:01 - DEBUG - close - trying to close objects inventory 1 / 3
+22:30:02 - DEBUG - zero - setting view angles back to 0
+22:30:02 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:30:02 - DEBUG - reset_state - resetting char state now
+22:30:10 - ERROR - console_ccc - console didnt open after 3 attempts
+22:30:10 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:30:10 - DEBUG - reset_state - resetting char state now
+22:30:18 - ERROR - console_ccc - console didnt open after 3 attempts
+22:30:18 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:30:18 - DEBUG - reset_state - resetting char state now
+22:30:26 - ERROR - console_ccc - console didnt open after 3 attempts
+22:30:26 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:30:26 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:30:26 - DEBUG - reset_state - resetting char state now
+22:30:34 - ERROR - console_ccc - console didnt open after 3 attempts
+22:30:34 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:30:34 - DEBUG - reset_state - resetting char state now
+22:30:42 - ERROR - console_ccc - console didnt open after 3 attempts
+22:30:43 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:30:43 - DEBUG - reset_state - resetting char state now
+22:30:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:30:50 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:30:50 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:30:50 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:30:50 - DEBUG - reset_state - resetting char state now
+22:30:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:30:58 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:30:58 - DEBUG - reset_state - resetting char state now
+22:31:07 - ERROR - console_ccc - console didnt open after 3 attempts
+22:31:07 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:31:07 - DEBUG - reset_state - resetting char state now
+22:31:15 - ERROR - console_ccc - console didnt open after 3 attempts
+22:31:15 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:31:15 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:31:15 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:31:15 - DEBUG - reset_state - resetting char state now
+22:31:23 - ERROR - console_ccc - console didnt open after 3 attempts
+22:31:23 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:31:23 - DEBUG - reset_state - resetting char state now
+22:31:31 - ERROR - console_ccc - console didnt open after 3 attempts
+22:31:31 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:31:31 - DEBUG - reset_state - resetting char state now
+22:31:39 - ERROR - console_ccc - console didnt open after 3 attempts
+22:31:39 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:31:39 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:31:39 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:31:40 - DEBUG - open - inventory opened
+22:31:40 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:31:40 - DEBUG - open - 0.1649796962738037 seconds taken for the reciving remote inventory to go away
+22:31:41 - DEBUG - search_in_inventory - searching in inventory for riot
+22:31:42 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:31:42 - DEBUG - search_in_inventory - searching in inventory for cliff
+22:31:43 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:31:44 - DEBUG - search_in_inventory - searching in inventory for tree
+22:31:45 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:31:45 - DEBUG - search_in_inventory - searching in inventory for behe
+22:31:46 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:31:47 - DEBUG - search_in_inventory - searching in inventory for sulf
+22:31:48 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:31:49 - DEBUG - search_in_inventory - searching in inventory for dust
+22:31:50 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+22:31:50 - DEBUG - close - trying to close objects inventory 1 / 3
+22:31:51 - DEBUG - deposit_all - depositing in grinder
+22:31:51 - DEBUG - depo_grinder - Deposit Grinder
+22:31:52 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:31:53 - DEBUG - open - inventory opened
+22:31:53 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:31:53 - DEBUG - open - 0.1531217098236084 seconds taken for the reciving remote inventory to go away
+22:31:55 - ERROR - depo_grinder - couldnt open up the grinder while trying to deposit
+22:31:55 - DEBUG - close - trying to close objects inventory 1 / 3
+22:31:56 - DEBUG - zero - setting view angles back to 0
+22:31:56 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:31:56 - DEBUG - reset_state - resetting char state now
+22:32:04 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:04 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:32:04 - DEBUG - reset_state - resetting char state now
+22:32:12 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:12 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:32:12 - DEBUG - reset_state - resetting char state now
+22:32:19 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:19 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:32:19 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:32:19 - DEBUG - reset_state - resetting char state now
+22:32:27 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:27 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:32:27 - DEBUG - reset_state - resetting char state now
+22:32:35 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:35 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:32:35 - DEBUG - reset_state - resetting char state now
+22:32:42 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:42 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:32:42 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:32:42 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:32:42 - DEBUG - reset_state - resetting char state now
+22:32:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:50 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:32:50 - DEBUG - reset_state - resetting char state now
+22:32:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:32:58 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:32:58 - DEBUG - reset_state - resetting char state now
+22:33:06 - ERROR - console_ccc - console didnt open after 3 attempts
+22:33:06 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:33:06 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:33:06 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:33:06 - DEBUG - reset_state - resetting char state now
+22:33:13 - ERROR - console_ccc - console didnt open after 3 attempts
+22:33:13 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:33:13 - DEBUG - reset_state - resetting char state now
+22:33:21 - ERROR - console_ccc - console didnt open after 3 attempts
+22:33:21 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:33:21 - DEBUG - reset_state - resetting char state now
+22:33:29 - ERROR - console_ccc - console didnt open after 3 attempts
+22:33:29 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:33:29 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:33:29 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:33:30 - DEBUG - open - inventory opened
+22:33:30 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:33:31 - DEBUG - open - 0.25369739532470703 seconds taken for the reciving remote inventory to go away
+22:33:33 - ERROR - depo_grinder - couldnt open up the grinder while trying to deposit
+22:33:33 - DEBUG - close - trying to close objects inventory 1 / 3
+22:33:34 - DEBUG - zero - setting view angles back to 0
+22:33:34 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:33:34 - DEBUG - reset_state - resetting char state now
+22:33:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:33:42 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:33:42 - DEBUG - reset_state - resetting char state now
+22:33:49 - ERROR - console_ccc - console didnt open after 3 attempts
+22:33:49 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:33:49 - DEBUG - reset_state - resetting char state now
+22:33:56 - ERROR - console_ccc - console didnt open after 3 attempts
+22:33:57 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:33:57 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:33:57 - DEBUG - reset_state - resetting char state now
+22:34:04 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:04 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:34:04 - DEBUG - reset_state - resetting char state now
+22:34:12 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:12 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:34:12 - DEBUG - reset_state - resetting char state now
+22:34:20 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:20 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:34:20 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:34:20 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:34:20 - DEBUG - reset_state - resetting char state now
+22:34:27 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:27 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:34:27 - DEBUG - reset_state - resetting char state now
+22:34:35 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:35 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:34:35 - DEBUG - reset_state - resetting char state now
+22:34:43 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:43 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:34:43 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:34:43 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:34:43 - DEBUG - reset_state - resetting char state now
+22:34:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:50 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:34:50 - DEBUG - reset_state - resetting char state now
+22:34:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:34:58 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:34:58 - DEBUG - reset_state - resetting char state now
+22:35:06 - ERROR - console_ccc - console didnt open after 3 attempts
+22:35:06 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:35:06 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:35:06 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:35:08 - DEBUG - open - inventory opened
+22:35:08 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:35:08 - DEBUG - open - 0.06559920310974121 seconds taken for the reciving remote inventory to go away
+22:35:10 - ERROR - depo_grinder - couldnt open up the grinder while trying to deposit
+22:35:10 - DEBUG - close - trying to close objects inventory 1 / 3
+22:35:11 - DEBUG - zero - setting view angles back to 0
+22:35:11 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:35:11 - DEBUG - reset_state - resetting char state now
+22:35:19 - ERROR - console_ccc - console didnt open after 3 attempts
+22:35:19 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:35:19 - DEBUG - reset_state - resetting char state now
+22:35:26 - ERROR - console_ccc - console didnt open after 3 attempts
+22:35:26 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:35:26 - DEBUG - reset_state - resetting char state now
+22:35:34 - ERROR - console_ccc - console didnt open after 3 attempts
+22:35:34 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:35:34 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:35:34 - DEBUG - reset_state - resetting char state now
+22:35:42 - ERROR - console_ccc - console didnt open after 3 attempts
+22:35:42 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:35:42 - DEBUG - reset_state - resetting char state now
+22:35:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:35:50 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:35:50 - DEBUG - reset_state - resetting char state now
+22:35:57 - ERROR - console_ccc - console didnt open after 3 attempts
+22:35:57 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:35:57 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:35:57 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:35:57 - DEBUG - reset_state - resetting char state now
+22:36:05 - ERROR - console_ccc - console didnt open after 3 attempts
+22:36:05 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:36:05 - DEBUG - reset_state - resetting char state now
+22:36:13 - ERROR - console_ccc - console didnt open after 3 attempts
+22:36:13 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:36:13 - DEBUG - reset_state - resetting char state now
+22:36:20 - ERROR - console_ccc - console didnt open after 3 attempts
+22:36:20 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:36:20 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:36:20 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:36:20 - DEBUG - reset_state - resetting char state now
+22:36:28 - ERROR - console_ccc - console didnt open after 3 attempts
+22:36:28 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:36:28 - DEBUG - reset_state - resetting char state now
+22:36:36 - ERROR - console_ccc - console didnt open after 3 attempts
+22:36:36 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:36:36 - DEBUG - reset_state - resetting char state now
+22:36:43 - ERROR - console_ccc - console didnt open after 3 attempts
+22:36:43 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:36:43 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:36:44 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:36:45 - DEBUG - open - inventory opened
+22:36:45 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:36:45 - DEBUG - open - 0.14612531661987305 seconds taken for the reciving remote inventory to go away
+22:36:46 - ERROR - depo_grinder - while trying to deposit we couldnt access grinder
+22:36:48 - DEBUG - open - trying to open teleporter 1 / 3
+22:36:52 - WARNING - open - teleporter didnt open retrying now
+22:36:52 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:36:52 - DEBUG - reset_state - resetting char state now
+22:36:52 - DEBUG - close - trying to close objects inventory 1 / 3
+22:37:00 - ERROR - console_ccc - console didnt open after 3 attempts
+22:37:00 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:37:00 - DEBUG - reset_state - resetting char state now
+22:37:08 - ERROR - console_ccc - console didnt open after 3 attempts
+22:37:08 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:37:08 - DEBUG - reset_state - resetting char state now
+22:37:15 - ERROR - console_ccc - console didnt open after 3 attempts
+22:37:15 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:37:15 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:37:16 - DEBUG - open - trying to open teleporter 2 / 3
+22:37:19 - WARNING - open - teleporter didnt open retrying now
+22:37:19 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:37:19 - DEBUG - reset_state - resetting char state now
+22:37:19 - DEBUG - close - trying to close objects inventory 1 / 3
+22:37:28 - ERROR - console_ccc - console didnt open after 3 attempts
+22:37:28 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:37:28 - DEBUG - reset_state - resetting char state now
+22:37:35 - ERROR - console_ccc - console didnt open after 3 attempts
+22:37:36 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:37:36 - DEBUG - reset_state - resetting char state now
+22:37:43 - ERROR - console_ccc - console didnt open after 3 attempts
+22:37:43 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:37:43 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:37:43 - DEBUG - open - trying to open teleporter 3 / 3
+22:37:47 - WARNING - open - teleporter didnt open retrying now
+22:37:47 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:37:47 - DEBUG - reset_state - resetting char state now
+22:37:47 - DEBUG - close - trying to close objects inventory 1 / 3
+22:37:55 - ERROR - console_ccc - console didnt open after 3 attempts
+22:37:55 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:37:55 - DEBUG - reset_state - resetting char state now
+22:38:03 - ERROR - console_ccc - console didnt open after 3 attempts
+22:38:03 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:38:03 - DEBUG - reset_state - resetting char state now
+22:38:11 - ERROR - console_ccc - console didnt open after 3 attempts
+22:38:11 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:38:11 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:38:11 - ERROR - open - unable to open up the teleporter after 3 attempts
+22:38:11 - DEBUG - deposit_all - collecting grindables
+22:38:11 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:38:13 - DEBUG - open - inventory opened
+22:38:15 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+22:38:15 - DEBUG - close - trying to close objects inventory 1 / 3
+22:38:15 - DEBUG - zero - setting view angles back to 0
+22:38:15 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:38:15 - DEBUG - reset_state - resetting char state now
+22:38:23 - ERROR - console_ccc - console didnt open after 3 attempts
+22:38:24 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:38:24 - DEBUG - reset_state - resetting char state now
+22:38:32 - ERROR - console_ccc - console didnt open after 3 attempts
+22:38:32 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:38:32 - DEBUG - reset_state - resetting char state now
+22:38:40 - ERROR - console_ccc - console didnt open after 3 attempts
+22:38:40 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:38:40 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:38:40 - DEBUG - reset_state - resetting char state now
+22:38:48 - ERROR - console_ccc - console didnt open after 3 attempts
+22:38:48 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:38:48 - DEBUG - reset_state - resetting char state now
+22:38:56 - ERROR - console_ccc - console didnt open after 3 attempts
+22:38:56 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:38:56 - DEBUG - reset_state - resetting char state now
+22:39:04 - ERROR - console_ccc - console didnt open after 3 attempts
+22:39:04 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:39:04 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:39:04 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:39:04 - DEBUG - reset_state - resetting char state now
+22:39:12 - ERROR - console_ccc - console didnt open after 3 attempts
+22:39:12 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:39:12 - DEBUG - reset_state - resetting char state now
+22:39:20 - ERROR - console_ccc - console didnt open after 3 attempts
+22:39:20 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:39:20 - DEBUG - reset_state - resetting char state now
+22:39:28 - ERROR - console_ccc - console didnt open after 3 attempts
+22:39:28 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:39:28 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:39:28 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:39:28 - DEBUG - reset_state - resetting char state now
+22:39:36 - ERROR - console_ccc - console didnt open after 3 attempts
+22:39:36 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:39:36 - DEBUG - reset_state - resetting char state now
+22:39:44 - ERROR - console_ccc - console didnt open after 3 attempts
+22:39:44 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:39:44 - DEBUG - reset_state - resetting char state now
+22:39:52 - ERROR - console_ccc - console didnt open after 3 attempts
+22:39:52 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:39:52 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:39:53 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:39:53 - DEBUG - open - inventory opened
+22:39:54 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:39:54 - DEBUG - open - 0.1497955322265625 seconds taken for the reciving remote inventory to go away
+22:39:56 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+22:39:56 - DEBUG - close - trying to close objects inventory 1 / 3
+22:39:56 - DEBUG - zero - setting view angles back to 0
+22:39:56 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:39:56 - DEBUG - reset_state - resetting char state now
+22:40:04 - ERROR - console_ccc - console didnt open after 3 attempts
+22:40:04 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:40:04 - DEBUG - reset_state - resetting char state now
+22:40:12 - ERROR - console_ccc - console didnt open after 3 attempts
+22:40:12 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:40:12 - DEBUG - reset_state - resetting char state now
+22:40:20 - ERROR - console_ccc - console didnt open after 3 attempts
+22:40:20 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:40:20 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:40:20 - DEBUG - reset_state - resetting char state now
+22:40:28 - ERROR - console_ccc - console didnt open after 3 attempts
+22:40:28 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:40:28 - DEBUG - reset_state - resetting char state now
+22:40:36 - ERROR - console_ccc - console didnt open after 3 attempts
+22:40:36 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:40:36 - DEBUG - reset_state - resetting char state now
+22:40:44 - ERROR - console_ccc - console didnt open after 3 attempts
+22:40:44 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:40:44 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:40:44 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:40:44 - DEBUG - reset_state - resetting char state now
+22:40:52 - ERROR - console_ccc - console didnt open after 3 attempts
+22:40:52 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:40:52 - DEBUG - reset_state - resetting char state now
+22:41:00 - ERROR - console_ccc - console didnt open after 3 attempts
+22:41:00 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:41:00 - DEBUG - reset_state - resetting char state now
+22:41:08 - ERROR - console_ccc - console didnt open after 3 attempts
+22:41:08 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:41:08 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:41:08 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:41:08 - DEBUG - reset_state - resetting char state now
+22:41:16 - ERROR - console_ccc - console didnt open after 3 attempts
+22:41:16 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:41:16 - DEBUG - reset_state - resetting char state now
+22:41:24 - ERROR - console_ccc - console didnt open after 3 attempts
+22:41:24 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:41:24 - DEBUG - reset_state - resetting char state now
+22:41:32 - ERROR - console_ccc - console didnt open after 3 attempts
+22:41:32 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:41:32 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:41:33 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:41:34 - DEBUG - open - inventory opened
+22:41:34 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:41:34 - DEBUG - open - 0.15944147109985352 seconds taken for the reciving remote inventory to go away
+22:41:36 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+22:41:36 - DEBUG - close - trying to close objects inventory 1 / 3
+22:41:37 - DEBUG - zero - setting view angles back to 0
+22:41:37 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:41:37 - DEBUG - reset_state - resetting char state now
+22:41:45 - ERROR - console_ccc - console didnt open after 3 attempts
+22:41:45 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:41:45 - DEBUG - reset_state - resetting char state now
+22:41:53 - ERROR - console_ccc - console didnt open after 3 attempts
+22:41:53 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:41:53 - DEBUG - reset_state - resetting char state now
+22:42:01 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:01 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:42:01 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:42:01 - DEBUG - reset_state - resetting char state now
+22:42:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:09 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:42:09 - DEBUG - reset_state - resetting char state now
+22:42:17 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:17 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:42:17 - DEBUG - reset_state - resetting char state now
+22:42:25 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:25 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:42:25 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:42:25 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:42:25 - DEBUG - reset_state - resetting char state now
+22:42:33 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:33 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:42:33 - DEBUG - reset_state - resetting char state now
+22:42:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:41 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:42:41 - DEBUG - reset_state - resetting char state now
+22:42:49 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:49 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:42:49 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:42:49 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:42:49 - DEBUG - reset_state - resetting char state now
+22:42:57 - ERROR - console_ccc - console didnt open after 3 attempts
+22:42:57 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:42:57 - DEBUG - reset_state - resetting char state now
+22:43:05 - ERROR - console_ccc - console didnt open after 3 attempts
+22:43:05 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:43:05 - DEBUG - reset_state - resetting char state now
+22:43:13 - ERROR - console_ccc - console didnt open after 3 attempts
+22:43:13 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:43:13 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:43:14 - DEBUG - open - trying to open strucuture inventory 1 / 3
+22:43:15 - DEBUG - open - inventory opened
+22:43:15 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+22:43:15 - DEBUG - open - 0.2510051727294922 seconds taken for the reciving remote inventory to go away
+22:43:15 - ERROR - collect_grindables - while trying to deposit we couldnt access grinder
+22:43:18 - DEBUG - dedi_deposit - Deposit top row
+22:43:20 - DEBUG - dedi_deposit - Deposit middle row
+22:43:21 - DEBUG - dedi_deposit - Deposit bottom row
+22:43:23 - DEBUG - drop_all_inv - dropping all items from our inventory 
+22:43:24 - DEBUG - close - trying to close objects inventory 1 / 3
+22:43:24 - DEBUG - move_to_waiting_queue - adding pego2C to waiting queue
+22:43:24 - INFO - execute_task - Executing task: pego2D
+22:43:24 - DEBUG - reset_state - resetting char state now
+22:43:25 - DEBUG - open - trying to open player inventory 1 / 3
+22:43:25 - DEBUG - open - inventory opened
+22:43:26 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:43:26 - DEBUG - close - trying to close objects inventory 1 / 3
+22:43:27 - WARNING - check_state - tping back to render bed to replenish food and water | 2= food 3= water | reason:3
+22:43:28 - DEBUG - open - trying to open teleporter 1 / 3
+22:43:31 - WARNING - open - teleporter didnt open retrying now
+22:43:31 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:43:31 - DEBUG - reset_state - resetting char state now
+22:43:39 - ERROR - console_ccc - console didnt open after 3 attempts
+22:43:39 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:43:39 - DEBUG - reset_state - resetting char state now
+22:43:47 - ERROR - console_ccc - console didnt open after 3 attempts
+22:43:47 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:43:47 - DEBUG - reset_state - resetting char state now
+22:43:56 - ERROR - console_ccc - console didnt open after 3 attempts
+22:43:56 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:43:56 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:43:56 - DEBUG - open - trying to open teleporter 2 / 3
+22:44:00 - WARNING - open - teleporter didnt open retrying now
+22:44:00 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:44:00 - DEBUG - reset_state - resetting char state now
+22:44:08 - ERROR - console_ccc - console didnt open after 3 attempts
+22:44:08 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:44:08 - DEBUG - reset_state - resetting char state now
+22:44:16 - ERROR - console_ccc - console didnt open after 3 attempts
+22:44:16 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:44:16 - DEBUG - reset_state - resetting char state now
+22:44:24 - ERROR - console_ccc - console didnt open after 3 attempts
+22:44:24 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:44:24 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:44:24 - DEBUG - open - trying to open teleporter 3 / 3
+22:44:28 - WARNING - open - teleporter didnt open retrying now
+22:44:28 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:44:28 - DEBUG - reset_state - resetting char state now
+22:44:36 - ERROR - console_ccc - console didnt open after 3 attempts
+22:44:36 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:44:36 - DEBUG - reset_state - resetting char state now
+22:44:44 - ERROR - console_ccc - console didnt open after 3 attempts
+22:44:44 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:44:44 - DEBUG - reset_state - resetting char state now
+22:44:52 - ERROR - console_ccc - console didnt open after 3 attempts
+22:44:52 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:44:52 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:44:52 - ERROR - open - unable to open up the teleporter after 3 attempts
+22:44:53 - DEBUG - zero - setting view angles back to 0
+22:44:53 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:44:53 - DEBUG - reset_state - resetting char state now
+22:45:01 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:01 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:45:01 - DEBUG - reset_state - resetting char state now
+22:45:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:09 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:45:09 - DEBUG - reset_state - resetting char state now
+22:45:17 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:17 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:45:17 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:45:17 - DEBUG - reset_state - resetting char state now
+22:45:25 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:25 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:45:25 - DEBUG - reset_state - resetting char state now
+22:45:33 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:33 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:45:33 - DEBUG - reset_state - resetting char state now
+22:45:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:41 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:45:41 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:45:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:45:41 - DEBUG - reset_state - resetting char state now
+22:45:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:50 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:45:50 - DEBUG - reset_state - resetting char state now
+22:45:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:45:58 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:45:58 - DEBUG - reset_state - resetting char state now
+22:46:06 - ERROR - console_ccc - console didnt open after 3 attempts
+22:46:06 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:46:06 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:46:06 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:46:06 - DEBUG - reset_state - resetting char state now
+22:46:13 - ERROR - console_ccc - console didnt open after 3 attempts
+22:46:14 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:46:14 - DEBUG - reset_state - resetting char state now
+22:46:22 - ERROR - console_ccc - console didnt open after 3 attempts
+22:46:22 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:46:22 - DEBUG - reset_state - resetting char state now
+22:46:29 - ERROR - console_ccc - console didnt open after 3 attempts
+22:46:30 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:46:30 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:46:33 - DEBUG - zero - setting view angles back to 0
+22:46:33 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:46:33 - DEBUG - reset_state - resetting char state now
+22:46:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:46:41 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:46:41 - DEBUG - reset_state - resetting char state now
+22:46:49 - ERROR - console_ccc - console didnt open after 3 attempts
+22:46:49 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:46:49 - DEBUG - reset_state - resetting char state now
+22:46:57 - ERROR - console_ccc - console didnt open after 3 attempts
+22:46:57 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:46:57 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:46:57 - DEBUG - reset_state - resetting char state now
+22:47:05 - ERROR - console_ccc - console didnt open after 3 attempts
+22:47:05 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:47:05 - DEBUG - reset_state - resetting char state now
+22:47:13 - ERROR - console_ccc - console didnt open after 3 attempts
+22:47:13 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:47:13 - DEBUG - reset_state - resetting char state now
+22:47:21 - ERROR - console_ccc - console didnt open after 3 attempts
+22:47:21 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:47:21 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:47:21 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:47:21 - DEBUG - reset_state - resetting char state now
+22:47:29 - ERROR - console_ccc - console didnt open after 3 attempts
+22:47:29 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:47:29 - DEBUG - reset_state - resetting char state now
+22:47:37 - ERROR - console_ccc - console didnt open after 3 attempts
+22:47:37 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:47:37 - DEBUG - reset_state - resetting char state now
+22:47:45 - ERROR - console_ccc - console didnt open after 3 attempts
+22:47:45 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:47:45 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:47:45 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:47:45 - DEBUG - reset_state - resetting char state now
+22:47:53 - ERROR - console_ccc - console didnt open after 3 attempts
+22:47:53 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:47:53 - DEBUG - reset_state - resetting char state now
+22:48:01 - ERROR - console_ccc - console didnt open after 3 attempts
+22:48:01 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:48:01 - DEBUG - reset_state - resetting char state now
+22:48:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:48:09 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:48:09 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:48:12 - DEBUG - open - trying to open player inventory 1 / 3
+22:48:16 - DEBUG - open - trying to open player inventory 2 / 3
+22:48:17 - DEBUG - open - inventory opened
+22:48:17 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:48:17 - DEBUG - close - trying to close objects inventory 1 / 3
+22:48:18 - DEBUG - reset_state - resetting char state now
+22:48:19 - DEBUG - open - trying to open player inventory 1 / 3
+22:48:19 - DEBUG - open - inventory opened
+22:48:20 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:48:20 - DEBUG - close - trying to close objects inventory 1 / 3
+22:48:21 - WARNING - check_state - tping back to render bed to replenish food and water | 2= food 3= water | reason:3
+22:48:21 - DEBUG - open - trying to open teleporter 1 / 3
+22:48:25 - WARNING - open - teleporter didnt open retrying now
+22:48:25 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:48:25 - DEBUG - reset_state - resetting char state now
+22:48:33 - ERROR - console_ccc - console didnt open after 3 attempts
+22:48:33 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:48:33 - DEBUG - reset_state - resetting char state now
+22:48:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:48:41 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:48:41 - DEBUG - reset_state - resetting char state now
+22:48:49 - ERROR - console_ccc - console didnt open after 3 attempts
+22:48:49 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:48:49 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:48:49 - DEBUG - open - trying to open teleporter 2 / 3
+22:48:53 - WARNING - open - teleporter didnt open retrying now
+22:48:53 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:48:53 - DEBUG - reset_state - resetting char state now
+22:49:01 - ERROR - console_ccc - console didnt open after 3 attempts
+22:49:01 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:49:01 - DEBUG - reset_state - resetting char state now
+22:49:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:49:09 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:49:09 - DEBUG - reset_state - resetting char state now
+22:49:17 - ERROR - console_ccc - console didnt open after 3 attempts
+22:49:17 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:49:17 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:49:17 - DEBUG - open - trying to open teleporter 3 / 3
+22:49:21 - WARNING - open - teleporter didnt open retrying now
+22:49:21 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:49:21 - DEBUG - reset_state - resetting char state now
+22:49:29 - ERROR - console_ccc - console didnt open after 3 attempts
+22:49:29 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:49:29 - DEBUG - reset_state - resetting char state now
+22:49:37 - ERROR - console_ccc - console didnt open after 3 attempts
+22:49:37 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:49:37 - DEBUG - reset_state - resetting char state now
+22:49:45 - ERROR - console_ccc - console didnt open after 3 attempts
+22:49:45 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:49:45 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:49:45 - ERROR - open - unable to open up the teleporter after 3 attempts
+22:49:46 - DEBUG - zero - setting view angles back to 0
+22:49:46 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:49:46 - DEBUG - reset_state - resetting char state now
+22:49:54 - ERROR - console_ccc - console didnt open after 3 attempts
+22:49:54 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:49:54 - DEBUG - reset_state - resetting char state now
+22:50:02 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:02 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:50:02 - DEBUG - reset_state - resetting char state now
+22:50:10 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:10 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:50:10 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:50:10 - DEBUG - reset_state - resetting char state now
+22:50:18 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:18 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:50:18 - DEBUG - reset_state - resetting char state now
+22:50:26 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:26 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:50:26 - DEBUG - reset_state - resetting char state now
+22:50:34 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:34 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:50:34 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:50:34 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:50:34 - DEBUG - reset_state - resetting char state now
+22:50:43 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:43 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:50:43 - DEBUG - reset_state - resetting char state now
+22:50:51 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:51 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:50:51 - DEBUG - reset_state - resetting char state now
+22:50:59 - ERROR - console_ccc - console didnt open after 3 attempts
+22:50:59 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:50:59 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:50:59 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:50:59 - DEBUG - reset_state - resetting char state now
+22:51:07 - ERROR - console_ccc - console didnt open after 3 attempts
+22:51:07 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:51:07 - DEBUG - reset_state - resetting char state now
+22:51:15 - ERROR - console_ccc - console didnt open after 3 attempts
+22:51:15 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:51:15 - DEBUG - reset_state - resetting char state now
+22:51:23 - ERROR - console_ccc - console didnt open after 3 attempts
+22:51:23 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:51:23 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:51:26 - DEBUG - zero - setting view angles back to 0
+22:51:26 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:51:26 - DEBUG - reset_state - resetting char state now
+22:51:33 - ERROR - console_ccc - console didnt open after 3 attempts
+22:51:34 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:51:34 - DEBUG - reset_state - resetting char state now
+22:51:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:51:41 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:51:41 - DEBUG - reset_state - resetting char state now
+22:51:49 - ERROR - console_ccc - console didnt open after 3 attempts
+22:51:49 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:51:49 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:51:49 - DEBUG - reset_state - resetting char state now
+22:51:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:51:58 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:51:58 - DEBUG - reset_state - resetting char state now
+22:52:06 - ERROR - console_ccc - console didnt open after 3 attempts
+22:52:06 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:52:06 - DEBUG - reset_state - resetting char state now
+22:52:14 - ERROR - console_ccc - console didnt open after 3 attempts
+22:52:14 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:52:14 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:52:14 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:52:14 - DEBUG - reset_state - resetting char state now
+22:52:21 - ERROR - console_ccc - console didnt open after 3 attempts
+22:52:21 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:52:21 - DEBUG - reset_state - resetting char state now
+22:52:29 - ERROR - console_ccc - console didnt open after 3 attempts
+22:52:29 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:52:29 - DEBUG - reset_state - resetting char state now
+22:52:37 - ERROR - console_ccc - console didnt open after 3 attempts
+22:52:37 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:52:37 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:52:37 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:52:37 - DEBUG - reset_state - resetting char state now
+22:52:45 - ERROR - console_ccc - console didnt open after 3 attempts
+22:52:45 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:52:45 - DEBUG - reset_state - resetting char state now
+22:52:53 - ERROR - console_ccc - console didnt open after 3 attempts
+22:52:53 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:52:53 - DEBUG - reset_state - resetting char state now
+22:53:01 - ERROR - console_ccc - console didnt open after 3 attempts
+22:53:01 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:53:01 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:53:04 - DEBUG - open - trying to open player inventory 1 / 3
+22:53:08 - DEBUG - open - trying to open player inventory 2 / 3
+22:53:09 - DEBUG - open - inventory opened
+22:53:09 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:53:10 - DEBUG - close - trying to close objects inventory 1 / 3
+22:53:10 - DEBUG - reset_state - resetting char state now
+22:53:11 - DEBUG - open - trying to open player inventory 1 / 3
+22:53:12 - DEBUG - open - inventory opened
+22:53:12 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:53:12 - DEBUG - close - trying to close objects inventory 1 / 3
+22:53:13 - WARNING - check_state - tping back to render bed to replenish food and water | 2= food 3= water | reason:3
+22:53:14 - DEBUG - open - trying to open teleporter 1 / 3
+22:53:18 - WARNING - open - teleporter didnt open retrying now
+22:53:18 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:53:18 - DEBUG - reset_state - resetting char state now
+22:53:26 - ERROR - console_ccc - console didnt open after 3 attempts
+22:53:26 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:53:26 - DEBUG - reset_state - resetting char state now
+22:53:34 - ERROR - console_ccc - console didnt open after 3 attempts
+22:53:34 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:53:34 - DEBUG - reset_state - resetting char state now
+22:53:42 - ERROR - console_ccc - console didnt open after 3 attempts
+22:53:42 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:53:42 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:53:42 - DEBUG - open - trying to open teleporter 2 / 3
+22:53:46 - WARNING - open - teleporter didnt open retrying now
+22:53:46 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:53:46 - DEBUG - reset_state - resetting char state now
+22:53:54 - ERROR - console_ccc - console didnt open after 3 attempts
+22:53:54 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:53:54 - DEBUG - reset_state - resetting char state now
+22:54:02 - ERROR - console_ccc - console didnt open after 3 attempts
+22:54:02 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:54:02 - DEBUG - reset_state - resetting char state now
+22:54:10 - ERROR - console_ccc - console didnt open after 3 attempts
+22:54:10 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:54:10 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:54:11 - DEBUG - open - trying to open teleporter 3 / 3
+22:54:15 - WARNING - open - teleporter didnt open retrying now
+22:54:15 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:54:15 - DEBUG - reset_state - resetting char state now
+22:54:23 - ERROR - console_ccc - console didnt open after 3 attempts
+22:54:23 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:54:23 - DEBUG - reset_state - resetting char state now
+22:54:31 - ERROR - console_ccc - console didnt open after 3 attempts
+22:54:31 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:54:31 - DEBUG - reset_state - resetting char state now
+22:54:39 - ERROR - console_ccc - console didnt open after 3 attempts
+22:54:39 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:54:39 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:54:39 - ERROR - open - unable to open up the teleporter after 3 attempts
+22:54:40 - DEBUG - zero - setting view angles back to 0
+22:54:40 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:54:40 - DEBUG - reset_state - resetting char state now
+22:54:48 - ERROR - console_ccc - console didnt open after 3 attempts
+22:54:48 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:54:48 - DEBUG - reset_state - resetting char state now
+22:54:56 - ERROR - console_ccc - console didnt open after 3 attempts
+22:54:56 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:54:56 - DEBUG - reset_state - resetting char state now
+22:55:04 - ERROR - console_ccc - console didnt open after 3 attempts
+22:55:04 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:55:04 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:55:04 - DEBUG - reset_state - resetting char state now
+22:55:12 - ERROR - console_ccc - console didnt open after 3 attempts
+22:55:12 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:55:12 - DEBUG - reset_state - resetting char state now
+22:55:20 - ERROR - console_ccc - console didnt open after 3 attempts
+22:55:20 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:55:20 - DEBUG - reset_state - resetting char state now
+22:55:28 - ERROR - console_ccc - console didnt open after 3 attempts
+22:55:28 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:55:28 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:55:28 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:55:28 - DEBUG - reset_state - resetting char state now
+22:55:36 - ERROR - console_ccc - console didnt open after 3 attempts
+22:55:36 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:55:36 - DEBUG - reset_state - resetting char state now
+22:55:44 - ERROR - console_ccc - console didnt open after 3 attempts
+22:55:44 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:55:44 - DEBUG - reset_state - resetting char state now
+22:55:52 - ERROR - console_ccc - console didnt open after 3 attempts
+22:55:52 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:55:52 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:55:52 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:55:52 - DEBUG - reset_state - resetting char state now
+22:56:00 - ERROR - console_ccc - console didnt open after 3 attempts
+22:56:00 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:56:00 - DEBUG - reset_state - resetting char state now
+22:56:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:56:09 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:56:09 - DEBUG - reset_state - resetting char state now
+22:56:17 - ERROR - console_ccc - console didnt open after 3 attempts
+22:56:17 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:56:17 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:56:20 - DEBUG - zero - setting view angles back to 0
+22:56:20 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:56:20 - DEBUG - reset_state - resetting char state now
+22:56:28 - ERROR - console_ccc - console didnt open after 3 attempts
+22:56:28 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:56:28 - DEBUG - reset_state - resetting char state now
+22:56:36 - ERROR - console_ccc - console didnt open after 3 attempts
+22:56:36 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:56:36 - DEBUG - reset_state - resetting char state now
+22:56:44 - ERROR - console_ccc - console didnt open after 3 attempts
+22:56:44 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:56:44 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:56:44 - DEBUG - reset_state - resetting char state now
+22:56:52 - ERROR - console_ccc - console didnt open after 3 attempts
+22:56:52 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:56:52 - DEBUG - reset_state - resetting char state now
+22:56:54 - INFO - received_message - Shard ID None has successfully RESUMED session a71925fbef757eebab5c649f14c011f9.
+22:57:00 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:00 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:57:00 - DEBUG - reset_state - resetting char state now
+22:57:09 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:09 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:57:09 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:57:09 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:57:09 - DEBUG - reset_state - resetting char state now
+22:57:17 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:17 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:57:17 - DEBUG - reset_state - resetting char state now
+22:57:25 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:25 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:57:25 - DEBUG - reset_state - resetting char state now
+22:57:33 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:33 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:57:33 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:57:33 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:57:33 - DEBUG - reset_state - resetting char state now
+22:57:41 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:41 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:57:41 - DEBUG - reset_state - resetting char state now
+22:57:49 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:50 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:57:50 - DEBUG - reset_state - resetting char state now
+22:57:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:57:58 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:57:58 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+22:58:01 - DEBUG - open - trying to open player inventory 1 / 3
+22:58:05 - DEBUG - open - trying to open player inventory 2 / 3
+22:58:05 - DEBUG - open - inventory opened
+22:58:05 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:58:06 - DEBUG - close - trying to close objects inventory 1 / 3
+22:58:07 - DEBUG - reset_state - resetting char state now
+22:58:07 - DEBUG - open - trying to open player inventory 1 / 3
+22:58:08 - DEBUG - open - inventory opened
+22:58:08 - DEBUG - open - trying to open up the buff menu 1 / 10
+22:58:08 - DEBUG - close - trying to close objects inventory 1 / 3
+22:58:09 - WARNING - check_state - tping back to render bed to replenish food and water | 2= food 3= water | reason:3
+22:58:10 - DEBUG - open - trying to open teleporter 1 / 3
+22:58:14 - WARNING - open - teleporter didnt open retrying now
+22:58:14 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:58:14 - DEBUG - reset_state - resetting char state now
+22:58:22 - ERROR - console_ccc - console didnt open after 3 attempts
+22:58:22 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:58:22 - DEBUG - reset_state - resetting char state now
+22:58:29 - ERROR - console_ccc - console didnt open after 3 attempts
+22:58:30 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:58:30 - DEBUG - reset_state - resetting char state now
+22:58:38 - ERROR - console_ccc - console didnt open after 3 attempts
+22:58:38 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:58:38 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:58:38 - DEBUG - open - trying to open teleporter 2 / 3
+22:58:42 - WARNING - open - teleporter didnt open retrying now
+22:58:42 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:58:42 - DEBUG - reset_state - resetting char state now
+22:58:50 - ERROR - console_ccc - console didnt open after 3 attempts
+22:58:50 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:58:50 - DEBUG - reset_state - resetting char state now
+22:58:58 - ERROR - console_ccc - console didnt open after 3 attempts
+22:58:58 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:58:58 - DEBUG - reset_state - resetting char state now
+22:59:06 - ERROR - console_ccc - console didnt open after 3 attempts
+22:59:06 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:59:06 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:59:07 - DEBUG - open - trying to open teleporter 3 / 3
+22:59:11 - WARNING - open - teleporter didnt open retrying now
+22:59:11 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:59:11 - DEBUG - reset_state - resetting char state now
+22:59:19 - ERROR - console_ccc - console didnt open after 3 attempts
+22:59:19 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:59:19 - DEBUG - reset_state - resetting char state now
+22:59:27 - ERROR - console_ccc - console didnt open after 3 attempts
+22:59:27 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:59:27 - DEBUG - reset_state - resetting char state now
+22:59:35 - ERROR - console_ccc - console didnt open after 3 attempts
+22:59:35 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+22:59:35 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+22:59:35 - ERROR - open - unable to open up the teleporter after 3 attempts
+22:59:36 - DEBUG - zero - setting view angles back to 0
+22:59:36 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+22:59:36 - DEBUG - reset_state - resetting char state now
+22:59:44 - ERROR - console_ccc - console didnt open after 3 attempts
+22:59:44 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+22:59:44 - DEBUG - reset_state - resetting char state now
+22:59:52 - ERROR - console_ccc - console didnt open after 3 attempts
+22:59:52 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+22:59:52 - DEBUG - reset_state - resetting char state now
+23:00:00 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:00 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+23:00:00 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+23:00:00 - DEBUG - reset_state - resetting char state now
+23:00:08 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:08 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+23:00:08 - DEBUG - reset_state - resetting char state now
+23:00:16 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:16 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+23:00:16 - DEBUG - reset_state - resetting char state now
+23:00:25 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:25 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+23:00:25 - ERROR - yaw_zero - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+23:00:25 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+23:00:25 - DEBUG - reset_state - resetting char state now
+23:00:33 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:33 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+23:00:33 - DEBUG - reset_state - resetting char state now
+23:00:41 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:41 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+23:00:41 - DEBUG - reset_state - resetting char state now
+23:00:49 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:49 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+23:00:49 - ERROR - pitch_zero - error processing ccc_data[4]: 'NoneType' object is not subscriptable
+23:00:49 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+23:00:49 - DEBUG - reset_state - resetting char state now
+23:00:57 - ERROR - console_ccc - console didnt open after 3 attempts
+23:00:57 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+23:00:57 - DEBUG - reset_state - resetting char state now
+23:01:05 - ERROR - console_ccc - console didnt open after 3 attempts
+23:01:06 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+23:01:06 - DEBUG - reset_state - resetting char state now
+23:01:14 - ERROR - console_ccc - console didnt open after 3 attempts
+23:01:14 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+23:01:14 - ERROR - set_yaw - error processing ccc_data[3]: 'NoneType' object is not subscriptable
+23:01:17 - DEBUG - zero - setting view angles back to 0
+23:01:17 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+23:01:17 - DEBUG - reset_state - resetting char state now
+23:01:25 - ERROR - console_ccc - console didnt open after 3 attempts
+23:01:25 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+23:01:25 - DEBUG - reset_state - resetting char state now
+23:01:33 - ERROR - console_ccc - console didnt open after 3 attempts
+23:01:33 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+23:01:33 - DEBUG - reset_state - resetting char state now
+23:01:41 - ERROR - console_ccc - console didnt open after 3 attempts
+23:01:41 - ERROR - console_ccc - CCC is still returning NONE after 3 attempts
+23:01:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+23:01:41 - DEBUG - reset_state - resetting char state now
+23:01:52 - ERROR - console_ccc - console didnt open after 3 attempts
+23:01:52 - DEBUG - console_ccc - trying to get ccc data 2 / 3
+23:01:52 - DEBUG - reset_state - resetting char state now
+23:02:03 - ERROR - console_ccc - console didnt open after 3 attempts
+23:02:03 - DEBUG - console_ccc - trying to get ccc data 3 / 3
+23:02:03 - DEBUG - reset_state - resetting char state now
