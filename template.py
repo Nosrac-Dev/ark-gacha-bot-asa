@@ -279,7 +279,7 @@ def console_strip_check(roi):
     total_pixels = gray_roi.size
     percentage_gray = (num_gray_pixels / total_pixels) * 100
     logs.logger.template(f"percentage gray {percentage_gray}")
-    print(f"percentage gray {percentage_gray}")
+    #print(f"percentage gray {percentage_gray}")
     return percentage_gray >= 80
 
 def check_both_strips():
