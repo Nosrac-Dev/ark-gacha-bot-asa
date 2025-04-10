@@ -239,6 +239,7 @@ def console_strip():
     total_pixels = gray_roi.size
     percentage_gray = (num_gray_pixels / total_pixels) * 100
     logs.logger.template(f"percentage gray {percentage_gray}")
+    print(f"percentage gray {percentage_gray}")
     return percentage_gray >= 80
 
 
