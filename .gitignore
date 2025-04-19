@@ -5,5 +5,9 @@ settings.py
 logs/logs.txt
 logs/logs.txt
 logs/logs.txt
-ASA/discord.py
 json_files/stations.json
+discord.py
+logs/logs.txt
+logs/logs.txt
+settings.py
+settings.py
