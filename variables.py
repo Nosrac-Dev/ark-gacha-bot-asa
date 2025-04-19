@@ -14,7 +14,7 @@ data = {
     "search_bar_bed_alive_x": 500,
     "spawn_button_x": 2200,
     "spawn_button_y": 1300,
-    "implant_eat_x": 295,
+    "implant_eat_x": 295,   
     "implant_eat_y": 380,
     "radical_laydown_x": 1550,
     "radical_laydown_y": 620,
@@ -30,7 +30,9 @@ data = {
     "buff_button_y": 1180,
     "drop_all_obj_x":1978,
     "back_button_tp_x": 240,
-    "back_button_tp_y": 1285
+    "back_button_tp_y": 1285,
+    "screen_center_x": 1280, #Bitbucket
+    "screen_center_y": 720 #Bitbucket
 }
 
 def get_pixel_loc(location):

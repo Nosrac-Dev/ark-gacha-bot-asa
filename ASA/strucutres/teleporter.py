@@ -13,9 +13,9 @@ def is_open():
     return template.check_template("teleporter_title",0.7)
     
 def open():
-    """
-    player should already be looking down at the teleporter this just opens and WILL try and correct if there are issues 
-    """
+    #"""
+    #player should already be looking down at the teleporter this just opens and WILL try and correct if there are issues 
+    #"""
     attempts = 0 
     while not is_open():
         attempts += 1
@@ -55,6 +55,7 @@ def teleport_not_default(arg):
         stationdata = ASA.stations.custom_stations.get_station_metadata(arg)
 
     teleporter_name = stationdata.name
+    logs.logger.info(f"Teleporting to: {teleporter_name}")
     time.sleep(0.3*settings.sleep_constant)
     utils.turn_down(80)
     time.sleep(0.3*settings.sleep_constant)
@@ -72,8 +73,16 @@ def teleport_not_default(arg):
         utils.write(teleporter_name)
         time.sleep(0.2*settings.sleep_constant)
         windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-        time.sleep(0.3*settings.sleep_constant) #preventing the orange text from the starting teleport screen messing things up
-        if not template.template_await_true(template.check_teleporter_orange,3):
+        logs.logger.info(f"Trying to click on {teleporter_name} in list")
+        time.sleep(0.4*settings.sleep_constant) #preventing the orange text from the starting teleport screen messing things up #Bitbucket Changed 0.3 to 0.4
+        if not template.template_await_true(template.check_teleporter_orange,3):   #Bitbucket
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket
+            logs.logger.warning(f"Trying to click on {teleporter_name} in list 2/3")
+        if not template.template_await_true(template.check_teleporter_orange,3):   #Bitbucket
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket
+            logs.logger.warning(f"Trying to click on {teleporter_name} in list 3/3")
+    
+        if not template.template_await_true(template.check_teleporter_orange,3):  
             logs.logger.warning(f"orange pixel for teleporter ready not found likely already on the tp we are just exiting the tp treating it as the tp we should be on")
             close() # closing out as either the TP couldnt be found however we still want to change to the station yaw so we still continue
 

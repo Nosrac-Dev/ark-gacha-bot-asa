@@ -8,7 +8,7 @@ def template(self,message,*args,**kwargs):
         self._log(TEMPLATE_LEVEL,message,args,**kwargs)
 
 logging.Logger.template = template
-logging_level = logging.DEBUG   
+logging_level = logging.INFO  
 
 logger = logging.getLogger("Gacha")
 logging.basicConfig(filename="logs/logs.txt",level=logging_level,format="%(asctime)s - %(levelname)s - %(funcName)s - %(message)s",datefmt="%H:%M:%S")

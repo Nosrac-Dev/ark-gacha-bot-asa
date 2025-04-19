@@ -21,7 +21,7 @@ keymap = {
 
 default_keymap = { 
     "use": "e", "consolekeys": "tilde", "showtribemanager": "l", "showmyinventory": "i", "accessinventory": "f", "dropitem":"o",
-    "pausemenu": "escape","reload":"r","run":"leftshift","crouch":"c","useitem1": "one","useitem2": "two","useitem3": "three","useitem4": "four",
+    "pausemenu": "escape","reload":"r","run":"leftshift","crouch":"c","prone":"x","useitem1": "one","useitem2": "two","useitem3": "three","useitem4": "four",
     "useitem5": "five","useitem6": "six","useitem7": "seven","useitem8": "eight","useitem9": "nine","useitem10": "zero"
 }
 

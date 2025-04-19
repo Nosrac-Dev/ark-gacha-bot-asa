@@ -1,7 +1,63 @@
 [
+
     {
-        "name": "pego1",
-        "teleporter": "pego1",
+        "name": "pego2B",
+        "teleporter": "GTpego2B",
+        "delay": 3300
+    },
+    {
+        "name": "pego2C",
+        "teleporter": "GTpego2C",
+        "delay": 3300
+    },
+    {
+        "name": "pego2D",
+        "teleporter": "GTpego2D",
+        "delay": 3300
+    },
+    {
+        "name": "pego2E",
+        "teleporter": "GTpego2E",
+        "delay": 3300
+    },
+    {
+        "name": "pego2F",
+        "teleporter": "GTpego2F",
+        "delay": 3300
+    },
+    {
+        "name": "pego2G",
+        "teleporter": "GTpego2G",
+        "delay": 3300
+    },
+    {
+        "name": "pego4B",
+        "teleporter": "GTpego4B",
+        "delay": 3300
+    },
+    {
+        "name": "pego4C",
+        "teleporter": "GTpego4C",
+        "delay": 3300
+    },
+    {
+        "name": "pego4D",
+        "teleporter": "GTpego4D",
+        "delay": 3300
+    },
+    {
+        "name": "pego4E",
+        "teleporter": "GTpego4E",
+        "delay": 3300
+    },
+    {
+        "name": "pego4F",
+        "teleporter": "GTpego4F",
+        "delay": 3300
+    },
+    {
+        "name": "pego4G",
+        "teleporter": "GTpego4G",
         "delay": 3300
     }
 

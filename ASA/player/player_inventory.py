@@ -19,6 +19,7 @@ def open():
         if template.template_await_true(template.check_template,2,"inventory",0.7):
             logs.logger.debug("inventory opened")
             break
+ 
         
         #check state of the char before redoing
         if attempts >= ASA.config.inventory_open_attempts:
@@ -74,7 +75,8 @@ def implant_eat():
         for x in range(30):
             utils.press_key("s") # moving backwards so we dont die on tps and create bags
         open()
-        windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
+        windows.move_mouse(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))   #Bitbucket Need to use Mouse_Move not click.
+        #windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         time.sleep(10) # accounting for high ping lag
         utils.press_key("Use")
 

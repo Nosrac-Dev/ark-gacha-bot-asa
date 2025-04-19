@@ -64,6 +64,10 @@ def iguanadon_open(metadata):
     while not ASA.strucutres.inventory.is_open():
         attempt += 1
         logs.logger.debug(f"the iguanadon at {metadata.name} could not be accessed retrying {attempt} / {bot.config.iguanadon_attempts}")
+        if attempt >= 3:   #Bitbucket Added code to press Run key and stand up if can't access Iguanidon in case we are crouched.
+            utils.press_key("Run")
+            time.sleep(0.2*settings.sleep_constant)
+        utils.press_key("Run") #Bitbucket Added code to press Run key and stand up if can't access Iguanidon in case we are crouched.
         utils.zero()
         utils.set_yaw(metadata.yaw)
         time.sleep(0.2*settings.sleep_constant)
