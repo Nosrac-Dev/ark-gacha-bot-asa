@@ -22,11 +22,13 @@ def load_resolution_data(file_path):
 
 def open_crystals():
     count = 0
+    #windows.click(variables.get_pixel_loc("screen_center_x"),variables.get_pixel_loc("screen_center_y")) #Bitbucket Make sure not in chat
     while template.check_template("crystal_in_hotbar",0.7) and count < 450: # count is alittle higher incase while pressing the button it doesnt triger
+    #while count < 450: # count is alittle higher incase while pressing the button it doesnt trigger
         for x in range(10):
             utils.press_key(f"UseItem{x+1}")
             count += 1
-    logs.logger.debug("Finished Opening Crystals") #Bitbucket
+    logs.logger.info("Finished Opening Crystals") #Bitbucket
 
 def dedi_deposit(height):
     if height == 3:
@@ -69,7 +71,7 @@ def dedi_deposit(height):
     time.sleep(0.1*settings.sleep_constant)
 
 def vault_deposit(items, metadata):
-    logs.logger.debug("Deposit in vaults") #Bitbucket
+    logs.logger.info("Deposit in vaults") #Bitbucket
 
     side = metadata.side
     if side == "right":
@@ -106,7 +108,7 @@ def drop_useless():
     ASA.player.player_inventory.close()
 
 def depo_grinder(metadata):
-    logs.logger.debug("Deposit Grinder") #Bitbucket
+    logs.logger.info("Deposit Grinder") #Bitbucket
 
     utils.turn_right(180)
     time.sleep(0.5*settings.sleep_constant)
@@ -129,6 +131,8 @@ def depo_grinder(metadata):
         ASA.player.player_inventory.transfer_all_inventory()
         time.sleep(0.3*settings.sleep_constant)
         windows.click(variables.get_pixel_loc("dedi_withdraw_x"),variables.get_pixel_loc("dedi_withdraw_y")) #this is pressing the grind all button 
+        time.sleep(0.1*settings.sleep_constant)
+        windows.click(variables.get_pixel_loc("dedi_withdraw_x"),variables.get_pixel_loc("dedi_withdraw_y")) #this is pressing the grind all button #Bitbucket Added second click
         time.sleep(0.3*settings.sleep_constant)
         ASA.strucutres.inventory.close()
     template.template_await_false(template.check_template,1,"inventory",0.7)

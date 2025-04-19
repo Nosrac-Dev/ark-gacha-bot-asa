@@ -61,7 +61,7 @@ def enter_tekpod():
             ASA.player.player_state.check_state()
             logs.logger.error(f"we were unable to get into the tekpod on the {attempts} attempt retrying now")
 
-        if attempts >= bot.config.render_attempts:
+        if attempts >= bot.config.render_attempts and render_flag != True:    #Bitbucket Added Render_flag check in case we made it into Tek_pod
             logs.logger.error(f"we were unable to get into the tekpod after {attempts} attempts pausing execution to avoid unbreakable loops")
             break
 

@@ -2,7 +2,7 @@
     {
         "name": "vault1",
         "side": "left",
-        "items":["fabricated","pump","assault","mine"]
+        "items":["fabricated","pump","assault","mine","gacha"]
     },
     {
         "name": "vault2",

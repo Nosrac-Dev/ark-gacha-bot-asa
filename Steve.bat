@@ -47,7 +47,7 @@ copy ".\json_files\gacha - Floors 4-5-1-3.json" ".\json_files\gacha.json
 run.bat
 goto exit
 
-opt5:
+:opt5:
 echo You picked floor 5
 del .\json_files\gacha.json
 copy ".\json_files\gacha - Floors 5-1-4.json" ".\json_files\gacha.json

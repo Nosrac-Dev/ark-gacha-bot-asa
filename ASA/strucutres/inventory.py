@@ -25,11 +25,13 @@ def open():
             logs.logger.debug(f"inventory opened")
             if template.template_await_true(template.check_template,1,"waiting_inv",0.8):
                 start = time.time()
-                logs.logger.debug(f"waiting for up too 10 seconds due to the reciving remote inventory is present")
+                logs.logger.debug(f"waiting for up too 10 seconds due to the receiving remote inventory is present")
                 template.template_await_false(template.check_template,10,"waiting_inv",0.8)
-                logs.logger.debug(f"{time.time() - start} seconds taken for the reciving remote inventory to go away")
+                logs.logger.debug(f"{time.time() - start} seconds taken for the receiving remote inventory to go away")
                 break
-            
+        else:
+            windows.click(variables.get_pixel_loc("screen_center_x"),variables.get_pixel_loc("screen_center_y")) #Bitbucket
+    
         #check state of the char before redoing
         if attempts >= ASA.config.inventory_open_attempts:
             logs.logger.error(f"unable to open up the objects inventory")
