@@ -30,6 +30,7 @@ def reset_state():
     ASA.player.player_inventory.close()
     ASA.strucutres.teleporter.close()
     ASA.player.tribelog.close()
+    utils.press_key("Run") #Bitbucket Added code to press Run key and stand up if can't access in case we are crouched.
     if ASA.strucutres.bed.is_open():
         ASA.strucutres.bed.spawn_in(settings.bed_spawn) #guessing the char died will respawn it if the char hasnt died and it just in a tekpod screen it will just exit when it cant find its target bed
     

@@ -74,6 +74,7 @@ def implant_eat():
         close() 
         for x in range(30):
             utils.press_key("s") # moving backwards so we dont die on tps and create bags
+            utils.press_key("d") # moving backwards so we dont die on tps and create bags
         open()
         windows.move_mouse(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))   #Bitbucket Need to use Mouse_Move not click.
         #windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
