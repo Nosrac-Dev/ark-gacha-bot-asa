@@ -1,5 +1,5 @@
 from reconnect import join_menu , main_menu , multiplayer_menu , recon_utils , crash 
-
+import time 
 import template
 import windows
 class reconnect():
@@ -14,10 +14,15 @@ class reconnect():
     def rejoin_server(self):
         joined = False
 
+        start_time = time.time()
         c = crash.crash(windows.hwnd)
         c.re_open_game()
 
         while not joined:
+            if (time.time() - start_time) >= 5*60:
+                c = crash.crash(windows.hwnd)
+                c.re_open_game()
+                start_time = time.time()
             main_menu.enter_menu()
             join_menu.enter_menu()
             multiplayer_menu.join_server(self.server)
