@@ -1,3 +1,4 @@
+import ASA.player.player_state
 import template
 import logs.gachalogs as logs
 import utils
@@ -8,7 +9,7 @@ import settings
 import ASA.config 
 import ASA.stations.custom_stations
 import ASA.player.tribelog
-
+ASA.player.player_state
 def is_open():
     return template.check_template("teleporter_title",0.7)
     
@@ -24,6 +25,7 @@ def open():
     
         if not template.template_await_true(template.check_template,2,"teleporter_title",0.7):
             logs.logger.warning("teleporter didnt open retrying now")
+            ASA.player.player_state.check_state()
             # check state of char which should close out of any windows we are in or rejoin the game
             utils.pitch_zero() # reseting the chars pitch/yaw
             utils.turn_down(80)
@@ -65,7 +67,7 @@ def teleport_not_default(arg):
             start = time.time()
             logs.logger.debug(f"teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear")
             template.template_await_true(template.teleport_icon,10,0.55)
-            logs.logger.info(f"time taken for teleporter icon to appear : {time.time() - start}")
+            logs.logger.debug(f"time taken for teleporter icon to appear : {time.time() - start}")
 
         windows.click(variables.get_pixel_loc("search_bar_bed_alive_x"),variables.get_pixel_loc("search_bar_bed_y")) #im lazy this is the same position as the teleporter search bar
         utils.ctrl_a()

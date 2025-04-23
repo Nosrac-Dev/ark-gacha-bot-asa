@@ -6,6 +6,7 @@ import variables
 import time 
 import settings
 import ASA.config 
+import ASA.player.player_state
 
 def is_open():
     return template.check_template("inventory",0.7)
@@ -83,6 +84,7 @@ def implant_eat():
 
         if not template.template_await_true(template.check_template,10,"death_regions",0.7):
             #check state of the char before redoing
+            ASA.player.player_state.check_state()
             ...
                 
         if attempts >= ASA.config.suicide_attempts:

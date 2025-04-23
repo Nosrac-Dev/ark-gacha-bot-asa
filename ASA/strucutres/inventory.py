@@ -1,3 +1,5 @@
+import ASA.player
+import ASA.player.player_state
 import template
 import logs.gachalogs as logs
 import utils
@@ -31,6 +33,7 @@ def open():
                 break
             
         #check state of the char before redoing
+        ASA.player.player_state.check_state()
         if attempts >= ASA.config.inventory_open_attempts:
             logs.logger.error(f"unable to open up the objects inventory")
             break
@@ -43,10 +46,10 @@ def close():
         windows.click(variables.get_pixel_loc("close_inv_x"), variables.get_pixel_loc("close_inv_y"))
         template.template_await_false(template.check_template,2,"inventory",0.7)
             
-
         if attempts >= ASA.config.inventory_close_attempts:
             logs.logger.error(f"unable to close the objects inventory after {attempts} attempts") 
             #check state of the char the reason we can do it now is that the latter should spam click close inv 
+            ASA.player.player_state.check_state()
             break
     time.sleep(0.3*settings.sleep_constant)    
 #these functions assume that the inventory is already open

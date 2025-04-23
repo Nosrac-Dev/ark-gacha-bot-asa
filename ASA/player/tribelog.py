@@ -1,3 +1,5 @@
+import ASA.player
+import ASA.player.player_state
 import template
 import logs.gachalogs as logs
 import utils
@@ -32,4 +34,5 @@ def close():
         if attempts >= ASA.config.inventory_close_attempts:
             logs.logger.error(f"unable to close the objects inventory after {attempts} attempts") 
             #check state of the char the reason we can do it now is that the latter should spam click close inv 
+            ASA.player.player_state.check_state()
             break

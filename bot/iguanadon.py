@@ -97,7 +97,7 @@ def pickup_seeds():
             while template.check_template("inventory",0.7):
                 attempts += 1
                 ASA.strucutres.inventory.popcorn_top_row()
-                if  attempts >= 60 : 
+                if  attempts >= 60 : # 60 * 6  = 360 so whole inv should be popcorned with this value 
                     logs.logger.error("bot got stuck in the popcorning the bag inventory mostlikly broken")
                     break
 
