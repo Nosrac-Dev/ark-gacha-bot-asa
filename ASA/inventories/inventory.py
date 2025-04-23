@@ -8,7 +8,9 @@ import settings
 import ASA.config 
 
 class inventory():
-
+    '''
+    THIS CLASS HAS NO OPPERATBILITY IF YOU CHANGE ANYTHING NOTHING WILL HAPPEN -> GO TO PLAYER OR STRUCTURE // INVENTORY FOR THE RESPECTED SIDE OF UI THAT THE CHAR IS USING TO CHANGE THINGS
+    '''
     def __init__(self):
         ...
         

@@ -25,6 +25,7 @@ def open():
             logs.logger.error(f"unable to open up the players inventory")
             break
     time.sleep(0.3*settings.sleep_constant)
+
 def close():
     attempts = 0
     while is_open():
@@ -39,6 +40,7 @@ def close():
             #check state of the char the reason we can do it now is that the latter should spam click close inv 
             break
     time.sleep(0.3*settings.sleep_constant)
+
 #these functions assume that the inventory is already open
 def search_in_inventory(item:str):
     logs.logger.debug(f"searching in inventory for {item}")
@@ -69,11 +71,12 @@ def implant_eat():
         attempts += 1
         logs.logger.debug(f"trying to eat player implant {attempts} / {ASA.config.suicide_attempts}")
         utils.press_key("ShowMyInventory")
-        open()
+        open() 
         close() 
         for x in range(30):
             utils.press_key("s") # moving backwards so we dont die on tps and create bags
         open()
+        windows.move_mouse(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         time.sleep(10) # accounting for high ping lag
         utils.press_key("Use")

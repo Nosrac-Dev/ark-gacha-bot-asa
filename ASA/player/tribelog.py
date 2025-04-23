@@ -29,7 +29,6 @@ def close():
         windows.click(variables.get_pixel_loc("close_inv_x"),variables.get_pixel_loc("close_inv_y"))
         template.template_await_false(template.check_template_no_bounds,2,"tribelog_check",0.8)
             
-
         if attempts >= ASA.config.inventory_close_attempts:
             logs.logger.error(f"unable to close the objects inventory after {attempts} attempts") 
             #check state of the char the reason we can do it now is that the latter should spam click close inv 
