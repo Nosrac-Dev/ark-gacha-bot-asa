@@ -9,7 +9,7 @@ import settings
 import ASA.config 
 import ASA.stations.custom_stations
 import ASA.player.tribelog
-ASA.player.player_state
+
 def is_open():
     return template.check_template("teleporter_title",0.7)
     
