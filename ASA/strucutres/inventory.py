@@ -72,9 +72,9 @@ def transfer_all_from():
     time.sleep(0.1*settings.sleep_constant)
 
 def popcorn_top_row():
-    for x in range(5):
+    for count in range(6):
         time.sleep(0.1*settings.sleep_constant)
-        x = inv_slots["x"] + (x *inv_slots["distance"]) + 30
+        x = inv_slots["x"] + (count *inv_slots["distance"]) + 30 # x pos = startx + distancebetweenslots * count 
         y = inv_slots["y"] + 30
         if screen.screen_resolution == 1080:
             windows.move_mouse(x * 0.75,y * 0.75)
