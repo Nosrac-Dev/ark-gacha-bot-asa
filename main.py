@@ -2,14 +2,18 @@ import discord
 from discord.ext import commands
 from typing import Callable
 import asyncio
-import botoptions
+import logs.botoptions as botoptions
 import pyautogui
 import settings
 import json
 import time
-import discordbot
-import stations.stations as station
+import logs.discordbot as discordbot
+import bot.stations as stations
 import task_manager
+import win32gui
+import win32con
+import sys
+import pygetwindow as gw
 
 intents = discord.Intents.default()
 pyautogui.FAILSAFE = False
@@ -28,40 +32,12 @@ def save_json(json_file:str,data):
     with open(json_file, 'w') as f:
         json.dump(data, f, indent=4)
 
-async def wait_queue():
-    log_channel = bot.get_channel(settings.log_wait_queue)
-    last_position = 0
-    while True:
-        
-        with open("txt_files/wait.txt","r") as file:
-            file.seek(last_position)
-            queue = file.read()
-            if queue:
-                await log_channel.purge()
-                await log_channel.send(queue)
-                last_position = file.tell()
-        await asyncio.sleep(5)
-
-async def active_queue():
-    log_channel = bot.get_channel(settings.log_active_queue)
-    last_position = 0
-    while True:
-        
-        with open("txt_files/active.txt","r") as file:
-            file.seek(last_position)
-            queue = file.read()
-            if queue:
-                await log_channel.purge()
-                await log_channel.send(queue)
-                last_position = file.tell()
-        await asyncio.sleep(5)
-
 async def send_new_logs():
     log_channel = bot.get_channel(settings.log_channel_gacha)
     last_position = 0
     
     while True:
-        with open("txt_files/logs.txt", 'r') as file:
+        with open("logs/logs.txt", 'r') as file:
             file.seek(last_position)
             new_logs = file.read()
             if new_logs:
@@ -70,7 +46,6 @@ async def send_new_logs():
         await asyncio.sleep(5)
 
 @bot.tree.command(name="add_gacha", description="add a new gacha station to the data")
-
 async def add_gacha(interaction: discord.Interaction, name: str, teleporter: str, resource_type: str ,direction: str):
     data = load_json("json_files/gacha.json")
 
@@ -146,8 +121,8 @@ async def list_pego(interaction: discord.Interaction):
 @bot.tree.command(name="pause", description="sends the bot back to render bed for X amount of seconds")
 async def reset(interaction: discord.Interaction,time:int):
     task = task_manager.scheduler
-    pause = station.pause(time)
-    task.add_task(pause)
+    pause_task = stations.pause(time)
+    task.add_task(pause_task)
     await interaction.response.send_message(f"pause task added will now pause for {time} seconds once the next task finishes")
     
 async def embed_send(queue_type):
@@ -160,22 +135,18 @@ async def embed_send(queue_type):
         embed_msg = await discordbot.embed_create(queue_type)
         await log_channel.purge()
         await log_channel.send(embed = embed_msg)
-        await asyncio.sleep(5)
+        await asyncio.sleep(30)
 
 @bot.tree.command()
 async def start(interaction: discord.Interaction):
-
+    global running_tasks
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot starting up now')
     
     # resetting log files
-    with open("txt_files/logs.txt", 'w') as file:
+    with open("logs/logs.txt", 'w') as file:
         file.write(f"")
-    with open("txt_files/wait.txt", 'w') as wait:
-        wait.write(f"")
-    with open("txt_files/active.txt", 'w') as active:
-        active.write(f"")
     running_tasks.append(bot.loop.create_task(send_new_logs()))
     
     
@@ -185,6 +156,26 @@ async def start(interaction: discord.Interaction):
     running_tasks.append(bot.loop.create_task(embed_send("active_queue")))
     running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))
     
+@bot.tree.command()
+async def shutdown(interaction: discord.Interaction):
+    await interaction.response.send_message("Shutting down script...")
+    print("Shutting down script...")
+    cmd_windows = [win for win in gw.getAllWindows() if "cmd" in win.title.lower() or "system32" in win.title.lower()]
+
+    if cmd_windows:
+        cmd_window = cmd_windows[0]  
+        hwnd = cmd_window._hWnd  
+
+        win32gui.ShowWindow(hwnd, win32con.SW_RESTORE) 
+        win32gui.SetForegroundWindow(hwnd)  
+        time.sleep(1)         
+        win32gui.PostMessage(hwnd, win32con.WM_CLOSE, 0, 0)
+        print("Shutting down...")
+        sys.exit() 
+    else:
+        print("No CMD window found.")
+
+
 @bot.event
 async def on_ready():
     await bot.tree.sync()

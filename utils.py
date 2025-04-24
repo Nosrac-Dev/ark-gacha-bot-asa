@@ -2,8 +2,9 @@ import ctypes
 import time
 import local_player
 import windows
-import ark 
-
+import logs.gachalogs as logs
+import ASA.player.console
+import ASA.player.player_state
 """
 FUNCTIONS FOR KEYBOARD 
 """
@@ -88,9 +89,10 @@ def normalize_yaw(yaw):
 def set_yaw(yaw):
     global current_yaw
     try:
-        current_yaw = float(ark.console_ccc()[3])
+        logs.logger.debug(f"setting yaw as {float(ASA.player.console.console_ccc()[3])}")
+        current_yaw = float(ASA.player.console.console_ccc()[3])
     except Exception as e:
-        print(e)
+        logs.logger.error(f"error processing ccc_data[3]: {e}")
 
     diff = ((yaw - current_yaw) + 180) % 360 - 180
     if diff < 0:
@@ -112,7 +114,7 @@ def yaw_zero(ccc_data = None):
     global current_yaw
 
     if ccc_data == None:
-        ccc_data = ark.console_ccc()
+        ccc_data = ASA.player.console.console_ccc()
     try:
         if float(ccc_data[3]) > 0:
             turn_left(float(ccc_data[3]))
@@ -120,14 +122,14 @@ def yaw_zero(ccc_data = None):
             turn_right(-float(ccc_data[3]))
         current_yaw = 0
     except Exception as e:
-        print(f"error processing ccc_data[3]: {e}")
+        logs.logger.error(f"error processing ccc_data[3]: {e}")
         #ark.check_state()
 
 def pitch_zero(ccc_data = None):
     global current_pitch
     
     if ccc_data == None:
-        ccc_data = ark.console_ccc()
+        ccc_data = ASA.player.console.console_ccc()
     try:
         if float(ccc_data[4]) > 0:
             turn_down(float(ccc_data[4]))
@@ -135,13 +137,14 @@ def pitch_zero(ccc_data = None):
             turn_up(-float(ccc_data[4]))
         current_pitch = 0
     except Exception as e:
-        print(f"error processing ccc_data[4]: {e}")
+        logs.logger.error(f"error processing ccc_data[4]: {e}")
         #ark.check_state()
 
 def zero():
+    logs.logger.debug("setting view angles back to 0")
     global current_yaw
     global current_pitch
-    ccc_data = ark.console_ccc()    
+    ccc_data = ASA.player.console.console_ccc()
 
     yaw_zero(ccc_data)
     pitch_zero(ccc_data)

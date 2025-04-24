@@ -2,7 +2,7 @@ import re
 import os
 import psutil
 from pathlib import Path
-
+import time 
 
 def path(process_name):
     print("finding path now ")
@@ -11,8 +11,12 @@ def path(process_name):
         if proc.info['name'] == process_name:
             exe_path = proc.info['exe']
             return Path(exe_path)
-
-base_path = path("ArkAscended.exe" ).parents[3]
+try:
+    base_path = path("ArkAscended.exe" ).parents[3]
+except Exception as e:
+    print(f"{e} PLEASE OPEN UP ARK TO FIX THIS ERROR THEN RESTART THE SCRIPT")
+    time.sleep(10)
+    exit()
 
 def get_user_settings(setting_name):
 

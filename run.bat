@@ -1,9 +1,9 @@
 @echo off
 
 :: Specify the required Python version
-set "PYTHON_VERSION=3.11.1"
+set "PYTHON_VERSION=3.11"
 
-:: Check if Python 3.11.1 is installed
+:: Check if Python 3.11 is installed
 echo Checking for Python %PYTHON_VERSION%...
 py -%PYTHON_VERSION% --version >nul 2>&1
 if errorlevel 1 (

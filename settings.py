@@ -1,4 +1,4 @@
-screen_resolution = 1080 # 1440 or 1080 ONLY
+sleep_constant = 1
 iguanadon = "GACHAIGUANADON"
 drop_off = "GACHADEDI"
 bed_spawn = "GACHARENDER"
@@ -13,7 +13,10 @@ height_grind = 3
 command_prefix = "%"
 singleplayer = False
 server_number = 0
-# you need to put in you channel IDs and you bot API
+crafting = False
+seeds_230 = False
+
+# you need to put in you channel IDs and your bot API
 log_channel_gacha = 111111111111111
 log_active_queue = 111111111111111
 log_wait_queue = 111111111111111

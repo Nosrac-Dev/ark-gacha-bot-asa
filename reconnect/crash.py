@@ -4,10 +4,16 @@ import win32process
 import subprocess
 import os
 import local_player
-import discordbot
+import logs.discordbot as discordbot
 import time 
 import windows
 from reconnect import recon_utils
+import logging
+
+reconnectlogs = logging.getLogger("Reconnect")
+logging_level = logging.INFO
+logging.basicConfig(filename="txt_files/logs.txt",level=logging_level,format="%(asctime)s - %(levelname)s - %(message)s",datefmt="%H:%M:%S")
+reconnectlogs.setLevel(logging_level)
 
 class crash():
     def __init__(self,hwnd):
@@ -28,13 +34,13 @@ class crash():
             process = psutil.Process(pid)
 
             process.terminate()
-            discordbot.logger(f"game with pid {pid} terminated")
+            reconnectlogs.critical(f"game with pid {pid} terminated")
         except psutil.NoSuchProcess:
-            discordbot.logger("process not found")
+            reconnectlogs.critical("process not found")
         except psutil.AccessDenied:
-            discordbot.logger("no permissions to terminate")
+            reconnectlogs.critical("no permissions to terminate")
         except Exception as e:
-            discordbot.logger(f"error: {e}")
+            reconnectlogs.critical(f"error: {e}")
 
 
     def launch_game_with_steam(self):
@@ -43,11 +49,17 @@ class crash():
         if os.path.exists(steam_path):
         
             subprocess.run([steam_path, f"steam://run/{self.appid}"])
-            discordbot.logger(f"launching game with appid {self.appid} via steam")
+            reconnectlogs.critical(f"launching game with appid {self.appid} via steam")
         else:
-            discordbot.logger("steam exe not found at the expected location cannot relaunch game")
+            reconnectlogs.critical("steam exe not found at the expected location cannot relaunch game")
             
-
+    def re_open_game(self):
+        self.close_game()
+        time.sleep(10)
+        self.launch_game_with_steam()
+        recon_utils.template_sleep_no_bounds("join_last_session",0.7,60)
+        windows.hwnd = windows.find_window_by_title("ArkAscended") # new process ID as game as relaunced
+        
     def crash_rejoin(self):
         if self.detect_crash():
             self.close_game()
