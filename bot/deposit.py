@@ -24,6 +24,7 @@ def open_crystals():
     count = 0
     #windows.click(variables.get_pixel_loc("screen_center_x"),variables.get_pixel_loc("screen_center_y")) #Bitbucket Make sure not in chat
     while template.check_template("crystal_in_hotbar",0.7) and count < 450: # count is alittle higher incase while pressing the button it doesnt triger
+    while template.check_template("crystal_in_hotbar",0.3) and count < 450: # count is alittle higher incase while pressing the button it doesnt triger
     #while count < 450: # count is alittle higher incase while pressing the button it doesnt trigger
         for x in range(10):
             utils.press_key(f"UseItem{x+1}")

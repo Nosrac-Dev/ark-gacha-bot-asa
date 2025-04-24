@@ -14,6 +14,7 @@ import bot.config
 def pego_pickup(metadata):
     attempt = 0
     utils.turn_up(15)
+    utils.turn_up(5)
     time.sleep(0.2*settings.sleep_constant)
     ASA.strucutres.inventory.open()
     while not ASA.strucutres.inventory.is_open():
@@ -22,6 +23,7 @@ def pego_pickup(metadata):
         utils.zero()
         utils.set_yaw(metadata.yaw)
         utils.turn_up(15)
+        utils.turn_up(5)
         time.sleep(0.2*settings.sleep_constant)
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.pego_attempts:
