@@ -44,7 +44,7 @@ def check_state(): # mainliy checked at the start of every task to check for foo
         logs.logger.debug(f"tekpod buff found on screen leaving tekpod now reason | type : {type} render flag : {bot.render.render_flag}")
         bot.render.leave_tekpod()
     elif type == 2 or type == 3:
-        logs.logger.warning(f"tping back to render bed to replenish food and water | 2= food 3= water | reason:{type}")
+        logs.logger.warning(f"tping back to render bed to replenish food and water | 2= water 3= food | reason:{type}")
         ASA.strucutres.teleporter.teleport_not_default(settings.bed_spawn)
         bot.render.enter_tekpod()
         time.sleep(30) # assuming 30 seconds should replenish the player back to 100/100

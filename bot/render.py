@@ -33,24 +33,24 @@ def enter_tekpod():
         utils.set_yaw(settings.station_yaw)
         utils.turn_down(15)
         time.sleep(0.3*settings.sleep_constant)
-        pyautogui.keyDown(utils.keymap_return(local_player.get_input_settings("Use")))
+        pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
         
         if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
-            pyautogui.keyUp(utils.keymap_return(local_player.get_input_settings("Use")))
+            pyautogui.keyUp(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
             time.sleep(0.5*settings.sleep_constant)    
             utils.press_key(local_player.get_input_settings("Run")) 
             utils.zero()
             utils.set_yaw(settings.station_yaw)
             utils.turn_down(15)
             time.sleep(0.3*settings.sleep_constant)
-            pyautogui.keyDown(utils.keymap_return(local_player.get_input_settings("Use")))
+            pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
             time.sleep(0.5*settings.sleep_constant)
 
         if template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
             time.sleep(0.2*settings.sleep_constant)
             windows.move_mouse(variables.get_pixel_loc("radical_laydown_x"), variables.get_pixel_loc("radical_laydown_y"))
             time.sleep(0.5*settings.sleep_constant)
-            pyautogui.keyUp(utils.keymap_return(local_player.get_input_settings("Use")))
+            pyautogui.keyUp(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
             time.sleep(1)
 
         if buffs.check_buffs() == 1:
