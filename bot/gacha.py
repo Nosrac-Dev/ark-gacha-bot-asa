@@ -118,7 +118,7 @@ def collection(metadata):
         turn_constant = 1
     else:
         turn_constant = -1
-
+    utils.press_key("Run") #Bitbucket Added code to press Run key and stand up if can't access in case we are crouched.
     utils.turn_right(40*turn_constant)
     time.sleep(0.2*settings.sleep_constant)
     ASA.strucutres.inventory.open()
@@ -131,6 +131,7 @@ def collection(metadata):
         utils.set_yaw(metadata.side)
         utils.turn_right(40*turn_constant)
         time.sleep(0.2*settings.sleep_constant)
+        utils.press_key("Run") #Bitbucket Added code to press Run key and stand up if can't access in in case we are crouched.
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.gacha_attempts:
             logs.logger.error(f"the {direction} gacha at {metadata.name} could not be accesssed after {attempt} attempts")

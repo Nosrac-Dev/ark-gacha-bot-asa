@@ -45,8 +45,6 @@ def console_ccc():
             windows.click(variables.get_pixel_loc("screen_center_x"),variables.get_pixel_loc("screen_center_y")) #Bitbucket Make sure not in chat
             utils.press_key("ConsoleKeys")
             template.template_await_true(is_open,1)
-
-
             if count >= ASA.config.console_open_attempts:
                 logs.logger.error(f"console didnt open after {count} attempts")
                 break
