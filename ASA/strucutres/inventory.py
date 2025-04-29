@@ -33,7 +33,8 @@ def open():
                 break
             
         #check state of the char before redoing
-        ASA.player.player_state.check_state()
+        else:
+            ASA.player.player_state.check_state()
         if attempts >= ASA.config.inventory_open_attempts:
             logs.logger.error(f"unable to open up the objects inventory")
             break
