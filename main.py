@@ -193,7 +193,23 @@ async def logging(interaction: discord.Interaction, level:str):
     logstuff.getLogger("Gacha").setLevel(gachalogs.logging_level)
     await interaction.response.send_message(f"Logging_level has been set to {logstuff.getLevelName(gachalogs.logging_level)}" )
 
+@bot.tree.command(name="log_reset", description="resets the loggint task") #Nos 5/3 
+async def log_reset(interaction: discord.Interaction):
+    global running_tasks
+    logchn = bot.get_channel(settings.log_channel_gacha) 
+    if logchn:
+        await logchn.send(f'Logs are resetting')
+    
+    # resetting log files
+    with open("logs/logs.txt", 'w') as file:
+        file.write(f"")
+    running_tasks.pop(1) #Removes the first Item from the running_task array (send_new_logs)
+    running_tasks.insert(1, bot.loop.create_task(send_new_logs())) #Starts a new (send_new_logs) and adds it to the first slot of the running_task array
 
+    await interaction.response.send_message(f"Logs should be fixed now")
+    await logchn.send(f"{running_tasks}") 
+#    running_tasks.append(bot.loop.create_task(embed_send("active_queue"))) #saved incase active or waiting cues need to be resetzzzzzzz
+#    running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))
 
 @bot.event
 async def on_ready():
