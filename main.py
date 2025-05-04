@@ -145,6 +145,7 @@ async def start(interaction: discord.Interaction):
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot starting up now')
+        await logchn.send(f'Look at bot <@576182444592463892>') #Nosrac 4/27 @'S traveler on startup
     
     # resetting log files
     with open("logs/logs.txt", 'w') as file:
