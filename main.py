@@ -14,6 +14,9 @@ import win32gui
 import win32con
 import sys
 import pygetwindow as gw
+import logs.gachalogs as gachalogs
+import logging as logstuff
+
 
 intents = discord.Intents.default()
 pyautogui.FAILSAFE = False
@@ -83,7 +86,6 @@ async def list_gacha(interaction: discord.Interaction):
 
 
 @bot.tree.command(name="add_pego", description="add a new pego station to the data")
-
 async def add_pego(interaction: discord.Interaction, name: str, teleporter: str, delay: int):
     data = load_json("json_files/pego.json")
 
@@ -160,7 +162,7 @@ async def start(interaction: discord.Interaction):
 async def shutdown(interaction: discord.Interaction):
     await interaction.response.send_message("Shutting down script...")
     print("Shutting down script...")
-    cmd_windows = [win for win in gw.getAllWindows() if "cmd" in win.title.lower() or "system32" in win.title.lower()]
+    cmd_windows = [win for win in gw.getAllWindows() if "cmd" in win.title.lower() or "command prompt" in win.title.lower() or "system32" in win.title.lower()]
 
     if cmd_windows:
         cmd_window = cmd_windows[0]  
@@ -174,6 +176,23 @@ async def shutdown(interaction: discord.Interaction):
         sys.exit() 
     else:
         print("No CMD window found.")
+
+@bot.tree.command(name="lag_factor", description="changes the sleep_constant value in settings.py") #Command to adjust the sleep_constant value in settings.py to account for lag Nosrac 5/28
+async def lag_factor(interaction: discord.Interaction, factor:float):
+    settings.sleep_constant = factor
+    await interaction.response.send_message(f"sleep_constant has been set to {settings.sleep_constant} the bot will now run {settings.sleep_constant*100}% slower than base speed")
+
+@bot.tree.command(name="logging", description="Changes the logging level of the bot (DEBUG, INFO, WARNING, ERROR, CRITICAL)") #Command to adjust the logging level of the bot by changing the logging_level variable in gachalogs file Nosrac 5/29
+async def logging(interaction: discord.Interaction, level:str):
+    level = level.upper()
+    if level in ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"):
+        gachalogs.logging_level = logstuff.getLevelName(level)
+    else:
+        gachalogs.logging_level = logstuff.getLevelName("INFO")
+        #gachalogs.logging_level = 20
+    logstuff.getLogger("Gacha").setLevel(gachalogs.logging_level)
+    await interaction.response.send_message(f"Logging_level has been set to {logstuff.getLevelName(gachalogs.logging_level)}" )
+
 
 
 @bot.event
