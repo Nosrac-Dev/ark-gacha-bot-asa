@@ -71,7 +71,9 @@ def transfer_all_from():
     logs.logger.debug(f"transfering all from object")
     time.sleep(0.2*settings.sleep_constant)
     windows.click(variables.get_pixel_loc("transfer_all_from_x"), variables.get_pixel_loc("transfer_all_y"))
-    time.sleep(0.1*settings.sleep_constant)
+    time.sleep(0.05*settings.sleep_constant)
+    windows.click(variables.get_pixel_loc("transfer_all_from_x"), variables.get_pixel_loc("transfer_all_y"))  #added second click Bitbucket
+    time.sleep(0.05*settings.sleep_constant)
 
 def popcorn_top_row():
     for x in range(5):

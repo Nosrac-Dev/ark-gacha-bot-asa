@@ -212,6 +212,9 @@ async def log_reset(interaction: discord.Interaction):
 #    running_tasks.append(bot.loop.create_task(embed_send("active_queue"))) #saved incase active or waiting cues need to be resetzzzzzzz
 #    running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))
 
+
+
+
 @bot.event
 async def on_ready():
     await bot.tree.sync()
