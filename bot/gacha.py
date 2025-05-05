@@ -56,7 +56,9 @@ def drop_off(metadata): #drop off for 150 stacks of seeds
                 utils.press_key("DropItem")
                 time.sleep(0.3*settings.sleep_constant)
             time.sleep(0.1*settings.sleep_constant)
-
+        else:
+            logs.logger.critical(f'Look at Iguanaadon <@576182444592463892>') #Bitbucket
+            #logchn.send(f'Look at Iguanaadon <@576182444592463892>') #Bitbucket
     ASA.player.player_inventory.close()
     time.sleep(0.2*settings.sleep_constant)
     if temp:
