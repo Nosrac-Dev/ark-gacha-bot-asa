@@ -195,6 +195,9 @@ async def logging(interaction: discord.Interaction, level:str):
 
 
 
+
+
+
 @bot.event
 async def on_ready():
     await bot.tree.sync()
