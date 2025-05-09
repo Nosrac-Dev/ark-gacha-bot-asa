@@ -16,6 +16,7 @@ import sys
 import pygetwindow as gw
 import logs.gachalogs as gachalogs
 import logging as logstuff
+from ASA.player import console
 
 
 intents = discord.Intents.default()
@@ -44,7 +45,10 @@ async def send_new_logs():
             file.seek(last_position)
             new_logs = file.read()
             if new_logs:
-                await log_channel.send(f"New logs:\n```{new_logs}```")
+                if gachalogs.logging_level >= logstuff.ERROR:
+                    await log_channel.send(f"<@576182444592463892>\n New logs:\n```{new_logs}```")
+                else:    
+                    await log_channel.send(f"New logs:\n```{new_logs}```")
                 last_position = file.tell()
         await asyncio.sleep(5)
 
@@ -145,7 +149,7 @@ async def start(interaction: discord.Interaction):
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot starting up now')
-    
+        await logchn.send(f"<@576182444592463892> Starting Now!")
     # resetting log files
     with open("logs/logs.txt", 'w') as file:
         file.write(f"")
@@ -193,6 +197,16 @@ async def logging(interaction: discord.Interaction, level:str):
     logstuff.getLogger("Gacha").setLevel(gachalogs.logging_level)
     await interaction.response.send_message(f"Logging_level has been set to {logstuff.getLevelName(gachalogs.logging_level)}" )
 
+@bot.tree.command(name="berry", description="Flag bot to refill iguanadon berries") #Bitbucket Command to change berry_station global variable to true 
+async def berry(interaction: discord.Interaction, refill:bool):
+    stations.berry_station = refill
+    await interaction.response.send_message(f"berry_station has been set to {stations.berry_station}")
+
+@bot.tree.command(name="reconnect", description="Reconnect to server. Helpful if items did not render in") #Bitbucket 
+async def reconnect(interaction: discord.Interaction, confirm:bool):
+    await interaction.response.send_message(f"Resetting connection to server")
+    console.console_write("reconnect")
+    time.sleep(60) # takes a while for the reonnect to actually go into action
 
 
 

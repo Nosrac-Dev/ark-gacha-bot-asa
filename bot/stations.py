@@ -52,8 +52,8 @@ class gacha_station(base_task):
         berry_metadata = custom_stations.get_station_metadata(settings.berry_station)
         iguanadon_metadata = custom_stations.get_station_metadata(settings.iguanadon)
 
-        if (berry_station and (time_between > config.time_to_reberry*60*60)) or time_between > config.time_to_reberry*60*60: # if time is greater than 4 hours since the last time you went to berry station 
-            teleporter.teleport_not_default(berry_metadata)                    # or if berry station is true( when you go to tekpod and drop all ) and the time between has been longer than 30 mins since youve last been 
+        if (berry_station or time_between > config.time_to_reberry*60*60): # if time is greater than 4 hours since the last time you went to berry station 
+            teleporter.teleport_not_default(berry_metadata)                    # or if berry station is true( when you go to tekpod and drop all ) Old code included and the time between has been longer than 30 mins since youve last been 
             if settings.external_berry: 
                 logs.logger.debug("sleeping for 20 seconds as external")
                 time.sleep(20)#letting station spawn in if you have to tp away
@@ -118,7 +118,8 @@ class render_station(base_task):
         
     def execute(self):
         global berry_station 
-        berry_station = True # setting to true as we will be away for mostlikly for a few hours
+        #berry_station = True # setting to true as we will be away for mostlikly for a few hours #Disabled by Bitbucket
+        logs.logger.debug(f"Executing Render Station")
         if bot.render.render_flag == False:
             player_state.reset_state()
             teleporter.teleport_not_default(settings.bed_spawn)
@@ -162,6 +163,7 @@ class pause(base_task):
         self.name = "pause"
         self.time = time
     def execute(self):
+        logs.logger.debug(f"Executing Pause Station Time:{self.time}")
         player_state.check_state()
         teleporter.teleport_not_default(settings.bed_spawn)
         bot.render.enter_tekpod()
