@@ -74,8 +74,9 @@ def implant_eat():
         utils.press_key("ShowMyInventory")
         open() 
         close() 
-        for x in range(30):
-            utils.press_key("s") # moving backwards so we dont die on tps and create bags
+        for x in range(60):
+            utils.press_key("'") # moving backwards so we dont die on tps and create bags
+            utils.press_key("]") # moving backwards so we dont die on tps and create bags
         open()
         windows.move_mouse(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
