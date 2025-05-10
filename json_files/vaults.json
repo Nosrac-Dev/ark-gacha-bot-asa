@@ -2,11 +2,11 @@
     {
         "name": "vault1",
         "side": "left",
-        "items":["fabricated","pump","assault"]
+        "items":["fabricated","pump","assault","mine","gacha"]
     },
     {
         "name": "vault2",
         "side": "right",
-        "items":["riot","cliff","tree","behe"]
+        "items":["riot","cliff","tree","behe","sulf","dust"]
     }
 ]
