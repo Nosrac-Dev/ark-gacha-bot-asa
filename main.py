@@ -176,6 +176,60 @@ async def shutdown(interaction: discord.Interaction):
     else:
         print("No CMD window found.")
 
+@bot.tree.command(name="lag_factor", description="changes the sleep_constant value in settings.py") #Command to adjust the sleep_constant value in settings.py to account for lag Nosrac 5/28
+async def lag_factor(interaction: discord.Interaction, factor:float):
+    settings.sleep_constant = factor
+    await interaction.response.send_message(f"sleep_constant has been set to {settings.sleep_constant} the bot will now run {settings.sleep_constant} times the base speed")
+
+@bot.tree.command(name="logging", description="Changes the logging level of the bot (DEBUG, INFO, WARNING, ERROR, CRITICAL)") #Command to adjust the logging level of the bot by changing the logging_level variable in gachalogs file Nosrac 5/29
+async def logging(interaction: discord.Interaction, level:str):
+    level = level.upper()
+    if level in ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"):
+        gachalogs.logging_level = logstuff.getLevelName(level)
+    else:
+        gachalogs.logging_level = logstuff.getLevelName("INFO")
+        #gachalogs.logging_level = 20
+    logstuff.getLogger("Gacha").setLevel(gachalogs.logging_level)
+    await interaction.response.send_message(f"Logging_level has been set to {logstuff.getLevelName(gachalogs.logging_level)}" )
+
+@bot.tree.command(name="log_reset", description="resets the loggint task") #Nos 5/3 
+async def log_reset(interaction: discord.Interaction):
+    global running_tasks
+    logchn = bot.get_channel(settings.log_channel_gacha) 
+    if logchn:
+        await logchn.send(f'Logs are resetting')
+    
+    # resetting log files
+    with open("logs/logs.txt", 'w') as file:
+        file.write(f"")
+    running_tasks.pop(1) #Removes the first Item from the running_task array (send_new_logs)
+    running_tasks.insert(1, bot.loop.create_task(send_new_logs())) #Starts a new (send_new_logs) and adds it to the first slot of the running_task array
+
+    await interaction.response.send_message(f"Logs should be fixed now")
+    await logchn.send(f"{running_tasks}") 
+#    running_tasks.append(bot.loop.create_task(embed_send("active_queue"))) #saved incase active or waiting cues need to be resetzzzzzzz
+#    running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))@bot.tree.command(name="berry", description="Flag bot to refill iguanadon berries") #Bitbucket Command to change berry_station global variable to true 
+
+@bot.tree.command(name="berry", description="Flag to refill Berries") #Bitbucket 
+async def berry(interaction: discord.Interaction, refill:bool):
+    stations.berry_station = refill
+    await interaction.response.send_message(f"berry_station has been set to {stations.berry_station}")
+
+@bot.tree.command(name="reconnect", description="Reconnect to server. Helpful if items did not render in") #Bitbucket 
+async def reconnect(interaction: discord.Interaction, confirm:bool):
+    await interaction.response.send_message(f"Resetting connection to server")
+    console.console_write("reconnect")
+    time.sleep(60) # takes a while for the reonnect to actually go into action
+
+@bot.tree.command(name="suspend", description="Suspend bot while true") #Bitbucket 
+async def suspend(interaction: discord.Interaction, flag:bool):
+    console.suspendFlag = flag
+    await interaction.response.send_message(f"Changing suspend state to {flag}")
+
+
+
+
+
 
 @bot.event
 async def on_ready():
