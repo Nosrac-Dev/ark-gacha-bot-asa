@@ -184,7 +184,7 @@ async def shutdown(interaction: discord.Interaction):
 @bot.tree.command(name="lag_factor", description="changes the sleep_constant value in settings.py") #Command to adjust the sleep_constant value in settings.py to account for lag Nosrac 5/28
 async def lag_factor(interaction: discord.Interaction, factor:float):
     settings.sleep_constant = factor
-    await interaction.response.send_message(f"sleep_constant has been set to {settings.sleep_constant} the bot will now run {settings.sleep_constant*100}% slower than base speed")
+    await interaction.response.send_message(f"sleep_constant has been set to {settings.sleep_constant} the bot will now run {settings.sleep_constant} times the base speed")
 
 @bot.tree.command(name="logging", description="Changes the logging level of the bot (DEBUG, INFO, WARNING, ERROR, CRITICAL)") #Command to adjust the logging level of the bot by changing the logging_level variable in gachalogs file Nosrac 5/29
 async def logging(interaction: discord.Interaction, level:str):
@@ -225,6 +225,12 @@ async def reconnect(interaction: discord.Interaction, confirm:bool):
     await interaction.response.send_message(f"Resetting connection to server")
     console.console_write("reconnect")
     time.sleep(60) # takes a while for the reonnect to actually go into action
+
+@bot.tree.command(name="suspend", description="Suspend bot while true") #Bitbucket 
+async def suspend(interaction: discord.Interaction, flag:bool):
+    console.suspendFlag = flag
+    await interaction.response.send_message(f"Changing suspend state to {flag}")
+
 
 
 
