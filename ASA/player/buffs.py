@@ -39,6 +39,7 @@ class check_buffs():
     def check_buffs(self):
         self.open()
         type = 0 
+        time.sleep(0.5*settings.sleep_constant) #Bitbucket Prevent code falling through due to buffs not loading quick enough
         if self.in_tekpod(): #if the char is in the tekpod we cannot be starving therefore we know what state we are in 
             type = 1
         elif self.is_dehydrated():

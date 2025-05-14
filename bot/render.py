@@ -36,7 +36,8 @@ def enter_tekpod():
         pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
         
         if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
-            pyautogui.keyUp(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
+            logs.logger.warning(f"We don't see the bed radical, Render_Flag: {render_flag}, Attempts: {attempts}")
+            pyautogui.keyUp(local_player.get_input_settings("Use"))
             time.sleep(0.5*settings.sleep_constant)    
             utils.press_key(local_player.get_input_settings("Run")) 
             utils.zero()
@@ -47,6 +48,7 @@ def enter_tekpod():
             time.sleep(0.5*settings.sleep_constant)
 
         if template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+            logs.logger.warning(f"We see the bed radical and will select laydown, Render_Flag: {render_flag}, Attempts: {attempts}")
             time.sleep(0.2*settings.sleep_constant)
             windows.move_mouse(variables.get_pixel_loc("radical_laydown_x"), variables.get_pixel_loc("radical_laydown_y"))
             time.sleep(0.5*settings.sleep_constant)
@@ -58,7 +60,7 @@ def enter_tekpod():
             render_flag = True
             utils.current_pitch = 0 # resetting the pitch for when char leaves the tekpod
         else:
-            ASA.player.player_state.check_state()
+            #ASA.player.player_state.check_state() #Bitbucket 5/13 May have found error. Checkstate will leave tek pod if in it.
             logs.logger.error(f"we were unable to get into the tekpod on the {attempts} attempt retrying now")
 
         if attempts >= bot.config.render_attempts:
