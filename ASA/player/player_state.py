@@ -32,6 +32,7 @@ def reset_state():
     ASA.player.tribelog.close()
     utils.press_key("Run") #Bitbucket Added code to press Run key and stand up if can't access in case we are crouched.
     if ASA.strucutres.bed.is_open():
+        logs.logger.debug(f"Bed screen is open") #Bitbucket
         ASA.strucutres.bed.spawn_in(settings.bed_spawn) #guessing the char died will respawn it if the char hasnt died and it just in a tekpod screen it will just exit when it cant find its target bed
     
 def check_state(): # mainliy checked at the start of every task to check for food / water on the char
