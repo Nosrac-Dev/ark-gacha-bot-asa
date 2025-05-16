@@ -14,6 +14,9 @@ import win32gui
 import win32con
 import sys
 import pygetwindow as gw
+import logs.gachalogs as gachalogs
+import logging as logstuff
+from ASA.player import console
 
 intents = discord.Intents.default()
 pyautogui.FAILSAFE = False

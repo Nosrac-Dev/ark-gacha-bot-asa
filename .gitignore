@@ -3,3 +3,11 @@
 *.pyc
 settings.py
 settings.py
+json_files/gacha - Floors 1-5.json
+json_files/gacha - Floors 2-5-1.json
+/json_files
+json_files/gacha.json
+json_files/pego.json
+json_files/vaults.json
+logs/logs.txt
+settings.py
