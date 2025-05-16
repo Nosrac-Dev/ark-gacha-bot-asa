@@ -9,6 +9,7 @@ import ASA.config
 import ASA.stations.custom_stations
 import ASA.player.tribelog
 import ASA.player.player_inventory
+import ASA.player.player_state
 
 def is_open():
     return template.check_template("beds_title",0.7) #bed title is found in both death and fast travel screens
@@ -26,6 +27,8 @@ def close():
 
         if attempts >= ASA.config.teleporter_close_attempts:
             logs.logger.error(f"unable to close the bed after {ASA.config.teleporter_close_attempts} attempts")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             break
             
 

@@ -18,6 +18,7 @@ import logs.gachalogs as gachalogs
 import logging as logstuff
 from ASA.player import console
 
+
 intents = discord.Intents.default()
 pyautogui.FAILSAFE = False
 bot = commands.Bot(command_prefix=settings.command_prefix, intents=intents)
@@ -143,6 +144,7 @@ async def embed_send(queue_type):
 @bot.tree.command()
 async def start(interaction: discord.Interaction):
     global running_tasks
+  
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot starting up now')

@@ -12,8 +12,10 @@ import settings
 import ASA.config 
 import ASA.strucutres.inventory
 import ASA.player.player_inventory
+import ASA.player.player_state
 import bot.config
 import json
+
 
 def load_resolution_data(file_path):
     with open(file_path, 'r') as file:
@@ -82,6 +84,8 @@ def vault_deposit(items, metadata):
     ASA.strucutres.inventory.open()
     if not template.template_await_true(template.check_template,1,"vault",0.7):
         logs.logger.error(f"{side} vault was not opened retrying now ")
+        ASA.player.player_state.lastError = time.time()
+        ASA.player.player_state.errorCount += 1
         ASA.strucutres.inventory.close()
         utils.zero()
         utils.set_yaw(metadata.yaw)
@@ -122,6 +126,8 @@ def depo_grinder(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.grinder_attempts:
             logs.logger.error(f"while trying to deposit we couldnt access grinder")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             break
 
     if template.check_template("grinder",0.7):
@@ -150,6 +156,8 @@ def collect_grindables(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.grinder_attempts:
             logs.logger.error(f"while trying to deposit we couldnt access grinder")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             break
 
     if template.check_template("grinder",0.7):

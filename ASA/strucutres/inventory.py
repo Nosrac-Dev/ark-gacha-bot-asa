@@ -9,6 +9,7 @@ import time
 import settings
 import ASA.config 
 import screen
+
 inv_slots = { 
     "x" : 1660,
     "y" : 320,
@@ -36,6 +37,8 @@ def open():
         ASA.player.player_state.check_state()
         if attempts >= ASA.config.inventory_open_attempts:
             logs.logger.error(f"unable to open up the objects inventory")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             break
     time.sleep(0.3*settings.sleep_constant)    
 def close():
@@ -48,6 +51,8 @@ def close():
             
         if attempts >= ASA.config.inventory_close_attempts:
             logs.logger.error(f"unable to close the objects inventory after {attempts} attempts") 
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             #check state of the char the reason we can do it now is that the latter should spam click close inv 
             ASA.player.player_state.check_state()
             break

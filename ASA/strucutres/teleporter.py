@@ -10,6 +10,7 @@ import ASA.config
 import ASA.stations.custom_stations
 import ASA.player.tribelog
 
+
 def is_open():
     return template.check_template("teleporter_title",0.7)
     
@@ -67,12 +68,14 @@ def teleport_not_default(arg):
             start = time.time()
             logs.logger.debug(f"teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear")
             template.template_await_true(template.teleport_icon,10,0.55)
-            logs.logger.debug(f"time taken for teleporter icon to appear : {time.time() - start}")
+            logs.logger.info(f"time taken for teleporter icon to appear : {time.time() - start}")
 
         windows.click(variables.get_pixel_loc("search_bar_bed_alive_x"),variables.get_pixel_loc("search_bar_bed_y")) #im lazy this is the same position as the teleporter search bar
         utils.ctrl_a()
         utils.write(teleporter_name)
-        time.sleep(0.2*settings.sleep_constant)
+        #  time.sleep(0.2*settings.sleep_constant)
+        logs.logger.info(f"Trying to click on {teleporter_name} in list")
+        time.sleep(0.4*settings.sleep_constant) #preventing the orange text from the starting teleport screen messing things up #Bitbucket Changed 0.3 to 0.4
         windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
 
         if not template.template_await_true(template.check_teleporter_orange,3):   #Bitbucket

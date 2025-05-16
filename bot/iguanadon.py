@@ -9,7 +9,9 @@ import settings
 import ASA.config 
 import ASA.strucutres.inventory
 import ASA.player.player_inventory
+import ASA.player.player_state
 import bot.config
+
 
 def berry_collection():
     time.sleep(0.5)
@@ -70,6 +72,8 @@ def iguanadon_open(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.iguanadon_attempts:
             logs.logger.error(f"the iguanadon at {metadata.name} could not be accesssed after {attempt} attempts")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             break
     
 def drop_seeds():
@@ -99,6 +103,8 @@ def pickup_seeds():
                 ASA.strucutres.inventory.popcorn_top_row()
                 if  attempts >= 60 : # 60 * 6  = 360 so whole inv should be popcorned with this value 
                     logs.logger.error("bot got stuck in the popcorning the bag inventory mostlikly broken")
+                    ASA.player.player_state.lastError = time.time()
+                    ASA.player.player_state.errorCount += 1
                     break
 
             # popcorn the bag lateron ( will be due to inv being capped )
