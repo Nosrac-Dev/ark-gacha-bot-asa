@@ -1,0 +1,818 @@
+10:40:57 - DEBUG - task_manager_start - task_manager_start initiated
+10:40:57 - ERROR - embed_create - error in embed_create: module 'task_manager' has no attribute 'scheduler'
+10:40:57 - INFO - main - scheduler now running
+10:40:57 - INFO - execute_task - Executing task: pego2B1
+10:40:57 - DEBUG - check_state - Check_State lastError: 31.713005542755127  errorCount: 0
+10:40:58 - DEBUG - reset_state - resetting char state now
+10:40:58 - DEBUG - open - trying to open player inventory 1 / 3
+10:40:59 - DEBUG - open - inventory opened
+10:40:59 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:41:00 - DEBUG - check_buffs - lastError: 34.52007555961609  resetting errorCount: 0
+10:41:00 - DEBUG - close - trying to close objects inventory 1 / 3
+10:41:01 - DEBUG - check_state - tekpod buff found on screen leaving tekpod now reason | type : 1 render flag : False
+10:41:01 - DEBUG - reset_state - resetting char state now
+10:41:03 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:03 - DEBUG - reset_state - resetting char state now
+10:41:04 - DEBUG - enter_data - using clipboard to put ccc into the console
+10:41:05 - DEBUG - set_yaw - setting yaw as -18.43
+10:41:05 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:05 - DEBUG - reset_state - resetting char state now
+10:41:06 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:08 - DEBUG - open - trying to open teleporter 1 / 3
+10:41:09 - DEBUG - open - teleporter opened
+10:41:10 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:41:10 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.25191521644592285
+10:41:11 - INFO - teleport_not_default - Trying to click on GTpego2B1 in list
+10:41:16 - DEBUG - open - trying to open up the tribelog screen
+10:41:16 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:41:18 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:18 - DEBUG - reset_state - resetting char state now
+10:41:19 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:19 - DEBUG - set_yaw - setting yaw as -18.43
+10:41:19 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:19 - DEBUG - reset_state - resetting char state now
+10:41:20 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:21 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:41:22 - DEBUG - open - inventory opened
+10:41:24 - DEBUG - check_state - Check_State lastError: 57.816925048828125  errorCount: 0
+10:41:24 - DEBUG - reset_state - resetting char state now
+10:41:24 - DEBUG - close - trying to close objects inventory 1 / 3
+10:41:25 - DEBUG - open - trying to open player inventory 1 / 3
+10:41:25 - DEBUG - open - inventory opened
+10:41:26 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:41:27 - DEBUG - close - trying to close objects inventory 1 / 3
+10:41:27 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:41:28 - DEBUG - open - inventory opened
+10:41:28 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:41:29 - DEBUG - open - 0.27707862854003906 seconds taken for the reciving remote inventory to go away
+10:41:29 - DEBUG - drop_all_inv - dropping all items from our inventory 
+10:41:30 - DEBUG - transfer_all_from - transfering all from object
+10:41:30 - DEBUG - close - trying to close objects inventory 1 / 3
+10:41:32 - DEBUG - open - trying to open teleporter 1 / 3
+10:41:34 - DEBUG - open - teleporter opened
+10:41:35 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:41:35 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.20496201515197754
+10:41:36 - INFO - teleport_not_default - Trying to click on GTDEDI2 in list
+10:41:41 - DEBUG - open - trying to open up the tribelog screen
+10:41:42 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:41:43 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:43 - DEBUG - reset_state - resetting char state now
+10:41:44 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:44 - DEBUG - set_yaw - setting yaw as 72.56
+10:41:44 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:44 - DEBUG - reset_state - resetting char state now
+10:41:45 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:46 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:46 - DEBUG - reset_state - resetting char state now
+10:41:47 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:47 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:47 - DEBUG - reset_state - resetting char state now
+10:41:49 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:49 - DEBUG - set_yaw - setting yaw as 72.56
+10:41:49 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:41:49 - DEBUG - reset_state - resetting char state now
+10:41:50 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:41:51 - DEBUG - deposit_all - opening crystals
+10:41:52 - DEBUG - deposit_all - depositing in ele dedi
+10:41:57 - DEBUG - dedi_deposit - Deposit bottom row
+10:41:59 - DEBUG - vaults - openening up vault1 on the left side to depo['fabricated', 'pump', 'assault', 'mine', 'gacha']
+10:41:59 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:42:00 - DEBUG - open - inventory opened
+10:42:00 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:42:00 - DEBUG - open - 0.3434779644012451 seconds taken for the reciving remote inventory to go away
+10:42:01 - DEBUG - search_in_inventory - searching in inventory for fabricated
+10:42:02 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:03 - DEBUG - search_in_inventory - searching in inventory for pump
+10:42:04 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:05 - DEBUG - search_in_inventory - searching in inventory for assault
+10:42:06 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:07 - DEBUG - search_in_inventory - searching in inventory for mine
+10:42:08 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:08 - DEBUG - search_in_inventory - searching in inventory for gacha
+10:42:09 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:10 - DEBUG - close - trying to close objects inventory 1 / 3
+10:42:12 - DEBUG - vaults - openening up vault2 on the right side to depo['riot', 'cliff', 'tree', 'behe', 'sulf', 'dust']
+10:42:12 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:42:13 - DEBUG - open - inventory opened
+10:42:13 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:42:13 - DEBUG - open - 0.34264683723449707 seconds taken for the reciving remote inventory to go away
+10:42:14 - DEBUG - search_in_inventory - searching in inventory for riot
+10:42:15 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:16 - DEBUG - search_in_inventory - searching in inventory for cliff
+10:42:17 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:18 - DEBUG - search_in_inventory - searching in inventory for tree
+10:42:19 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:19 - DEBUG - search_in_inventory - searching in inventory for behe
+10:42:20 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:21 - DEBUG - search_in_inventory - searching in inventory for sulf
+10:42:22 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:23 - DEBUG - search_in_inventory - searching in inventory for dust
+10:42:24 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:25 - DEBUG - close - trying to close objects inventory 1 / 3
+10:42:26 - DEBUG - deposit_all - depositing in grinder
+10:42:27 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:42:28 - DEBUG - open - inventory opened
+10:42:28 - DEBUG - check_state - Check_State lastError: 122.13480997085571  errorCount: 0
+10:42:28 - DEBUG - reset_state - resetting char state now
+10:42:28 - DEBUG - close - trying to close objects inventory 1 / 3
+10:42:29 - DEBUG - open - trying to open player inventory 1 / 3
+10:42:29 - DEBUG - open - inventory opened
+10:42:30 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:42:31 - DEBUG - close - trying to close objects inventory 1 / 3
+10:42:32 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:42:32 - DEBUG - open - inventory opened
+10:42:32 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:42:33 - DEBUG - open - 0.06841778755187988 seconds taken for the reciving remote inventory to go away
+10:42:33 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:42:34 - DEBUG - close - trying to close objects inventory 1 / 3
+10:42:36 - DEBUG - open - trying to open teleporter 1 / 3
+10:42:38 - DEBUG - open - teleporter opened
+10:42:38 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:42:38 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.2182168960571289
+10:42:39 - INFO - teleport_not_default - Trying to click on GTGRINDABLES2 in list
+10:42:45 - DEBUG - open - trying to open up the tribelog screen
+10:42:46 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:42:47 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:42:47 - DEBUG - reset_state - resetting char state now
+10:42:48 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:42:49 - DEBUG - set_yaw - setting yaw as 72.56
+10:42:49 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:42:49 - DEBUG - reset_state - resetting char state now
+10:42:50 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:42:50 - DEBUG - deposit_all - collecting grindables
+10:42:51 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:42:51 - DEBUG - open - inventory opened
+10:42:51 - DEBUG - check_state - Check_State lastError: 145.66492009162903  errorCount: 0
+10:42:51 - DEBUG - reset_state - resetting char state now
+10:42:51 - DEBUG - close - trying to close objects inventory 1 / 3
+10:42:52 - DEBUG - open - trying to open player inventory 1 / 3
+10:42:53 - DEBUG - open - inventory opened
+10:42:53 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:42:55 - DEBUG - close - trying to close objects inventory 1 / 3
+10:42:55 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:42:56 - DEBUG - open - inventory opened
+10:42:56 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:42:56 - DEBUG - open - 0.06963872909545898 seconds taken for the reciving remote inventory to go away
+10:42:57 - DEBUG - transfer_all_from - transfering all from object
+10:42:57 - DEBUG - close - trying to close objects inventory 1 / 3
+10:43:03 - DEBUG - dedi_deposit - Deposit bottom row
+10:43:06 - DEBUG - open - trying to open player inventory 1 / 3
+10:43:06 - DEBUG - open - inventory opened
+10:43:07 - DEBUG - drop_all_inv - dropping all items from our inventory 
+10:43:07 - DEBUG - close - trying to close objects inventory 1 / 3
+10:43:08 - DEBUG - move_to_waiting_queue - adding pego2B1 to waiting queue
+10:43:08 - INFO - execute_task - Executing task: pego2C1
+10:43:08 - DEBUG - check_state - Check_State lastError: 162.27210903167725  errorCount: 0
+10:43:08 - DEBUG - reset_state - resetting char state now
+10:43:09 - DEBUG - open - trying to open player inventory 1 / 3
+10:43:09 - DEBUG - open - inventory opened
+10:43:10 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:43:11 - DEBUG - close - trying to close objects inventory 1 / 3
+10:43:12 - DEBUG - open - trying to open teleporter 1 / 3
+10:43:14 - DEBUG - open - teleporter opened
+10:43:14 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:43:14 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.24187135696411133
+10:43:15 - INFO - teleport_not_default - Trying to click on GTpego2C1 in list
+10:43:20 - DEBUG - open - trying to open up the tribelog screen
+10:43:21 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:43:22 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:43:22 - DEBUG - reset_state - resetting char state now
+10:43:23 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:43:23 - DEBUG - set_yaw - setting yaw as 72.85
+10:43:23 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:43:23 - DEBUG - reset_state - resetting char state now
+10:43:24 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:43:25 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:43:26 - DEBUG - open - inventory opened
+10:43:26 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:43:26 - DEBUG - open - 0.15074992179870605 seconds taken for the reciving remote inventory to go away
+10:43:27 - DEBUG - drop_all_inv - dropping all items from our inventory 
+10:43:27 - DEBUG - transfer_all_from - transfering all from object
+10:43:28 - DEBUG - close - trying to close objects inventory 1 / 3
+10:43:30 - DEBUG - open - trying to open teleporter 1 / 3
+10:43:31 - DEBUG - open - teleporter opened
+10:43:32 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:43:32 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.20390057563781738
+10:43:33 - INFO - teleport_not_default - Trying to click on GTDEDI2 in list
+10:43:39 - DEBUG - open - trying to open up the tribelog screen
+10:43:40 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:43:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:43:41 - DEBUG - reset_state - resetting char state now
+10:43:43 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:43:43 - DEBUG - set_yaw - setting yaw as 72.67
+10:43:43 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:43:43 - DEBUG - reset_state - resetting char state now
+10:43:44 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:43:45 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:43:45 - DEBUG - reset_state - resetting char state now
+10:43:46 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:43:46 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:43:46 - DEBUG - reset_state - resetting char state now
+10:43:47 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:43:48 - DEBUG - set_yaw - setting yaw as 72.5
+10:43:48 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:43:48 - DEBUG - reset_state - resetting char state now
+10:43:49 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:43:49 - DEBUG - deposit_all - opening crystals
+10:43:51 - DEBUG - deposit_all - depositing in ele dedi
+10:43:55 - DEBUG - dedi_deposit - Deposit bottom row
+10:43:58 - DEBUG - vaults - openening up vault1 on the left side to depo['fabricated', 'pump', 'assault', 'mine', 'gacha']
+10:43:58 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:43:59 - DEBUG - open - inventory opened
+10:43:59 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:43:59 - DEBUG - open - 0.15478181838989258 seconds taken for the reciving remote inventory to go away
+10:44:00 - DEBUG - search_in_inventory - searching in inventory for fabricated
+10:44:01 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:01 - DEBUG - search_in_inventory - searching in inventory for pump
+10:44:03 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:03 - DEBUG - search_in_inventory - searching in inventory for assault
+10:44:04 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:05 - DEBUG - search_in_inventory - searching in inventory for mine
+10:44:06 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:07 - DEBUG - search_in_inventory - searching in inventory for gacha
+10:44:08 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:09 - DEBUG - close - trying to close objects inventory 1 / 3
+10:44:10 - DEBUG - vaults - openening up vault2 on the right side to depo['riot', 'cliff', 'tree', 'behe', 'sulf', 'dust']
+10:44:11 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:44:12 - DEBUG - open - inventory opened
+10:44:12 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:44:12 - DEBUG - open - 0.2527039051055908 seconds taken for the reciving remote inventory to go away
+10:44:13 - DEBUG - search_in_inventory - searching in inventory for riot
+10:44:14 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:14 - DEBUG - search_in_inventory - searching in inventory for cliff
+10:44:15 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:16 - DEBUG - search_in_inventory - searching in inventory for tree
+10:44:17 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:18 - DEBUG - search_in_inventory - searching in inventory for behe
+10:44:19 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:20 - DEBUG - search_in_inventory - searching in inventory for sulf
+10:44:21 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:22 - DEBUG - search_in_inventory - searching in inventory for dust
+10:44:23 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:24 - DEBUG - close - trying to close objects inventory 1 / 3
+10:44:25 - DEBUG - deposit_all - depositing in grinder
+10:44:26 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:44:26 - DEBUG - open - inventory opened
+10:44:27 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:44:27 - DEBUG - open - 0.1594069004058838 seconds taken for the reciving remote inventory to go away
+10:44:27 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:44:28 - DEBUG - close - trying to close objects inventory 1 / 3
+10:44:30 - DEBUG - open - trying to open teleporter 1 / 3
+10:44:32 - DEBUG - open - teleporter opened
+10:44:32 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:44:32 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.22737336158752441
+10:44:33 - INFO - teleport_not_default - Trying to click on GTGRINDABLES2 in list
+10:44:38 - DEBUG - open - trying to open up the tribelog screen
+10:44:39 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:44:40 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:44:40 - DEBUG - reset_state - resetting char state now
+10:44:41 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:44:41 - DEBUG - set_yaw - setting yaw as 72.5
+10:44:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:44:41 - DEBUG - reset_state - resetting char state now
+10:44:42 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:44:43 - DEBUG - deposit_all - collecting grindables
+10:44:43 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:44:47 - DEBUG - check_state - Check_State lastError: 261.3871359825134  errorCount: 0
+10:44:47 - DEBUG - reset_state - resetting char state now
+10:44:48 - DEBUG - open - trying to open player inventory 1 / 3
+10:44:48 - DEBUG - open - inventory opened
+10:44:49 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:44:50 - DEBUG - close - trying to close objects inventory 1 / 3
+10:44:51 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:44:54 - DEBUG - check_state - Check_State lastError: 268.6688652038574  errorCount: 0
+10:44:54 - DEBUG - reset_state - resetting char state now
+10:44:55 - DEBUG - open - trying to open player inventory 1 / 3
+10:44:56 - DEBUG - open - inventory opened
+10:44:56 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:44:57 - DEBUG - close - trying to close objects inventory 1 / 3
+10:44:58 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:45:02 - DEBUG - check_state - Check_State lastError: 276.0070104598999  errorCount: 0
+10:45:02 - DEBUG - reset_state - resetting char state now
+10:45:02 - DEBUG - open - trying to open player inventory 1 / 3
+10:45:03 - DEBUG - open - inventory opened
+10:45:04 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:45:05 - DEBUG - close - trying to close objects inventory 1 / 3
+10:45:05 - ERROR - open - unable to open up the objects inventory
+10:45:07 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+10:45:08 - DEBUG - zero - setting view angles back to 0
+10:45:08 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:45:08 - DEBUG - reset_state - resetting char state now
+10:45:09 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:45:09 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:45:09 - DEBUG - reset_state - resetting char state now
+10:45:11 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:45:11 - DEBUG - set_yaw - setting yaw as 162.55
+10:45:11 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:45:11 - DEBUG - reset_state - resetting char state now
+10:45:12 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:45:13 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:45:17 - DEBUG - check_state - Check_State lastError: 11.763386487960815  errorCount: 1
+10:45:17 - DEBUG - reset_state - resetting char state now
+10:45:18 - DEBUG - open - trying to open player inventory 1 / 3
+10:45:18 - DEBUG - open - inventory opened
+10:45:19 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:45:20 - DEBUG - close - trying to close objects inventory 1 / 3
+10:45:21 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:45:24 - DEBUG - check_state - Check_State lastError: 19.19891119003296  errorCount: 1
+10:45:25 - DEBUG - reset_state - resetting char state now
+10:45:25 - DEBUG - open - trying to open player inventory 1 / 3
+10:45:26 - DEBUG - open - inventory opened
+10:45:26 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:45:27 - DEBUG - close - trying to close objects inventory 1 / 3
+10:45:28 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:45:32 - DEBUG - check_state - Check_State lastError: 26.572454929351807  errorCount: 1
+10:45:32 - DEBUG - reset_state - resetting char state now
+10:45:32 - DEBUG - open - trying to open player inventory 1 / 3
+10:45:33 - DEBUG - open - inventory opened
+10:45:34 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:45:35 - DEBUG - close - trying to close objects inventory 1 / 3
+10:45:35 - ERROR - open - unable to open up the objects inventory
+10:45:38 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+10:45:38 - DEBUG - zero - setting view angles back to 0
+10:45:38 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:45:38 - DEBUG - reset_state - resetting char state now
+10:45:39 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:45:40 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:45:40 - DEBUG - reset_state - resetting char state now
+10:45:41 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:45:41 - DEBUG - set_yaw - setting yaw as -61.25
+10:45:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:45:41 - DEBUG - reset_state - resetting char state now
+10:45:42 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:45:43 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:45:47 - DEBUG - check_state - Check_State lastError: 11.795752048492432  errorCount: 2
+10:45:47 - DEBUG - reset_state - resetting char state now
+10:45:48 - DEBUG - open - trying to open player inventory 1 / 3
+10:45:48 - DEBUG - open - inventory opened
+10:45:49 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:45:50 - DEBUG - close - trying to close objects inventory 1 / 3
+10:45:51 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:45:55 - DEBUG - check_state - Check_State lastError: 19.36537265777588  errorCount: 2
+10:45:55 - DEBUG - reset_state - resetting char state now
+10:45:55 - DEBUG - open - trying to open player inventory 1 / 3
+10:45:56 - DEBUG - open - inventory opened
+10:45:56 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:45:58 - DEBUG - close - trying to close objects inventory 1 / 3
+10:45:58 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:46:02 - DEBUG - check_state - Check_State lastError: 26.642656087875366  errorCount: 2
+10:46:02 - DEBUG - reset_state - resetting char state now
+10:46:03 - DEBUG - open - trying to open player inventory 1 / 3
+10:46:03 - DEBUG - open - inventory opened
+10:46:04 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:46:05 - DEBUG - close - trying to close objects inventory 1 / 3
+10:46:05 - ERROR - open - unable to open up the objects inventory
+10:46:08 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+10:46:08 - DEBUG - zero - setting view angles back to 0
+10:46:08 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:46:08 - DEBUG - reset_state - resetting char state now
+10:46:09 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:46:10 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:46:10 - DEBUG - reset_state - resetting char state now
+10:46:11 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:46:11 - DEBUG - set_yaw - setting yaw as 162.55
+10:46:11 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:46:11 - DEBUG - reset_state - resetting char state now
+10:46:12 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:46:13 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:46:17 - DEBUG - check_state - Check_State lastError: 11.910182476043701  errorCount: 3
+10:46:17 - DEBUG - reset_state - resetting char state now
+10:46:18 - DEBUG - open - trying to open player inventory 1 / 3
+10:46:19 - DEBUG - open - inventory opened
+10:46:19 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:46:20 - DEBUG - close - trying to close objects inventory 1 / 3
+10:46:21 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:46:25 - DEBUG - check_state - Check_State lastError: 19.161218643188477  errorCount: 3
+10:46:25 - DEBUG - reset_state - resetting char state now
+10:46:25 - DEBUG - open - trying to open player inventory 1 / 3
+10:46:26 - DEBUG - open - inventory opened
+10:46:26 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:46:27 - DEBUG - close - trying to close objects inventory 1 / 3
+10:46:28 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:46:32 - DEBUG - check_state - Check_State lastError: 26.694162845611572  errorCount: 3
+10:46:32 - DEBUG - reset_state - resetting char state now
+10:46:33 - DEBUG - open - trying to open player inventory 1 / 3
+10:46:33 - DEBUG - open - inventory opened
+10:46:34 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:46:35 - DEBUG - close - trying to close objects inventory 1 / 3
+10:46:35 - ERROR - open - unable to open up the objects inventory
+10:46:36 - ERROR - collect_grindables - while trying to deposit we couldnt access grinder
+10:46:41 - DEBUG - dedi_deposit - Deposit bottom row
+10:46:43 - DEBUG - open - trying to open player inventory 1 / 3
+10:46:44 - DEBUG - open - inventory opened
+10:46:45 - DEBUG - drop_all_inv - dropping all items from our inventory 
+10:46:45 - DEBUG - close - trying to close objects inventory 1 / 3
+10:46:46 - DEBUG - move_to_waiting_queue - adding pego2C1 to waiting queue
+10:46:46 - INFO - execute_task - Executing task: pego2D1
+10:46:46 - DEBUG - check_state - Check_State lastError: 10.015415668487549  errorCount: 5
+10:46:46 - DEBUG - reset_state - resetting char state now
+10:46:47 - DEBUG - open - trying to open player inventory 1 / 3
+10:46:47 - DEBUG - open - inventory opened
+10:46:48 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:46:49 - DEBUG - close - trying to close objects inventory 1 / 3
+10:46:50 - DEBUG - open - trying to open teleporter 1 / 3
+10:46:51 - DEBUG - open - teleporter opened
+10:46:52 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:46:52 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.2200477123260498
+10:46:53 - INFO - teleport_not_default - Trying to click on GTpego2D1 in list
+10:46:59 - WARNING - teleport_not_default - orange pixel for teleporter ready not found likely already on the tp we are just exiting the tp treating it as the tp we should be on
+10:46:59 - DEBUG - close - trying to close the teleporter 1 / 3
+10:47:00 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:00 - DEBUG - reset_state - resetting char state now
+10:47:01 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:02 - DEBUG - set_yaw - setting yaw as 162.55
+10:47:02 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:02 - DEBUG - reset_state - resetting char state now
+10:47:03 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:04 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:47:04 - DEBUG - open - inventory opened
+10:47:06 - DEBUG - check_state - Check_State lastError: 30.373353481292725  errorCount: 5
+10:47:06 - DEBUG - reset_state - resetting char state now
+10:47:06 - DEBUG - close - trying to close objects inventory 1 / 3
+10:47:07 - DEBUG - open - trying to open player inventory 1 / 3
+10:47:08 - DEBUG - open - inventory opened
+10:47:08 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:47:09 - DEBUG - close - trying to close objects inventory 1 / 3
+10:47:10 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:47:11 - DEBUG - open - inventory opened
+10:47:11 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:47:11 - DEBUG - open - 0.16213345527648926 seconds taken for the reciving remote inventory to go away
+10:47:11 - DEBUG - drop_all_inv - dropping all items from our inventory 
+10:47:12 - DEBUG - transfer_all_from - transfering all from object
+10:47:13 - DEBUG - close - trying to close objects inventory 1 / 3
+10:47:14 - INFO - execute - bot has no crystals in hotbar we are skipping the deposit step
+10:47:14 - DEBUG - move_to_waiting_queue - adding pego2D1 to waiting queue
+10:47:14 - INFO - execute_task - Executing task: pego2E1
+10:47:14 - DEBUG - check_state - Check_State lastError: 37.85886597633362  errorCount: 5
+10:47:14 - DEBUG - reset_state - resetting char state now
+10:47:14 - DEBUG - open - trying to open player inventory 1 / 3
+10:47:15 - DEBUG - open - inventory opened
+10:47:15 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:47:16 - DEBUG - close - trying to close objects inventory 1 / 3
+10:47:18 - DEBUG - open - trying to open teleporter 1 / 3
+10:47:19 - DEBUG - open - teleporter opened
+10:47:20 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:47:20 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.2389688491821289
+10:47:21 - INFO - teleport_not_default - Trying to click on GTpego2E1 in list
+10:47:26 - DEBUG - open - trying to open up the tribelog screen
+10:47:26 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:47:27 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:27 - DEBUG - reset_state - resetting char state now
+10:47:28 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:29 - DEBUG - set_yaw - setting yaw as 72.78
+10:47:29 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:29 - DEBUG - reset_state - resetting char state now
+10:47:30 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:30 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:47:31 - DEBUG - open - inventory opened
+10:47:31 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:47:32 - DEBUG - open - 0.30059814453125 seconds taken for the reciving remote inventory to go away
+10:47:32 - DEBUG - drop_all_inv - dropping all items from our inventory 
+10:47:33 - DEBUG - transfer_all_from - transfering all from object
+10:47:33 - DEBUG - close - trying to close objects inventory 1 / 3
+10:47:35 - DEBUG - open - trying to open teleporter 1 / 3
+10:47:37 - DEBUG - open - teleporter opened
+10:47:37 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:47:37 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.22791314125061035
+10:47:38 - INFO - teleport_not_default - Trying to click on GTDEDI2 in list
+10:47:44 - DEBUG - open - trying to open up the tribelog screen
+10:47:45 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:47:46 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:46 - DEBUG - reset_state - resetting char state now
+10:47:47 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:47 - DEBUG - set_yaw - setting yaw as 72.61
+10:47:47 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:47 - DEBUG - reset_state - resetting char state now
+10:47:48 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:49 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:49 - DEBUG - reset_state - resetting char state now
+10:47:50 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:50 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:50 - DEBUG - reset_state - resetting char state now
+10:47:51 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:52 - DEBUG - set_yaw - setting yaw as 72.61
+10:47:52 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:47:52 - DEBUG - reset_state - resetting char state now
+10:47:53 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:47:53 - DEBUG - deposit_all - opening crystals
+10:47:55 - DEBUG - deposit_all - depositing in ele dedi
+10:47:59 - DEBUG - dedi_deposit - Deposit bottom row
+10:48:01 - DEBUG - vaults - openening up vault1 on the left side to depo['fabricated', 'pump', 'assault', 'mine', 'gacha']
+10:48:01 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:48:02 - DEBUG - open - inventory opened
+10:48:02 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:48:02 - DEBUG - open - 0.24674510955810547 seconds taken for the reciving remote inventory to go away
+10:48:03 - DEBUG - search_in_inventory - searching in inventory for fabricated
+10:48:04 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:05 - DEBUG - search_in_inventory - searching in inventory for pump
+10:48:06 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:07 - DEBUG - search_in_inventory - searching in inventory for assault
+10:48:08 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:09 - DEBUG - search_in_inventory - searching in inventory for mine
+10:48:10 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:11 - DEBUG - search_in_inventory - searching in inventory for gacha
+10:48:12 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:12 - DEBUG - close - trying to close objects inventory 1 / 3
+10:48:14 - DEBUG - vaults - openening up vault2 on the right side to depo['riot', 'cliff', 'tree', 'behe', 'sulf', 'dust']
+10:48:14 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:48:15 - DEBUG - open - inventory opened
+10:48:15 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:48:15 - DEBUG - open - 0.24721455574035645 seconds taken for the reciving remote inventory to go away
+10:48:16 - DEBUG - search_in_inventory - searching in inventory for riot
+10:48:17 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:18 - DEBUG - search_in_inventory - searching in inventory for cliff
+10:48:19 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:20 - DEBUG - search_in_inventory - searching in inventory for tree
+10:48:21 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:21 - DEBUG - search_in_inventory - searching in inventory for behe
+10:48:22 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:23 - DEBUG - search_in_inventory - searching in inventory for sulf
+10:48:24 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:25 - DEBUG - search_in_inventory - searching in inventory for dust
+10:48:26 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:27 - DEBUG - close - trying to close objects inventory 1 / 3
+10:48:28 - DEBUG - deposit_all - depositing in grinder
+10:48:29 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:48:30 - DEBUG - open - inventory opened
+10:48:30 - DEBUG - open - waiting for up too 10 seconds due to the reciving remote inventory is present
+10:48:30 - DEBUG - open - 0.34525370597839355 seconds taken for the reciving remote inventory to go away
+10:48:31 - DEBUG - transfer_all_inventory - transfering all from our inventory into strucutre
+10:48:32 - DEBUG - close - trying to close objects inventory 1 / 3
+10:48:34 - DEBUG - open - trying to open teleporter 1 / 3
+10:48:35 - DEBUG - open - teleporter opened
+10:48:36 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:48:36 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.24928498268127441
+10:48:37 - INFO - teleport_not_default - Trying to click on GTGRINDABLES2 in list
+10:48:38 - WARNING - teleport_not_default - Trying to click on GTGRINDABLES2 in list 2/3
+10:48:42 - DEBUG - open - trying to open up the tribelog screen
+10:48:43 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:48:44 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:48:44 - DEBUG - reset_state - resetting char state now
+10:48:45 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:48:45 - DEBUG - set_yaw - setting yaw as 72.61
+10:48:45 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:48:45 - DEBUG - reset_state - resetting char state now
+10:48:47 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:48:47 - DEBUG - deposit_all - collecting grindables
+10:48:48 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:48:52 - DEBUG - check_state - Check_State lastError: 135.6524019241333  errorCount: 5
+10:48:52 - DEBUG - reset_state - resetting char state now
+10:48:52 - DEBUG - open - trying to open player inventory 1 / 3
+10:48:53 - DEBUG - open - inventory opened
+10:48:53 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:48:54 - DEBUG - close - trying to close objects inventory 1 / 3
+10:48:55 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:48:59 - DEBUG - check_state - Check_State lastError: 143.1832206249237  errorCount: 5
+10:48:59 - DEBUG - reset_state - resetting char state now
+10:49:00 - DEBUG - open - trying to open player inventory 1 / 3
+10:49:00 - DEBUG - open - inventory opened
+10:49:01 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:49:02 - DEBUG - close - trying to close objects inventory 1 / 3
+10:49:03 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:49:07 - DEBUG - check_state - Check_State lastError: 150.65130138397217  errorCount: 5
+10:49:07 - DEBUG - reset_state - resetting char state now
+10:49:07 - DEBUG - open - trying to open player inventory 1 / 3
+10:49:08 - DEBUG - open - inventory opened
+10:49:08 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:49:09 - DEBUG - close - trying to close objects inventory 1 / 3
+10:49:10 - ERROR - open - unable to open up the objects inventory
+10:49:12 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+10:49:12 - DEBUG - zero - setting view angles back to 0
+10:49:12 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:12 - DEBUG - reset_state - resetting char state now
+10:49:14 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:14 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:14 - DEBUG - reset_state - resetting char state now
+10:49:15 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:15 - DEBUG - set_yaw - setting yaw as 162.49
+10:49:15 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:15 - DEBUG - reset_state - resetting char state now
+10:49:16 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:18 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:49:21 - DEBUG - check_state - Check_State lastError: 11.521363019943237  errorCount: 6
+10:49:21 - DEBUG - reset_state - resetting char state now
+10:49:22 - DEBUG - open - trying to open player inventory 1 / 3
+10:49:23 - DEBUG - open - inventory opened
+10:49:23 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:49:24 - DEBUG - close - trying to close objects inventory 1 / 3
+10:49:25 - DEBUG - check_state - Not in tekpod, lastError: 14.87083649635315  errorCount: 6
+10:49:25 - WARNING - check_state - tping back to render bed to replenish food and water | 2= water 3= food  4 = Error rate | reason:4
+10:49:26 - DEBUG - open - trying to open teleporter 1 / 3
+10:49:27 - DEBUG - open - teleporter opened
+10:49:28 - DEBUG - teleport_not_default - teleport icons are not on the teleport screen waiting for up to 10 seconds for them to appear
+10:49:28 - INFO - teleport_not_default - time taken for teleporter icon to appear : 0.2545924186706543
+10:49:29 - INFO - teleport_not_default - Trying to click on GTRENDER2 in list
+10:49:34 - DEBUG - open - trying to open up the tribelog screen
+10:49:35 - DEBUG - close - trying to close out of the tribelog screen 1 / 3 
+10:49:36 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:36 - DEBUG - reset_state - resetting char state now
+10:49:37 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:37 - DEBUG - set_yaw - setting yaw as 162.49
+10:49:37 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:37 - DEBUG - reset_state - resetting char state now
+10:49:38 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:39 - DEBUG - zero - setting view angles back to 0
+10:49:39 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:39 - DEBUG - reset_state - resetting char state now
+10:49:40 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:41 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:41 - DEBUG - reset_state - resetting char state now
+10:49:42 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:42 - DEBUG - set_yaw - setting yaw as -0.07
+10:49:42 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:42 - DEBUG - reset_state - resetting char state now
+10:49:43 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:44 - WARNING - enter_tekpod - We see the bed radical and will select laydown, Render_Flag: False, Attempts: 1
+10:49:47 - DEBUG - open - trying to open player inventory 1 / 3
+10:49:48 - DEBUG - open - inventory opened
+10:49:48 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:49:49 - DEBUG - check_buffs - lastError: 39.556983947753906  resetting errorCount: 6
+10:49:49 - DEBUG - close - trying to close objects inventory 1 / 3
+10:49:50 - CRITICAL - enter_tekpod - bot is now in the render pod rendering the station after 1 attempts
+10:49:53 - DEBUG - reset_state - resetting char state now
+10:49:56 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:56 - DEBUG - reset_state - resetting char state now
+10:49:57 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:49:57 - DEBUG - set_yaw - setting yaw as -0.07
+10:49:57 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:49:57 - DEBUG - reset_state - resetting char state now
+10:49:58 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:50:00 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:50:05 - DEBUG - check_state - Check_State lastError: 54.95789384841919  errorCount: 0
+10:50:05 - DEBUG - reset_state - resetting char state now
+10:50:06 - DEBUG - open - trying to open player inventory 1 / 3
+10:50:06 - DEBUG - open - inventory opened
+10:50:07 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:50:08 - DEBUG - close - trying to close objects inventory 1 / 3
+10:50:09 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:50:14 - DEBUG - check_state - Check_State lastError: 64.30340385437012  errorCount: 0
+10:50:14 - DEBUG - reset_state - resetting char state now
+10:50:15 - DEBUG - open - trying to open player inventory 1 / 3
+10:50:16 - DEBUG - open - inventory opened
+10:50:16 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:50:18 - DEBUG - close - trying to close objects inventory 1 / 3
+10:50:19 - ERROR - open - unable to open up the objects inventory
+10:50:22 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+10:50:22 - DEBUG - zero - setting view angles back to 0
+10:50:22 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:50:22 - DEBUG - reset_state - resetting char state now
+10:50:23 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:50:24 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:50:24 - DEBUG - reset_state - resetting char state now
+10:50:25 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:50:26 - DEBUG - set_yaw - setting yaw as -151.24
+10:50:26 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:50:26 - DEBUG - reset_state - resetting char state now
+10:50:28 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:50:29 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:50:33 - DEBUG - check_state - Check_State lastError: 14.401292562484741  errorCount: 1
+10:50:33 - DEBUG - reset_state - resetting char state now
+10:50:34 - DEBUG - open - trying to open player inventory 1 / 3
+10:50:34 - DEBUG - open - inventory opened
+10:50:35 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:50:36 - DEBUG - close - trying to close objects inventory 1 / 3
+10:50:37 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:50:40 - DEBUG - check_state - Check_State lastError: 21.54987406730652  errorCount: 1
+10:50:40 - DEBUG - reset_state - resetting char state now
+10:50:41 - DEBUG - open - trying to open player inventory 1 / 3
+10:50:42 - DEBUG - open - inventory opened
+10:50:42 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:50:43 - DEBUG - close - trying to close objects inventory 1 / 3
+10:50:44 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:50:48 - DEBUG - check_state - Check_State lastError: 28.780025482177734  errorCount: 1
+10:50:48 - DEBUG - reset_state - resetting char state now
+10:50:48 - DEBUG - open - trying to open player inventory 1 / 3
+10:50:49 - DEBUG - open - inventory opened
+10:50:49 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:50:50 - DEBUG - close - trying to close objects inventory 1 / 3
+10:50:51 - ERROR - open - unable to open up the objects inventory
+10:50:53 - ERROR - collect_grindables - couldnt open up the grinder while trying to deposit
+10:50:54 - DEBUG - zero - setting view angles back to 0
+10:50:54 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:50:54 - DEBUG - reset_state - resetting char state now
+10:50:55 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:50:55 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:50:55 - DEBUG - reset_state - resetting char state now
+10:50:56 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:50:56 - DEBUG - set_yaw - setting yaw as 162.56
+10:50:56 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:50:56 - DEBUG - reset_state - resetting char state now
+10:50:57 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:50:58 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:51:02 - DEBUG - check_state - Check_State lastError: 11.413124084472656  errorCount: 2
+10:51:02 - DEBUG - reset_state - resetting char state now
+10:51:03 - DEBUG - open - trying to open player inventory 1 / 3
+10:51:04 - DEBUG - open - inventory opened
+10:51:04 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:51:05 - DEBUG - close - trying to close objects inventory 1 / 3
+10:51:06 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:51:10 - DEBUG - check_state - Check_State lastError: 18.76848292350769  errorCount: 2
+10:51:10 - DEBUG - reset_state - resetting char state now
+10:51:10 - DEBUG - open - trying to open player inventory 1 / 3
+10:51:11 - DEBUG - open - inventory opened
+10:51:12 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:51:13 - DEBUG - close - trying to close objects inventory 1 / 3
+10:51:13 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:51:17 - DEBUG - check_state - Check_State lastError: 26.11519956588745  errorCount: 2
+10:51:17 - DEBUG - reset_state - resetting char state now
+10:51:18 - DEBUG - open - trying to open player inventory 1 / 3
+10:51:18 - DEBUG - open - inventory opened
+10:51:19 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:51:20 - DEBUG - close - trying to close objects inventory 1 / 3
+10:51:21 - ERROR - open - unable to open up the objects inventory
+10:51:21 - ERROR - collect_grindables - while trying to deposit we couldnt access grinder
+10:51:26 - DEBUG - dedi_deposit - Deposit bottom row
+10:51:28 - DEBUG - open - trying to open player inventory 1 / 3
+10:51:32 - DEBUG - open - trying to open player inventory 2 / 3
+10:51:35 - DEBUG - open - trying to open player inventory 3 / 3
+10:51:38 - ERROR - open - unable to open up the players inventory
+10:51:39 - DEBUG - move_to_waiting_queue - adding pego2E1 to waiting queue
+10:51:39 - INFO - execute_task - Executing task: pego2F1
+10:51:39 - DEBUG - check_state - Check_State lastError: 0.8322353363037109  errorCount: 5
+10:51:39 - DEBUG - reset_state - resetting char state now
+10:51:40 - DEBUG - reset_state - Bed screen is open
+10:51:40 - DEBUG - spawn_in - char is in the fast travel screen
+10:51:43 - ERROR - spawn_in - the bed char tried spawning on is not in the ready state or cant be found exiting out of bed screen now
+10:51:43 - DEBUG - close - trying to close the bed 1 / 3
+10:51:44 - DEBUG - open - trying to open player inventory 1 / 3
+10:51:48 - DEBUG - open - trying to open player inventory 2 / 3
+10:51:48 - DEBUG - open - inventory opened
+10:51:49 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:51:50 - DEBUG - close - trying to close objects inventory 1 / 3
+10:51:51 - DEBUG - open - trying to open teleporter 1 / 3
+10:51:56 - WARNING - open - teleporter didnt open retrying now
+10:51:56 - DEBUG - check_state - Check_State lastError: 17.912638664245605  errorCount: 5
+10:51:56 - DEBUG - reset_state - resetting char state now
+10:51:57 - DEBUG - open - trying to open player inventory 1 / 3
+10:51:58 - DEBUG - open - inventory opened
+10:51:58 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:51:59 - DEBUG - close - trying to close objects inventory 1 / 3
+10:52:00 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:52:00 - DEBUG - reset_state - resetting char state now
+10:52:01 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:52:01 - DEBUG - open - trying to open teleporter 2 / 3
+10:52:06 - WARNING - open - teleporter didnt open retrying now
+10:52:06 - DEBUG - check_state - Check_State lastError: 27.874584674835205  errorCount: 5
+10:52:06 - DEBUG - reset_state - resetting char state now
+10:52:07 - DEBUG - open - trying to open player inventory 1 / 3
+10:52:08 - DEBUG - open - inventory opened
+10:52:08 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:52:09 - DEBUG - close - trying to close objects inventory 1 / 3
+10:52:10 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:52:10 - DEBUG - reset_state - resetting char state now
+10:52:11 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:52:12 - DEBUG - open - trying to open teleporter 3 / 3
+10:52:16 - WARNING - open - teleporter didnt open retrying now
+10:52:16 - DEBUG - check_state - Check_State lastError: 38.00542092323303  errorCount: 5
+10:52:16 - DEBUG - reset_state - resetting char state now
+10:52:17 - DEBUG - open - trying to open player inventory 1 / 3
+10:52:18 - DEBUG - open - inventory opened
+10:52:18 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:52:19 - DEBUG - close - trying to close objects inventory 1 / 3
+10:52:20 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:52:20 - DEBUG - reset_state - resetting char state now
+10:52:21 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:52:22 - ERROR - open - unable to open up the teleporter after 3 attempts
+10:52:22 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:52:26 - DEBUG - check_state - Check_State lastError: 47.65863108634949  errorCount: 5
+10:52:26 - DEBUG - reset_state - resetting char state now
+10:52:27 - DEBUG - open - trying to open player inventory 1 / 3
+10:52:27 - DEBUG - open - inventory opened
+10:52:28 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:52:29 - DEBUG - close - trying to close objects inventory 1 / 3
+10:52:29 - DEBUG - open - trying to open strucuture inventory 2 / 3
+10:52:33 - DEBUG - check_state - Check_State lastError: 54.84655284881592  errorCount: 5
+10:52:33 - DEBUG - reset_state - resetting char state now
+10:52:34 - DEBUG - open - trying to open player inventory 1 / 3
+10:52:35 - DEBUG - open - inventory opened
+10:52:35 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:52:36 - DEBUG - close - trying to close objects inventory 1 / 3
+10:52:37 - DEBUG - open - trying to open strucuture inventory 3 / 3
+10:52:41 - DEBUG - check_state - Check_State lastError: 62.098817110061646  errorCount: 5
+10:52:41 - DEBUG - reset_state - resetting char state now
+10:52:41 - DEBUG - open - trying to open player inventory 1 / 3
+10:52:42 - DEBUG - open - inventory opened
+10:52:42 - DEBUG - open - trying to open up the buff menu 1 / 10
+10:52:43 - DEBUG - close - trying to close objects inventory 1 / 3
+10:52:44 - ERROR - open - unable to open up the objects inventory
+10:52:44 - DEBUG - pego_pickup - the pego at GTpego2F1 could not be accessed retrying 1 / 3
+10:52:44 - DEBUG - zero - setting view angles back to 0
+10:52:44 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:52:44 - DEBUG - reset_state - resetting char state now
+10:52:46 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:52:46 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:52:46 - DEBUG - reset_state - resetting char state now
+10:52:47 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:52:47 - DEBUG - set_yaw - setting yaw as -101.84
+10:52:47 - DEBUG - console_ccc - trying to get ccc data 1 / 3
+10:52:47 - DEBUG - reset_state - resetting char state now
+10:52:48 - DEBUG - enter_data - using uparrow to put ccc into the console
+10:52:49 - DEBUG - open - trying to open strucuture inventory 1 / 3
+10:52:53 - DEBUG - check_state - Check_State lastError: 8.981276512145996  errorCount: 6
+10:52:53 - DEBUG - reset_state - resetting char state now
+10:52:54 - DEBUG - open - trying to open player inventory 1 / 3
+10:52:54 - DEBUG - open - inventory opened
+10:52:56 - DEBUG - close - trying to close objects inventory 1 / 3
+10:52:57 - DEBUG - check_state - Not in tekpod, lastError: 12.782129049301147  errorCount: 6
+10:52:57 - WARNING - check_state - tping back to render bed to replenish food and water | 2= water 3= food  4 = Error rate | reason:4
+10:52:58 - DEBUG - open - trying to open teleporter 1 / 3

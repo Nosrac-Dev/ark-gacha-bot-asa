@@ -1,5 +1,89 @@
 [  
     {
+        "name": "gachaMale5A",
+        "teleporter": "GT5A",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale5A",
+        "teleporter": "GT5A",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale5B",
+        "teleporter": "GT5B",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale5B",
+        "teleporter": "GT5B",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale5C",
+        "teleporter": "GT5C",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale5C",
+        "teleporter": "GT5C",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale5D",
+        "teleporter": "GT5D",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale5D",
+        "teleporter": "GT5D",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale5E",
+        "teleporter": "GT5E",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale5E",
+        "teleporter": "GT5E",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale5F",
+        "teleporter": "GT5F",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale5F",
+        "teleporter": "GT5F",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale5G",
+        "teleporter": "GT5G",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale5G",
+        "teleporter": "GT5G",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
         "name": "gachaMale1A",
         "teleporter": "GT1A",
         "resource_type": "element",
@@ -120,44 +204,44 @@
         "side": "right"
     },
     {
-        "name": "gachaMale2A",
-        "teleporter": "GT2A",
+        "name": "gachaMale1A",
+        "teleporter": "GT1A",
         "resource_type": "element",
         "side": "left"
     },
     {
-        "name": "gachaFemale2A",
-        "teleporter": "GT2A",
+        "name": "gachaFemale1A",
+        "teleporter": "GT1A",
         "resource_type": "element",
         "side": "right"
     },
     {
-        "name": "gachaMale2B",
-        "teleporter": "GT2B",
+        "name": "gachaMale1B",
+        "teleporter": "GT1B",
         "resource_type": "element",
         "side": "left"
     },
     {
-        "name": "gachaFemale2B",
-        "teleporter": "GT2B",
+        "name": "gachaFemale1B",
+        "teleporter": "GT1B",
         "resource_type": "element",
         "side": "right"
     },
     {
-        "name": "gachaMale2C",
-        "teleporter": "GT2C",
+        "name": "gachaMale1C",
+        "teleporter": "GT1C",
         "resource_type": "element",
         "side": "left"
     },
     {
-        "name": "gachaFemale2C",
-        "teleporter": "GT2C",
+        "name": "gachaFemale1C",
+        "teleporter": "GT1C",
         "resource_type": "element",
         "side": "right"
     },
     {
-        "name": "gachaMale2D",
-        "teleporter": "GT2D",
+        "name": "gachaMale1D",
+        "teleporter": "GT1D",
         "resource_type": "element",
         "side": "left"
     },
@@ -454,6 +538,125 @@
         "teleporter": "GT5G",
         "resource_type": "element",
         "side": "right"
+    },
+    {
+        "name": "gachaMale1A",
+        "teleporter": "GT1A",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1A",
+        "teleporter": "GT1A",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1B",
+        "teleporter": "GT1B",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1B",
+        "teleporter": "GT1B",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1C",
+        "teleporter": "GT1C",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1C",
+        "teleporter": "GT1C",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1D",
+        "teleporter": "GT1D",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1D",
+        "teleporter": "GT1D",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1E",
+        "teleporter": "GT1E",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1E",
+        "teleporter": "GT1E",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1F",
+        "teleporter": "GT1F",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1F",
+        "teleporter": "GT1F",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1G",
+        "teleporter": "GT1G",
+        "resource_type": "element",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1G",
+        "teleporter": "GT1G",
+        "resource_type": "element",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1H",
+        "teleporter": "GT1H",
+        "resource_type": "blackpearl",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1H",
+        "teleporter": "GT1H",
+        "resource_type": "blackpearl",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1S",
+        "teleporter": "GT1S",
+        "resource_type": "BlueGem",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1S",
+        "teleporter": "GT1S",
+        "resource_type": "GreenGem",
+        "side": "right"
+    },
+    {
+        "name": "gachaMale1P",
+        "teleporter": "GT1P",
+        "resource_type": "Sap",
+        "side": "left"
+    },
+    {
+        "name": "gachaFemale1P",
+        "teleporter": "GT1P",
+        "resource_type": "Sap",
+        "side": "right"
     }
-
 ]

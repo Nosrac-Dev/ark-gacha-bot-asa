@@ -7,6 +7,7 @@ import time
 import settings
 import ASA.config
 import ASA.player.player_inventory
+import ASA.player.player_state
 
 class check_buffs():
     def __init__ (self):
@@ -37,10 +38,14 @@ class check_buffs():
         return template.check_buffs("tek_pod_buff",0.7)
     
     def check_buffs(self):
+        logs.logger.debug(f"Check_State lastError: {time.time() -  ASA.player.player_state.lastError}  errorCount: { ASA.player.player_state.errorCount}")
         self.open()
         type = 0 
+        time.sleep(0.5*settings.sleep_constant) #Bitbucket Prevent code falling through due to buffs not loading quick enough
         if self.in_tekpod(): #if the char is in the tekpod we cannot be starving therefore we know what state we are in 
-            type = 1
+            type = 1      
+            logs.logger.debug(f"lastError: {time.time() - ASA.player.player_state.lastError}  resetting errorCount: {ASA.player.player_state.errorCount}")
+            ASA.player.player_state.errorCount = 0 
         elif self.is_dehydrated():
             type = 2
         elif self.is_starving():

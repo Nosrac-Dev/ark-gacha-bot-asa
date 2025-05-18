@@ -12,7 +12,9 @@ import pyautogui
 import win32clipboard
 
 
+global suspendFlag 
 
+suspendFlag = False
 last_command = ""
 
 def is_open():
@@ -33,15 +35,19 @@ def enter_data(data:str):
     last_command = data
     
 def console_ccc():
+
     data = None
     attempts = 0
     while data == None:
+        while suspendFlag == True:
+            time.sleep(0.1)
         attempts += 1
         logs.logger.debug(f"trying to get ccc data {attempts} / {ASA.config.console_ccc_attempts}")
         ASA.player.player_state.reset_state() #reset state at the start to make sure we can open up the console window
         count = 0
         while not is_open():
             count += 1
+            windows.click(variables.get_pixel_loc("screen_center_x"),variables.get_pixel_loc("screen_center_y")) #Bitbucket Make sure not in chat
             utils.press_key("ConsoleKeys")
             template.template_await_true(is_open,1)
             if count >= ASA.config.console_open_attempts:

@@ -30,7 +30,9 @@ data = {
     "buff_button_y": 1180,
     "drop_all_obj_x":1978,
     "back_button_tp_x": 240,
-    "back_button_tp_y": 1285
+    "back_button_tp_y": 1285,
+    "screen_center_x": 1280, #Bitbucket
+    "screen_center_y": 720 #Bitbucket
 }
 
 def get_pixel_loc(location):

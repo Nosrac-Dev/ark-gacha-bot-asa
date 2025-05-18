@@ -14,6 +14,7 @@ import ASA.player.buffs
 global render_flag
 render_flag = False #starts as false as obviously we are not rendering anything
 
+
 def is_open():
     return template.check_template_no_bounds("bed_radical",0.6)
 
@@ -36,17 +37,43 @@ def enter_tekpod():
         pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
         
         if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
-            pyautogui.keyUp(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
+            logs.logger.warning(f"We don't see the bed radical, Render_Flag: {render_flag}, Attempts: {attempts}")
+            pyautogui.keyUp(local_player.get_input_settings("Use"))
             time.sleep(0.5*settings.sleep_constant)    
             utils.press_key(local_player.get_input_settings("Run")) 
             utils.zero()
             utils.set_yaw(settings.station_yaw)
-            utils.turn_down(15)
+            utils.turn_down(60)
             time.sleep(0.3*settings.sleep_constant)
             pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
             time.sleep(0.5*settings.sleep_constant)
 
+        if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+            logs.logger.warning(f"We don't see the bed radical, Render_Flag: {render_flag}, Attempts: {attempts}")
+            pyautogui.keyUp(local_player.get_input_settings("Use"))
+            time.sleep(0.5*settings.sleep_constant)    
+            utils.press_key(local_player.get_input_settings("Run")) 
+            utils.zero()
+            utils.set_yaw(settings.station_yaw)
+            utils.turn_right(30)
+            time.sleep(0.3*settings.sleep_constant)
+            pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
+            time.sleep(0.5*settings.sleep_constant)  
+
+        if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+            logs.logger.warning(f"We don't see the bed radical, Render_Flag: {render_flag}, Attempts: {attempts}")
+            pyautogui.keyUp(local_player.get_input_settings("Use"))
+            time.sleep(0.5*settings.sleep_constant)    
+            utils.press_key(local_player.get_input_settings("Run")) 
+            utils.zero()
+            utils.set_yaw(settings.station_yaw)
+            utils.turn_left(30)
+            time.sleep(0.3*settings.sleep_constant)
+            pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
+            time.sleep(0.5*settings.sleep_constant)     
+
         if template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+            logs.logger.warning(f"We see the bed radical and will select laydown, Render_Flag: {render_flag}, Attempts: {attempts}")
             time.sleep(0.2*settings.sleep_constant)
             windows.move_mouse(variables.get_pixel_loc("radical_laydown_x"), variables.get_pixel_loc("radical_laydown_y"))
             time.sleep(0.5*settings.sleep_constant)
@@ -55,17 +82,19 @@ def enter_tekpod():
 
         if buffs.check_buffs() == 1:
             logs.logger.critical(f"bot is now in the render pod rendering the station after {attempts} attempts")
+            ASA.player.player_state.errorCount = 0
             render_flag = True
             utils.current_pitch = 0 # resetting the pitch for when char leaves the tekpod
         else:
-            ASA.player.player_state.check_state()
+            #ASA.player.player_state.check_state() #Bitbucket 5/13 May have found error. Checkstate will leave tek pod if in it.
             logs.logger.error(f"we were unable to get into the tekpod on the {attempts} attempt retrying now")
 
-        if attempts >= bot.config.render_attempts:
+        if attempts >= bot.config.render_attempts and render_flag == False:    #Bitbucket Added Render_flag check in case we made it into Tek_pod:
             logs.logger.error(f"we were unable to get into the tekpod after {attempts} attempts pausing execution to avoid unbreakable loops")
             break
 
 def leave_tekpod():
+    logs.logger.debug(f"leave_tekpod")
     global render_flag
     buffs = ASA.player.buffs.check_buffs()
     ASA.player.player_state.reset_state() 

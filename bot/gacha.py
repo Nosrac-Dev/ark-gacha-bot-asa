@@ -9,8 +9,12 @@ import settings
 import ASA.config 
 import ASA.strucutres.inventory
 import ASA.player.player_inventory
+import ASA.player.player_state
 import bot.config
     
+global lastError
+global errorCount
+
 def drop_off(metadata): #drop off for 150 stacks of seeds
     direction = metadata.side
     if direction == "right":
@@ -33,6 +37,8 @@ def drop_off(metadata): #drop off for 150 stacks of seeds
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.gacha_attempts:
             logs.logger.error(f"the {direction} gacha at {metadata.name} could not be accesssed after {attempt} attempts")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             break
     temp = False
     if ASA.strucutres.inventory.is_open():
@@ -134,6 +140,8 @@ def collection(metadata):
         ASA.strucutres.inventory.open()
         if attempt >= bot.config.gacha_attempts:
             logs.logger.error(f"the {direction} gacha at {metadata.name} could not be accesssed after {attempt} attempts")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
 
     if ASA.strucutres.inventory.is_open():
         ASA.strucutres.inventory.transfer_all_from()

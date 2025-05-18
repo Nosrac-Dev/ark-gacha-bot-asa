@@ -8,6 +8,8 @@ import settings
 import ASA.config 
 import ASA.player.player_state
 
+
+
 def is_open():
     return template.check_template("inventory",0.7)
     
@@ -24,6 +26,8 @@ def open():
         #check state of the char before redoing
         if attempts >= ASA.config.inventory_open_attempts:
             logs.logger.error(f"unable to open up the players inventory")
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             break
     time.sleep(0.3*settings.sleep_constant)
 
@@ -38,6 +42,8 @@ def close():
 
         if attempts >= ASA.config.inventory_close_attempts:
             logs.logger.error(f"unable to close the objects inventory after {attempts} attempts") 
+            ASA.player.player_state.lastError = time.time()
+            ASA.player.player_state.errorCount += 1
             #check state of the char the reason we can do it now is that the latter should spam click close inv 
             break
     time.sleep(0.3*settings.sleep_constant)
@@ -74,8 +80,9 @@ def implant_eat():
         utils.press_key("ShowMyInventory")
         open() 
         close() 
-        for x in range(30):
-            utils.press_key("s") # moving backwards so we dont die on tps and create bags
+        for x in range(60):
+            utils.press_key("'") # moving backwards so we dont die on tps and create bags
+            utils.press_key("]") # moving backwards so we dont die on tps and create bags
         open()
         windows.move_mouse(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
