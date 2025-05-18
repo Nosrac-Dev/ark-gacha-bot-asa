@@ -10,7 +10,6 @@ import ASA.config
 import ASA.stations.custom_stations
 import ASA.player.tribelog
 
-
 def is_open():
     return template.check_template("teleporter_title",0.7)
     
@@ -26,10 +25,11 @@ def open():
     
         if not template.template_await_true(template.check_template,2*settings.sleep_constant,"teleporter_title",0.7):
             logs.logger.warning("teleporter didnt open retrying now")
-            ASA.player.player_state.check_state()
+            #ASA.player.player_state.check_state()   #Bitbucket removed for testing
             # check state of char which should close out of any windows we are in or rejoin the game
             utils.pitch_zero() # reseting the chars pitch/yaw
             utils.turn_down(80)
+            utils.turn_right(90*(-1**attempts))
             time.sleep(0.2*settings.sleep_constant) 
         else:
             logs.logger.debug(f"teleporter opened")   
@@ -58,6 +58,7 @@ def teleport_not_default(arg):
         stationdata = ASA.stations.custom_stations.get_station_metadata(arg)
 
     teleporter_name = stationdata.name
+    logs.logger.info(f"Teleporting to: {teleporter_name}")
     time.sleep(0.3*settings.sleep_constant)
     utils.turn_down(80)
     time.sleep(0.3*settings.sleep_constant)

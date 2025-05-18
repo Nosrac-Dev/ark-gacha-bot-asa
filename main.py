@@ -227,10 +227,14 @@ async def reconnect(interaction: discord.Interaction, confirm:bool):
     time.sleep(60) # takes a while for the reonnect to actually go into action
 
 @bot.tree.command(name="suspend", description="Suspend bot while true") #Bitbucket 
-async def suspend(interaction: discord.Interaction, flag:bool):
-    console.suspendFlag = flag
-    await interaction.response.send_message(f"Changing suspend state to {flag}")
+async def suspend(interaction: discord.Interaction):
+    console.suspendFlag = True
+    await interaction.response.send_message(f"Suspending state when accessing console")
 
+@bot.tree.command(name="resume", description="Resume bot") #Bitbucket 
+async def resume(interaction: discord.Interaction):
+    console.suspendFlag = False
+    await interaction.response.send_message(f"Resuming state when accessing console")
 
 
 

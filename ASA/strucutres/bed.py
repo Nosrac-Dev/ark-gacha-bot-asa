@@ -33,22 +33,36 @@ def close():
             
 
 def spawn_in(bed_name:str):
+    logs.logger.debug(f"Attempting to spawn in {bed_name}")
     if not is_open():
         ASA.player.player_inventory.implant_eat()
         
     if is_open():
         state = "death screen" if is_dead() else "fast travel screen"
         logs.logger.debug(f"char is in the {state}")
+        time.sleep(0.4*settings.sleep_constant)
         search_bar_x = variables.get_pixel_loc("search_bar_bed_dead_x" if is_dead() else "search_bar_bed_alive_x")
         windows.click(search_bar_x, variables.get_pixel_loc("search_bar_bed_y")) #search bar y axis is the same for both death/alive 
         
         utils.ctrl_a() #CTRL A removes all previous data in the search bar 
         utils.write(bed_name)
-
-        time.sleep(0.2*settings.sleep_constant)
+        time.sleep(0.4*settings.sleep_constant)
+        logs.logger.info(f"Trying to click on bed {bed_name} in list")
         windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
 
-        if not template.template_await_true(template.check_template,1,"ready_clicked_bed",0.7): # waiting for the bed to appear as ready to spawn in
+        if not template.template_await_true(template.check_template,3,"ready_clicked_bed",0.7): # waiting for the bed to appear as ready to spawn in
+            windows.click(variables.get_pixel_loc("search_bar_x"),variables.get_pixel_loc("search_bar_bed_y")) #search bar y axis is the same for both death/alive 
+            utils.ctrl_a()
+            utils.write(tbed_name)
+            time.sleep(0.4*settings.sleep_constant) 
+            logs.logger.warning(f"Trying to click on bed {bed_name} in list 2/3")
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket
+           
+        if not template.template_await_true(template.check_template,3,"ready_clicked_bed",0.7): # waiting for the bed to appear as ready to spawn in
+            logs.logger.warning(f"Trying to click on {bed_name} in list 3/3")
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket   
+
+        if not template.template_await_true(template.check_template,3,"ready_clicked_bed",0.7): # waiting for the bed to appear as ready to spawn in
             logs.logger.error(f"the bed char tried spawning on is not in the ready state or cant be found exiting out of bed screen now")
             close()
             return    # no need to continue with this therefore we should just leave func     

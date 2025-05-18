@@ -43,10 +43,34 @@ def enter_tekpod():
             utils.press_key(local_player.get_input_settings("Run")) 
             utils.zero()
             utils.set_yaw(settings.station_yaw)
-            utils.turn_down(15)
+            utils.turn_down(60)
             time.sleep(0.3*settings.sleep_constant)
             pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
             time.sleep(0.5*settings.sleep_constant)
+
+        if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+            logs.logger.warning(f"We don't see the bed radical, Render_Flag: {render_flag}, Attempts: {attempts}")
+            pyautogui.keyUp(local_player.get_input_settings("Use"))
+            time.sleep(0.5*settings.sleep_constant)    
+            utils.press_key(local_player.get_input_settings("Run")) 
+            utils.zero()
+            utils.set_yaw(settings.station_yaw)
+            utils.turn_right(30)
+            time.sleep(0.3*settings.sleep_constant)
+            pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
+            time.sleep(0.5*settings.sleep_constant)  
+
+        if not template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
+            logs.logger.warning(f"We don't see the bed radical, Render_Flag: {render_flag}, Attempts: {attempts}")
+            pyautogui.keyUp(local_player.get_input_settings("Use"))
+            time.sleep(0.5*settings.sleep_constant)    
+            utils.press_key(local_player.get_input_settings("Run")) 
+            utils.zero()
+            utils.set_yaw(settings.station_yaw)
+            utils.turn_left(30)
+            time.sleep(0.3*settings.sleep_constant)
+            pyautogui.keyDown(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
+            time.sleep(0.5*settings.sleep_constant)     
 
         if template.template_await_true(template.check_template_no_bounds,1,"bed_radical",0.6):
             logs.logger.warning(f"We see the bed radical and will select laydown, Render_Flag: {render_flag}, Attempts: {attempts}")
@@ -70,6 +94,7 @@ def enter_tekpod():
             break
 
 def leave_tekpod():
+    logs.logger.debug(f"leave_tekpod")
     global render_flag
     buffs = ASA.player.buffs.check_buffs()
     ASA.player.player_state.reset_state() 

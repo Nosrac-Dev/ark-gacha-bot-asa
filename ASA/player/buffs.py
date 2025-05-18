@@ -38,6 +38,7 @@ class check_buffs():
         return template.check_buffs("tek_pod_buff",0.7)
     
     def check_buffs(self):
+        logs.logger.debug(f"Check_State lastError: {time.time() -  ASA.player.player_state.lastError}  errorCount: { ASA.player.player_state.errorCount}")
         self.open()
         type = 0 
         time.sleep(0.5*settings.sleep_constant) #Bitbucket Prevent code falling through due to buffs not loading quick enough

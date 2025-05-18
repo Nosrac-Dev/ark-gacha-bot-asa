@@ -39,10 +39,12 @@ class gacha_station(base_task):
 
 
     def execute(self):
-        player_state.check_state()
         global berry_station
         global last_berry
-        
+        if (player_state.check_state() == 1):
+            logs.logger.debug(f"Returning to {self.teleporter_name}")
+            teleporter.teleport_not_default(self.teleporter_name) 
+
         temp = False
         time_between = time.time() - last_berry
 
@@ -91,7 +93,9 @@ class pego_station(base_task):
         self.delay = delay
 
     def execute(self):
-        player_state.check_state()
+        if (player_state.check_state() == 1):
+            logs.logger.debug(f"Returning to {self.teleporter_name}")
+            teleporter.teleport_not_default(self.teleporter_name)
         
         pego_metadata = custom_stations.get_station_metadata(self.teleporter_name)
         dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)

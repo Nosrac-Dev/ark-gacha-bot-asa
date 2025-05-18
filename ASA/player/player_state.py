@@ -22,6 +22,7 @@ errorCount = 0
 lastError = time.time()
 
 def check_disconnected():
+    logs.logger.debug(f"check_disconnected")
     rejoin = reconnect.start.reconnect(str(settings.server_number))
     
     if rejoin.check_disconected():
@@ -72,4 +73,7 @@ def check_state(): # mainliy checked at the start of every task to check for foo
             time.sleep(30) # assuming 30 seconds should replenish the player back to 100/100
         bot.render.leave_tekpod()
         time.sleep(1)
+        return 1
+    return 0
+
 
