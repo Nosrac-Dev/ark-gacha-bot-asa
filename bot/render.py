@@ -79,6 +79,12 @@ def enter_tekpod():
             time.sleep(0.5*settings.sleep_constant)
             pyautogui.keyUp(chr(utils.keymap_return(local_player.get_input_settings("Use"))))
             time.sleep(1)
+        else:
+            utils.zero()
+            utils.set_yaw(settings.station_yaw)
+            utils.press_key("+") # moving forwards
+            utils.press_key("+") # moving forwards
+            utils.press_key("+") # moving forwards
 
         if buffs.check_buffs() == 1:
             logs.logger.critical(f"bot is now in the render pod rendering the station after {attempts} attempts")

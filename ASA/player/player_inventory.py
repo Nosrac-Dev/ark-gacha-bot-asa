@@ -91,6 +91,7 @@ def implant_eat():
 
         if not template.template_await_true(template.check_template,10,"death_regions",0.7):
             #check state of the char before redoing
+            logs.logger.debugr(f"Validate Death")
             ASA.player.player_state.check_state()
             ...
                 

@@ -33,6 +33,7 @@ def open():
                 logs.logger.debug(f"{time.time() - start} seconds taken for the reciving remote inventory to go away")
                 break
         else:
+            logs.logger.debug(f"Clicking center of screen to make sure we exit chat")
             windows.click(variables.get_pixel_loc("screen_center_x"),variables.get_pixel_loc("screen_center_y")) #Bitbucket
   
         #check state of the char before redoing

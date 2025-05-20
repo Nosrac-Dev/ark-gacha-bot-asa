@@ -16,7 +16,8 @@ import sys
 import pygetwindow as gw
 import logs.gachalogs as gachalogs
 import logging as logstuff
-from ASA.player import console
+from ASA.player import console, player_state
+
 
 
 intents = discord.Intents.default()
@@ -216,8 +217,8 @@ async def log_reset(interaction: discord.Interaction):
 #    running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))@bot.tree.command(name="berry", description="Flag bot to refill iguanadon berries") #Bitbucket Command to change berry_station global variable to true 
 
 @bot.tree.command(name="berry", description="Flag to refill Berries") #Bitbucket 
-async def berry(interaction: discord.Interaction, refill:bool):
-    stations.berry_station = refill
+async def berry(interaction: discord.Interaction):
+    stations.berry_station = True
     await interaction.response.send_message(f"berry_station has been set to {stations.berry_station}")
 
 @bot.tree.command(name="reconnect", description="Reconnect to server. Helpful if items did not render in") #Bitbucket 
@@ -236,7 +237,15 @@ async def resume(interaction: discord.Interaction):
     console.suspendFlag = False
     await interaction.response.send_message(f"Resuming state when accessing console")
 
+@bot.tree.command(name="errorlimit", description="Flag to refill Berries") #Bitbucket 
+async def berry(interaction: discord.Interaction, threshold:int):
+    player_state.errorThreshhold = threshold
+    await interaction.response.send_message(f"Error limit threshold has been set to {player_state.errorThreshhold}")
 
+@bot.tree.command(name="doubleseed", description="Flag to use 230 stacks of seeds") #Bitbucket 
+async def doubleseed(interaction: discord.Interaction, enable:bool):
+    settings.seeds_230 = enable
+    await interaction.response.send_message(f"Flag to use 230 stacks of seeds has been set to {settings.seeds_230}")
 
 
 

@@ -17,9 +17,11 @@ import local_player
 
 global errorCount
 global lastError
+global errorThreshhold
 
 errorCount = 0
 lastError = time.time()
+errorThreshhold = 6
 
 def check_disconnected():
     logs.logger.debug(f"check_disconnected")
@@ -56,7 +58,7 @@ def check_state(): # mainliy checked at the start of every task to check for foo
     if (time.time() - lastError > 300):
         logs.logger.debug(f"lastError: {time.time() - lastError}  resetting errorCount: {errorCount}")
         errorCount = 0
-    if errorCount >= 6 and type != 1:
+    if errorCount >= errorThreshhold and type != 1:
         type = 4
         logs.logger.debug(f"Not in tekpod, lastError: {time.time() - lastError}  errorCount: {errorCount}")
 

@@ -78,17 +78,22 @@ def teleport_not_default(arg):
         logs.logger.info(f"Trying to click on {teleporter_name} in list")
         time.sleep(0.4*settings.sleep_constant) #preventing the orange text from the starting teleport screen messing things up #Bitbucket Changed 0.3 to 0.4
         windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-
+        windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+        windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
         if not template.template_await_true(template.check_teleporter_orange,3):   #Bitbucket
             windows.click(variables.get_pixel_loc("search_bar_bed_alive_x"),variables.get_pixel_loc("search_bar_bed_y")) #im lazy this is the same position as the teleporter search bar
             utils.ctrl_a()
             utils.write(teleporter_name)
-            time.sleep(0.2*settings.sleep_constant) 
+            time.sleep(0.4*settings.sleep_constant) 
             windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket
-           
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
             logs.logger.warning(f"Trying to click on {teleporter_name} in list 2/3")
         if not template.template_await_true(template.check_teleporter_orange,3):   #Bitbucket
+            time.sleep(0.4*settings.sleep_constant)
             windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
             logs.logger.warning(f"Trying to click on {teleporter_name} in list 3/3")
     
         if not template.template_await_true(template.check_teleporter_orange,3):  

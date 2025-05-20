@@ -30,7 +30,9 @@ def berry_station():
 def seed(type):
     if ASA.strucutres.inventory.is_open():
         time.sleep(0.1*settings.sleep_constant)
-        ASA.strucutres.inventory.transfer_all_from() # doing this should prevent the seed not appearing first try
+        #ASA.strucutres.inventory.transfer_all_from() # doing this should prevent the seed not appearing first try
+        ASA.strucutres.inventory.search_in_object(settings.berry_type)
+        ASA.strucutres.inventory.transfer_all_from()
         ASA.player.player_inventory.search_in_inventory(settings.berry_type) #iguanadon has 1450 weight for the 145 stacks of berries
         ASA.player.player_inventory.transfer_all_inventory()
         if type == 2:

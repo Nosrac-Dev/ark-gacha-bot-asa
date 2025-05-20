@@ -47,6 +47,7 @@ def console_ccc():
         count = 0
         while not is_open():
             count += 1
+            logs.logger.debug(f"Clicking center of screen to make sure we exit chat")
             windows.click(variables.get_pixel_loc("screen_center_x"),variables.get_pixel_loc("screen_center_y")) #Bitbucket Make sure not in chat
             utils.press_key("ConsoleKeys")
             template.template_await_true(is_open,1)
