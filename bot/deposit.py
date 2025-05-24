@@ -195,7 +195,11 @@ def deposit_all(metadata):
         depo_grinder(metadata)
         grindables_metadata = ASA.stations.custom_stations.get_station_metadata(settings.grindables)
         ASA.strucutres.teleporter.teleport_not_default(grindables_metadata)
-        logs.logger.debug("collecting grindables")
-        collect_grindables(grindables_metadata)
+        ASA.strucutres.inventory.open()
+        if template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+            logs.logger.debug("collecting grindables")
+            collect_grindables(grindables_metadata)
+        else:
+            logs.logger.debug("Skipping collecting grindables")
     else:
         drop_useless()
