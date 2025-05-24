@@ -3,6 +3,8 @@ import time
 import template
 import logs.gachalogs as logs
 import bot.render
+import utils
+import ASA.strucutres
 from ASA.strucutres import bed , teleporter , inventory
 from ASA.player import buffs , console , player_state , tribelog , player_inventory
 from ASA.stations import custom_stations
@@ -104,7 +106,18 @@ class pego_station(base_task):
         pego.pego_pickup(pego_metadata)
         if template.check_template("crystal_in_hotbar",0.7):
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
-            deposit.deposit_all(dropoff_metadata)
+            logs.logger.info(f"BEGIN CENTER SCREEN")
+            utils.pitch_zero()
+            logs.logger.info(f"END CENTER SCREEN")
+            ASA.strucutres.inventory.open()
+            logs.logger.info(f"DEDICATED STORAGE TEMPLATE CHECK")
+            if template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+                ASA.strucutres.inventory.close()
+                deposit.deposit_all(dropoff_metadata)
+            else:
+                ASA.strucutres.inventory.close()
+                logs.logger.info(f"Skipping deposit because we could not verify we were at dedi station")
+
         else:
             logs.logger.info(f"bot has no crystals in hotbar we are skipping the deposit step")
 

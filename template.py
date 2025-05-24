@@ -36,7 +36,8 @@ roi_regions = {
     "snow_owl_pellet":{"start_x":200, "start_y":150 ,"width":600 ,"height":600},
     "orange":{"start_x":705, "start_y":290 ,"width":1 ,"height":1},
     "chem_bench":{"start_x":1100, "start_y":245 ,"width":355 ,"height":70},
-    "indi_forge":{"start_x":1100, "start_y":245 ,"width":355 ,"height":70}
+    "indi_forge":{"start_x":1100, "start_y":245 ,"width":355 ,"height":70},
+    "dedicated_storage":{"start_x":1150, "start_y":268, "width":259, "height":32}
 }
 def template_await_true(func,sleep_amount:float,*args) -> bool:
     count = 0 
