@@ -31,16 +31,18 @@ def seed(type):
     if ASA.strucutres.inventory.is_open():
         time.sleep(0.1*settings.sleep_constant)
         #ASA.strucutres.inventory.transfer_all_from() # doing this should prevent the seed not appearing first try
-        ASA.strucutres.inventory.search_in_object(settings.berry_type)
-        ASA.strucutres.inventory.transfer_all_from()
-        ASA.player.player_inventory.search_in_inventory(settings.berry_type) #iguanadon has 1450 weight for the 145 stacks of berries
-        ASA.player.player_inventory.transfer_all_inventory()
-        if type == 2:
-            time.sleep(0.2*settings.sleep_constant)
-            ASA.player.player_inventory.drop_all_inv() #doing this second time round to drop everything else that is not needed by the bot
-        time.sleep(0.1*settings.sleep_constant)
-        ASA.player.player_inventory.close()
-        time.sleep(0.1*settings.sleep_constant)
+ 
+        if not template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+            ASA.strucutres.inventory.search_in_object(settings.berry_type)
+            ASA.strucutres.inventory.transfer_all_from()
+            ASA.player.player_inventory.search_in_inventory(settings.berry_type) #iguanadon has 1450 weight for the 145 stacks of berries
+            ASA.player.player_inventory.transfer_all_inventory()
+            if type == 2:
+                time.sleep(0.2*settings.sleep_constant)
+                ASA.player.player_inventory.drop_all_inv() #doing this second time round to drop everything else that is not needed by the bot
+            time.sleep(0.1*settings.sleep_constant)
+            ASA.player.player_inventory.close()
+            time.sleep(0.1*settings.sleep_constant)
 
     if not template.template_await_true(template.check_template,1,"seed_inv",0.7):
         logs.logger.debug("iguanadon seeding hasnt been spotted re adding berries")
@@ -52,14 +54,15 @@ def seed(type):
             ASA.player.player_inventory.transfer_all_inventory()
             ASA.strucutres.inventory.close()
             template.template_await_true(template.check_template,1,"seed_inv",0.7)
-            utils.press_key("Use")
-            time.sleep(0.6*settings.sleep_constant)
-            ASA.strucutres.inventory.open()
-            if ASA.strucutres.inventory.is_open():
-                ASA.strucutres.inventory.search_in_object("seed")
-                ASA.strucutres.inventory.transfer_all_from()
-                time.sleep(0.3*settings.sleep_constant)
-                ASA.strucutres.inventory.close()
+    utils.press_key("Use")
+    time.sleep(0.6*settings.sleep_constant)
+    ASA.strucutres.inventory.open()
+    if ASA.strucutres.inventory.is_open():
+        if not template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+            ASA.strucutres.inventory.search_in_object("seed")
+            ASA.strucutres.inventory.transfer_all_from()
+            time.sleep(0.3*settings.sleep_constant)
+            ASA.strucutres.inventory.close()
     time.sleep(0.2*settings.sleep_constant)
 
 def iguanadon_open(metadata):
