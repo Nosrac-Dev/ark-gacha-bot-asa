@@ -106,6 +106,18 @@ class pego_station(base_task):
         pego.pego_pickup(pego_metadata)
         if template.check_template("crystal_in_hotbar",0.7):
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+            utils.turn_right(180)
+            utils.turn_down(50)
+            time.sleep(2*settings.sleep_constant)
+            utils.press_key("Use")
+            logs.logger.info(f"LOOKING FOR A SIGN")
+            if template.template_await_true(template.check_template,2,"write_text",0.7):
+                logs.logger.info(f"I SAW A SIGN")
+                utils.press_key("escape")
+            else:
+                time.sleep(1*settings.sleep_constant)
+                utils.press_key("Use")
+
             logs.logger.info(f"BEGIN CENTER SCREEN")
             utils.pitch_zero()
             logs.logger.info(f"END CENTER SCREEN")

@@ -37,7 +37,8 @@ roi_regions = {
     "orange":{"start_x":705, "start_y":290 ,"width":1 ,"height":1},
     "chem_bench":{"start_x":1100, "start_y":245 ,"width":355 ,"height":70},
     "indi_forge":{"start_x":1100, "start_y":245 ,"width":355 ,"height":70},
-    "dedicated_storage":{"start_x":1150, "start_y":268, "width":259, "height":32}
+    "dedicated_storage":{"start_x":1150, "start_y":268, "width":259, "height":32},
+    "write_text":{"start_x":1100, "start_y":430, "width":351, "height":50}
 }
 def template_await_true(func,sleep_amount:float,*args) -> bool:
     count = 0 
