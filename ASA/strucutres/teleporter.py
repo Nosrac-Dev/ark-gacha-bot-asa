@@ -24,6 +24,9 @@ def open():
         utils.press_key("Use")
     
         if not template.template_await_true(template.check_template,2*settings.sleep_constant,"teleporter_title",0.7):
+            if template.check_template("write_text",0.7):
+                logs.logger.info(f"I SAW A SIGN")
+                utils.press_key("escape")
             logs.logger.warning("teleporter didnt open retrying now")
             #ASA.player.player_state.check_state()   #Bitbucket removed for testing
             # check state of char which should close out of any windows we are in or rejoin the game

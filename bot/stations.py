@@ -43,9 +43,11 @@ class gacha_station(base_task):
     def execute(self):
         global berry_station
         global last_berry
-        if (player_state.check_state() == 1):
-            logs.logger.debug(f"Returning to {self.teleporter_name}")
-            teleporter.teleport_not_default(self.teleporter_name) 
+        #if (player_state.check_state() == 1):
+        #    logs.logger.debug(f"Returning to {self.teleporter_name}")
+         #   teleporter.teleport_not_default(self.teleporter_name) 
+        
+        player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
 
         temp = False
         time_between = time.time() - last_berry
@@ -65,6 +67,8 @@ class gacha_station(base_task):
             last_berry = time.time()
             berry_station = False
             temp = True
+            player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
+
         
         teleporter.teleport_not_default(iguanadon_metadata) # iguanadon is a centeral tp
         
@@ -74,6 +78,7 @@ class gacha_station(base_task):
             time.sleep(60) # takes a while for the reonnect to actually go into action
 
         iguanadon.iguanadon(iguanadon_metadata)
+        player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
         teleporter.teleport_not_default(gacha_metadata)
         gacha.drop_off(gacha_metadata)
 
@@ -95,9 +100,7 @@ class pego_station(base_task):
         self.delay = delay
 
     def execute(self):
-        if (player_state.check_state() == 1):
-            logs.logger.debug(f"Returning to {self.teleporter_name}")
-            teleporter.teleport_not_default(self.teleporter_name)
+        player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
         
         pego_metadata = custom_stations.get_station_metadata(self.teleporter_name)
         dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)
@@ -108,12 +111,29 @@ class pego_station(base_task):
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
             utils.turn_right(180)
             utils.turn_down(50)
-            time.sleep(2*settings.sleep_constant)
+            time.sleep(0.2*settings.sleep_constant)
             utils.press_key("Use")
             logs.logger.info(f"LOOKING FOR A SIGN")
             if template.template_await_true(template.check_template,2,"write_text",0.7):
                 logs.logger.info(f"I SAW A SIGN")
-                utils.press_key("escape")
+                utils.press_key("escape")  #would be better to click cancel
+                #utils.turn_right(180)
+                utils.turn_down(40)
+                utils.turn_left(20)
+                time.sleep(0.2*settings.sleep_constant)
+                utils.press_key("Use")
+                if template.template_await_true(template.check_template,2,"write_text",0.7):
+                    logs.logger.info(f"I STILL SAW A SIGN")
+                    utils.press_key("escape")  #would be better to click cancel
+                    utils.turn_right(40)
+                    time.sleep(0.2*settings.sleep_constant)
+                    utils.press_key("Use")
+                if not template.template_await_true(template.check_template,2,"write_text",0.7):
+                    logs.logger.info(f"FINALLY NO SIGN")
+                    time.sleep(0.2*settings.sleep_constant)
+                    utils.press_key("Use")
+                else:
+                    utils.turn_right(180)
             else:
                 time.sleep(1*settings.sleep_constant)
                 utils.press_key("Use")

@@ -27,6 +27,7 @@ def enter_tekpod():
         if attempts == bot.config.render_attempts:
             logs.logger.warning(f"{attempts} attempts however bot could not get into the render bed we are dieing and respawning to try and fix this")
             ASA.player.player_inventory.implant_eat()
+            logs.logger.warning(f"Returning from implant eat function")
             ASA.player.player_state.check_state() # this should respawn our char in the bed
         time.sleep(0.5*settings.sleep_constant)    
         utils.press_key(local_player.get_input_settings("Run")) #uncrouching char just in case

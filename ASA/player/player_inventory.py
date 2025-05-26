@@ -78,17 +78,23 @@ def implant_eat():
         attempts += 1
         logs.logger.debug(f"trying to eat player implant {attempts} / {ASA.config.suicide_attempts}")
         utils.press_key("ShowMyInventory")
+        logs.logger.debug(f"Calling Open Inventory")
         open() 
+        logs.logger.debug(f"Calling close Inventory")
         close() 
+        logs.logger.debug(f"Moving backward")
         for x in range(60):
             utils.press_key("'") # moving backwards so we dont die on tps and create bags
             utils.press_key("]") # moving backwards so we dont die on tps and create bags
+        logs.logger.debug(f"Opening inventory to eat implant")    
         open()
+        logs.logger.debug(f"Clicking on eat implant")
         windows.move_mouse(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         time.sleep(10) # accounting for high ping lag
         utils.press_key("Use")
 
+        logs.logger.debug(f"Waiting for death screen")
         if not template.template_await_true(template.check_template,10,"death_regions",0.7):
             #check state of the char before redoing
             logs.logger.debugr(f"Validate Death")
