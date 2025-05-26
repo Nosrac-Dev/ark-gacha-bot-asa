@@ -5,6 +5,7 @@ import logs.gachalogs as logs
 import bot.render
 import utils
 import ASA.strucutres
+import windows
 from ASA.strucutres import bed , teleporter , inventory
 from ASA.player import buffs , console , player_state , tribelog , player_inventory
 from ASA.stations import custom_stations
@@ -92,7 +93,7 @@ class gacha_station(base_task):
             delay = 6600    # delay can be constant as it will be the same for all gachas 142 stacks took 110 mins
         return delay 
 
-class pego_station(base_task):
+class pego_station(base_task): 
     def __init__(self,name,teleporter_name,delay):
         super().__init__()
         self.name = name
@@ -110,34 +111,46 @@ class pego_station(base_task):
         if template.check_template("crystal_in_hotbar",0.7):
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
             utils.turn_right(180)
-            utils.turn_down(50)
-            time.sleep(0.2*settings.sleep_constant)
-            utils.press_key("Use")
-            logs.logger.info(f"LOOKING FOR A SIGN")
-            if template.template_await_true(template.check_template,2,"write_text",0.7):
-                logs.logger.info(f"I SAW A SIGN")
-                utils.press_key("escape")  #would be better to click cancel
-                #utils.turn_right(180)
-                utils.turn_down(40)
-                utils.turn_left(20)
+            ASA.strucutres.inventory.open()
+            if template.template_await_true(template.check_template,2,"industrial_grinder",0.7):
+                if template.check_template("indi_grinder_off",0.7):
+                    windows.click(template.roi_regions["indi_grinder_off"]["start_x"], template.roi_regions["indi_grinder_off"]["start_y"])
+                ASA.strucutres.inventory.close()
+                for x in range(20):
+                    utils.press_key("+") # moving to corner
+                    utils.press_key("[")    
+                utils.turn_right(90)
+                utils.turn_down(50)
                 time.sleep(0.2*settings.sleep_constant)
-                utils.press_key("Use")
-                if template.template_await_true(template.check_template,2,"write_text",0.7):
-                    logs.logger.info(f"I STILL SAW A SIGN")
+                utils.press_key("Use") #Sit in chair
+                '''
+                logs.logger.info(f"LOOKING FOR A SIGN")
+                if template.template_await_true(template.check_template,1,"write_text",0.7):
+                    logs.logger.info(f"I SAW A SIGN")
                     utils.press_key("escape")  #would be better to click cancel
-                    utils.turn_right(40)
+                    #utils.turn_right(180)
+                    utils.turn_down(40)
+                    utils.turn_left(20)
                     time.sleep(0.2*settings.sleep_constant)
                     utils.press_key("Use")
-                if not template.template_await_true(template.check_template,2,"write_text",0.7):
-                    logs.logger.info(f"FINALLY NO SIGN")
-                    time.sleep(0.2*settings.sleep_constant)
-                    utils.press_key("Use")
-                else:
-                    utils.turn_right(180)
-            else:
+                    if template.template_await_true(template.check_template,2,"write_text",0.7):
+                        logs.logger.info(f"I STILL SAW A SIGN")
+                        utils.press_key("escape")  #would be better to click cancel
+                        utils.turn_right(40)
+                        time.sleep(0.2*settings.sleep_constant)
+                        utils.press_key("Use")
+                    if not template.template_await_true(template.check_template,2,"write_text",0.7):
+                        logs.logger.info(f"FINALLY NO SIGN")
+                        time.sleep(0.2*settings.sleep_constant)
+                        utils.press_key("Use")
+                    else:
+                        utils.turn_right(180)
+                '''
                 time.sleep(1*settings.sleep_constant)
                 utils.press_key("Use")
-
+            else:
+                ASA.strucutres.inventory.close()
+                utils.turn_right(180)
             logs.logger.info(f"BEGIN CENTER SCREEN")
             utils.pitch_zero()
             logs.logger.info(f"END CENTER SCREEN")
