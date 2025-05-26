@@ -83,6 +83,7 @@ def teleport_not_default(arg):
         windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
         windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
         windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+        logs.logger.info(f"Looking for orange bar to show it was selected in list")
         if not template.template_await_true(template.check_teleporter_orange,3):   #Bitbucket
             windows.click(variables.get_pixel_loc("search_bar_bed_alive_x"),variables.get_pixel_loc("search_bar_bed_y")) #im lazy this is the same position as the teleporter search bar
             utils.ctrl_a()
@@ -104,6 +105,7 @@ def teleport_not_default(arg):
             close() # closing out as either the TP couldnt be found however we still want to change to the station yaw so we still continue
 
         else:
+            logs.logger.info(f"Spawning on first bed spot in list")
             time.sleep(0.2*settings.sleep_constant)
             windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
             time.sleep(0.2*settings.sleep_constant)
