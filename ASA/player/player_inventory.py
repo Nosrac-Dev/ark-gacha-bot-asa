@@ -93,13 +93,17 @@ def implant_eat():
         windows.click(variables.get_pixel_loc("implant_eat_x"),variables.get_pixel_loc("implant_eat_y"))
         time.sleep(10) # accounting for high ping lag
         utils.press_key("Use")
+        
 
         logs.logger.debug(f"Waiting for death screen")
         if not template.template_await_true(template.check_template,10,"death_regions",0.7):
             #check state of the char before redoing
-            logs.logger.debugr(f"Validate Death")
+            logs.logger.debug(f"Validate Death")
             ASA.player.player_state.check_state()
             ...
+        else:
+            logs.logger.debug(f"Found Death screen")
+
                 
         if attempts >= ASA.config.suicide_attempts:
             logs.logger.error(f"unable to eat player implant")

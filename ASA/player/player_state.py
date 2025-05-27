@@ -21,7 +21,7 @@ global errorThreshhold
 
 errorCount = 0
 lastError = time.time()
-errorThreshhold = 6
+errorThreshhold = 8
 
 def check_disconnected():
     logs.logger.debug(f"check_disconnected")
