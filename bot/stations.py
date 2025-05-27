@@ -62,7 +62,7 @@ class gacha_station(base_task):
 
         if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
-
+            deposit.deposit_dedi_station(dropoff_metadata)
 
         if (berry_station or time_between > config.time_to_reberry*60*60): # if time is greater than 4 hours since the last time you went to berry station 
             teleporter.teleport_not_default(berry_metadata)                    # or if berry station is true( when you go to tekpod and drop all ) and the time between has been longer than 30 mins since youve last been 
@@ -77,7 +77,8 @@ class gacha_station(base_task):
 
         if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off. Included in case previous stations did not execute
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
-       
+            deposit.deposit_dedi_station(dropoff_metadata)
+
         teleporter.teleport_not_default(iguanadon_metadata) # iguanadon is a centeral tp
         
         if settings.external_berry and temp: # quick fix for level 1 bug
@@ -90,7 +91,8 @@ class gacha_station(base_task):
         
         if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off. Included in case previous stations did not execute
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
-
+            deposit.deposit_dedi_station(dropoff_metadata)
+            
         teleporter.teleport_not_default(gacha_metadata)
         gacha.drop_off(gacha_metadata)
 
@@ -118,64 +120,13 @@ class pego_station(base_task):
         dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)
         if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+            deposit.deposit_dedi_station(dropoff_metadata)
 
         teleporter.teleport_not_default(pego_metadata)
         pego.pego_pickup(pego_metadata)
         if template.check_template("crystal_in_hotbar",0.7):
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
-            utils.turn_right(180)
-            ASA.strucutres.inventory.open()
-            if template.template_await_true(template.check_template,2,"industrial_grinder",0.7):
-                if template.check_template("indi_grinder_off",0.7):
-                    windows.click(template.roi_regions["indi_grinder_off"]["start_x"], template.roi_regions["indi_grinder_off"]["start_y"])
-                ASA.strucutres.inventory.close()
-                for x in range(20):
-                    utils.press_key("+") # moving to corner
-                    utils.press_key("[")    
-                utils.turn_right(90)
-                utils.turn_down(50)
-                time.sleep(0.2*settings.sleep_constant)
-                utils.press_key("Use") #Sit in chair
-                '''
-                logs.logger.info(f"LOOKING FOR A SIGN")
-                if template.template_await_true(template.check_template,1,"write_text",0.7):
-                    logs.logger.info(f"I SAW A SIGN")
-                    utils.press_key("escape")  #would be better to click cancel
-                    #utils.turn_right(180)
-                    utils.turn_down(40)
-                    utils.turn_left(20)
-                    time.sleep(0.2*settings.sleep_constant)
-                    utils.press_key("Use")
-                    if template.template_await_true(template.check_template,2,"write_text",0.7):
-                        logs.logger.info(f"I STILL SAW A SIGN")
-                        utils.press_key("escape")  #would be better to click cancel
-                        utils.turn_right(40)
-                        time.sleep(0.2*settings.sleep_constant)
-                        utils.press_key("Use")
-                    if not template.template_await_true(template.check_template,2,"write_text",0.7):
-                        logs.logger.info(f"FINALLY NO SIGN")
-                        time.sleep(0.2*settings.sleep_constant)
-                        utils.press_key("Use")
-                    else:
-                        utils.turn_right(180)
-                '''
-                time.sleep(1*settings.sleep_constant)
-                utils.press_key("Use")
-            else:
-                ASA.strucutres.inventory.close()
-                utils.turn_right(180)
-            logs.logger.info(f"BEGIN CENTER SCREEN")
-            utils.pitch_zero()
-            logs.logger.info(f"END CENTER SCREEN")
-            ASA.strucutres.inventory.open()
-            logs.logger.info(f"DEDICATED STORAGE TEMPLATE CHECK")
-            if template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
-                ASA.strucutres.inventory.close()
-                deposit.deposit_all(dropoff_metadata)
-            else:
-                ASA.strucutres.inventory.close()
-                logs.logger.info(f"Skipping deposit because we could not verify we were at dedi station")
-
+            deposit.deposit_dedi_station(dropoff_metadata)
         else:
             logs.logger.info(f"bot has no crystals in hotbar we are skipping the deposit step")
 
@@ -198,9 +149,12 @@ class render_station(base_task):
         if bot.render.render_flag == False:
             player_state.reset_state()
             teleporter.teleport_not_default(settings.bed_spawn)
-            bot.render.enter_tekpod()
+            '''
             if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
                 teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+                deposit.deposit_dedi_station(dropoff_metadata)
+            '''
+            bot.render.enter_tekpod()
             player_inventory.open()
             player_inventory.drop_all_inv()
             player_inventory.close()

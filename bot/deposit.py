@@ -203,3 +203,34 @@ def deposit_all(metadata):
             logs.logger.debug("Skipping collecting grindables")
     else:
         drop_useless()
+
+def deposit_dedi_station(dropoff_metadata):
+    utils.turn_right(180)
+    ASA.strucutres.inventory.open()
+    if template.template_await_true(template.check_template,2,"industrial_grinder",0.7):
+        if template.check_template("indi_grinder_off",0.7):
+            windows.click(template.roi_regions["indi_grinder_off"]["start_x"], template.roi_regions["indi_grinder_off"]["start_y"])
+        ASA.strucutres.inventory.close()
+        for x in range(20):
+            utils.press_key("+") # moving to corner
+            utils.press_key("[")    
+        utils.turn_right(90)
+        utils.turn_down(50)
+        time.sleep(0.2*settings.sleep_constant)
+        utils.press_key("Use") #Sit in chair
+        time.sleep(1*settings.sleep_constant)
+        utils.press_key("Use")
+    else:
+        ASA.strucutres.inventory.close()
+        utils.turn_right(180)
+    logs.logger.info(f"BEGIN CENTER SCREEN")
+    utils.pitch_zero()
+    logs.logger.info(f"END CENTER SCREEN")
+    ASA.strucutres.inventory.open()
+    logs.logger.info(f"DEDICATED STORAGE TEMPLATE CHECK")
+    if template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+        ASA.strucutres.inventory.close()
+        deposit_all(dropoff_metadata)
+    else:
+        ASA.strucutres.inventory.close()
+        logs.logger.info(f"Skipping deposit because we could not verify we were at dedi station")
