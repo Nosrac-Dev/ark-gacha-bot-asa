@@ -36,6 +36,7 @@ def spawn_in(bed_name:str):
     logs.logger.debug(f"Attempting to spawn in {bed_name}")
     if not is_open():
         ASA.player.player_inventory.implant_eat()
+        logs.logger.debug(f"Returned from the implant eat function!")
         
     if is_open():
         state = "death screen" if is_dead() else "fast travel screen"
