@@ -58,6 +58,11 @@ class gacha_station(base_task):
 
         berry_metadata = custom_stations.get_station_metadata(settings.berry_station)
         iguanadon_metadata = custom_stations.get_station_metadata(settings.iguanadon)
+        dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)
+
+        if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
+            teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+
 
         if (berry_station or time_between > config.time_to_reberry*60*60): # if time is greater than 4 hours since the last time you went to berry station 
             teleporter.teleport_not_default(berry_metadata)                    # or if berry station is true( when you go to tekpod and drop all ) and the time between has been longer than 30 mins since youve last been 
@@ -70,7 +75,9 @@ class gacha_station(base_task):
             temp = True
             player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
 
-        
+        if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off. Included in case previous stations did not execute
+            teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+       
         teleporter.teleport_not_default(iguanadon_metadata) # iguanadon is a centeral tp
         
         if settings.external_berry and temp: # quick fix for level 1 bug
@@ -80,6 +87,10 @@ class gacha_station(base_task):
 
         iguanadon.iguanadon(iguanadon_metadata)
         player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
+        
+        if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off. Included in case previous stations did not execute
+            teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+
         teleporter.teleport_not_default(gacha_metadata)
         gacha.drop_off(gacha_metadata)
 
@@ -105,6 +116,8 @@ class pego_station(base_task):
         
         pego_metadata = custom_stations.get_station_metadata(self.teleporter_name)
         dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)
+        if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
+            teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
 
         teleporter.teleport_not_default(pego_metadata)
         pego.pego_pickup(pego_metadata)
@@ -180,11 +193,14 @@ class render_station(base_task):
         
     def execute(self):
         global berry_station 
+        dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)
         berry_station = True # setting to true as we will be away for mostlikly for a few hours
         if bot.render.render_flag == False:
             player_state.reset_state()
             teleporter.teleport_not_default(settings.bed_spawn)
             bot.render.enter_tekpod()
+            if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
+                teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
             player_inventory.open()
             player_inventory.drop_all_inv()
             player_inventory.close()
