@@ -237,7 +237,7 @@ async def resume(interaction: discord.Interaction):
     console.suspendFlag = False
     await interaction.response.send_message(f"Resuming state when accessing console")
 
-@bot.tree.command(name="errorlimit", description="Flag to refill Berries") #Bitbucket 
+@bot.tree.command(name="errorlimit", description="Error limit before forced return to render bed") #Bitbucket 
 async def berry(interaction: discord.Interaction, threshold:int):
     player_state.errorThreshhold = threshold
     await interaction.response.send_message(f"Error limit threshold has been set to {player_state.errorThreshhold}")
@@ -247,6 +247,15 @@ async def doubleseed(interaction: discord.Interaction, enable:bool):
     settings.seeds_230 = enable
     await interaction.response.send_message(f"Flag to use 230 stacks of seeds has been set to {settings.seeds_230}")
 
+@bot.tree.command(name="gacha", description="Gacha starting station name") 
+async def logging(interaction: discord.Interaction, starting_station:str):
+    stations.gacha_start_station = starting_station
+    await interaction.response.send_message(f"Gacha starting station has been set to {stations.gacha_start_station}")
+
+@bot.tree.command(name="pegos", description="Flag to skip pegos") 
+async def logging(interaction: discord.Interaction, pegoskip:bool):
+    stations.pego_skip = pegoskip
+    await interaction.response.send_message(f"Pego skipping has been set to {stations.pego_skip}")
 
 
 @bot.event

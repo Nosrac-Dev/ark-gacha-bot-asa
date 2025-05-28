@@ -13,8 +13,13 @@ from bot import config , deposit , gacha , iguanadon , pego
 from abc import ABC ,abstractmethod
 global berry_station
 global last_berry
+global pego_skip
+global gacha_start_station
+
 last_berry = 0
 berry_station = True
+pego_skip = False
+gacha_start_station = ""
 
 class base_task(ABC):
     def __init__(self):
@@ -47,7 +52,20 @@ class gacha_station(base_task):
         #if (player_state.check_state() == 1):
         #    logs.logger.debug(f"Returning to {self.teleporter_name}")
          #   teleporter.teleport_not_default(self.teleporter_name) 
-        
+        gacha_metadata = custom_stations.get_station_metadata(self.teleporter_name)
+        gacha_metadata.side = self.direction
+        '''
+        if gacha_start_station != "":
+            if gacha_start_station != self.name:
+                logs.logger.info(f"Skipping Station: {self.name}")
+                return
+            else:
+                logs.logger.info(f"Fast forwarded to: {self.name}")
+                gacha_start_station = ""
+        else:
+            logs.logger.info(f"Station: {self.name}")
+        '''
+
         player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
 
         temp = False
@@ -92,7 +110,7 @@ class gacha_station(base_task):
         if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off. Included in case previous stations did not execute
             teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
             deposit.deposit_dedi_station(dropoff_metadata)
-            
+
         teleporter.teleport_not_default(gacha_metadata)
         gacha.drop_off(gacha_metadata)
 
@@ -114,21 +132,29 @@ class pego_station(base_task):
         self.delay = delay
 
     def execute(self):
-        player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
-        
-        pego_metadata = custom_stations.get_station_metadata(self.teleporter_name)
-        dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)
-        if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
-            teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
-            deposit.deposit_dedi_station(dropoff_metadata)
 
-        teleporter.teleport_not_default(pego_metadata)
-        pego.pego_pickup(pego_metadata)
-        if template.check_template("crystal_in_hotbar",0.7):
-            teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
-            deposit.deposit_dedi_station(dropoff_metadata)
+        pego_metadata = custom_stations.get_station_metadata(self.teleporter_name)
+        dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)     
+        
+        if (pego_skip):
+            logs.logger.info(f"Skipping {self.name} because pego_skip setting set to True")
         else:
-            logs.logger.info(f"bot has no crystals in hotbar we are skipping the deposit step")
+            logs.logger.info(f"Pego Station: {self.name}")
+        
+            player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
+            
+
+            if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
+                teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+                deposit.deposit_dedi_station(dropoff_metadata)
+
+            teleporter.teleport_not_default(pego_metadata)
+            pego.pego_pickup(pego_metadata)
+            if template.check_template("crystal_in_hotbar",0.7):
+                teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+                deposit.deposit_dedi_station(dropoff_metadata)
+            else:
+                logs.logger.info(f"bot has no crystals in hotbar we are skipping the deposit step")
 
     def get_priority_level(self):
         return 2 # highest prio level as we cant have these get capped 
