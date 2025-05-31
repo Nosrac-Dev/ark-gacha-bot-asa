@@ -74,8 +74,13 @@ def iguanadon_open(metadata):
         logs.logger.debug(f"the iguanadon at {metadata.name} could not be accessed retrying {attempt} / {bot.config.iguanadon_attempts}")
         utils.zero()
         utils.set_yaw(metadata.yaw)
+        utils.turn_down(15)
+        utils.turn_right(15)
         time.sleep(0.2*settings.sleep_constant)
         ASA.strucutres.inventory.open()
+        if attempt == 2:
+            utils.turn_down(15)
+            utils.turn_right(15)
         if attempt >= bot.config.iguanadon_attempts:
             logs.logger.error(f"the iguanadon at {metadata.name} could not be accesssed after {attempt} attempts")
             ASA.player.player_state.lastError = time.time()
