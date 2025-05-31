@@ -19,7 +19,7 @@ global gacha_start_station
 last_berry = 0
 berry_station = True
 pego_skip = False
-gacha_start_station = ""
+gacha_start_station = "False"
 
 class base_task(ABC):
     def __init__(self):
@@ -49,13 +49,15 @@ class gacha_station(base_task):
     def execute(self):
         global berry_station
         global last_berry
+        global gacha_start_station
         #if (player_state.check_state() == 1):
         #    logs.logger.debug(f"Returning to {self.teleporter_name}")
          #   teleporter.teleport_not_default(self.teleporter_name) 
         gacha_metadata = custom_stations.get_station_metadata(self.teleporter_name)
         gacha_metadata.side = self.direction
+        logs.logger.info(f"Gacha Start set to: {gacha_start_station}")
         '''
-        if gacha_start_station != "":
+        if gacha_start_station != "False":
             if gacha_start_station != self.name:
                 logs.logger.info(f"Skipping Station: {self.name}")
                 return
