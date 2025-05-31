@@ -17,7 +17,7 @@ def berry_collection():
     time.sleep(0.5)
     ASA.strucutres.inventory.open()
     if ASA.strucutres.inventory.is_open():
-        if not template.check_template("dedicated_storage",0.7):
+        if template.check_template("tek_trough_1170x270_230x30",0.7):
             ASA.strucutres.inventory.transfer_all_from()
             ASA.strucutres.inventory.close()
     time.sleep(0.5)
@@ -33,7 +33,7 @@ def seed(type):
         time.sleep(0.1*settings.sleep_constant)
         #ASA.strucutres.inventory.transfer_all_from() # doing this should prevent the seed not appearing first try
  
-        if not template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+        if template.template_await_true(template.check_template,2,"iguanadon_cart_slot_1050_450_60_30",0.7):
             ASA.strucutres.inventory.search_in_object(settings.berry_type)
             ASA.strucutres.inventory.transfer_all_from()
             ASA.player.player_inventory.search_in_inventory(settings.berry_type) #iguanadon has 1450 weight for the 145 stacks of berries
@@ -48,7 +48,7 @@ def seed(type):
     if not template.template_await_true(template.check_template,1,"seed_inv",0.7):
         logs.logger.debug("iguanadon seeding hasnt been spotted re adding berries")
         ASA.strucutres.inventory.open()
-        if not template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+        if template.template_await_true(template.check_template,2,"iguanadon_cart_slot_1050_450_60_30",0.7):
             ASA.strucutres.inventory.search_in_object(settings.berry_type)
             ASA.strucutres.inventory.transfer_all_from()
             ASA.player.player_inventory.search_in_inventory(settings.berry_type)
@@ -59,7 +59,7 @@ def seed(type):
     time.sleep(0.6*settings.sleep_constant)
     ASA.strucutres.inventory.open()
     if ASA.strucutres.inventory.is_open():
-        if not template.template_await_true(template.check_template,2,"dedicated_storage",0.7):
+        if template.template_await_true(template.check_template,2,"iguanadon_cart_slot_1050_450_60_30",0.7):
             ASA.strucutres.inventory.search_in_object("seed")
             ASA.strucutres.inventory.transfer_all_from()
             time.sleep(0.3*settings.sleep_constant)
@@ -101,7 +101,7 @@ def pickup_seeds():
     time.sleep(0.2*settings.sleep_constant)
     ASA.strucutres.inventory.open()
     if ASA.strucutres.inventory.is_open():
-        if not template.check_template("dedicated_storage",0.7):
+        if not template.check_template("dedicated_storage",0.7) and not template.check_template("iguanadon_cart_slot_1050_450_60_30",0.7):
             ASA.strucutres.inventory.transfer_all_from() #this should also cause us to get out of bag
             if template.template_await_false(template.check_template,1,"inventory",0.7):
                 logs.logger.warning(f"the bag we dropped on the floor for 230 seeds couldnt be fully picked up popcorning now")

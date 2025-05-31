@@ -42,26 +42,27 @@ def drop_off(metadata): #drop off for 150 stacks of seeds
             break
     temp = False
     if ASA.strucutres.inventory.is_open():
-        ASA.strucutres.inventory.transfer_all_from()
-        if template.template_await_true(template.check_template_no_bounds,1,"slot_capped",0.7):
-            logs.logger.debug(f"player is overcapped")
-            ASA.strucutres.inventory.drop_all_obj() # as our player is overcapped the gacha will also be overcapped + we have seeds in our inventory which is more important than pellets
-            ASA.player.player_inventory.search_in_inventory("pell")
-            if not template.template_await_true(template.check_template_no_bounds,0.5,"snow_owl_pellet",0.5):
-                logs.logger.warning(f"GACHA is full of seeds") #warning the gacha is full of seeds as obviously something is wrong 
-                ASA.player.player_inventory.close()
+        if template.check_template_no_bounds("gacha_empty_costume_slot_1440x320_90x30",0.7):
+            ASA.strucutres.inventory.transfer_all_from()
+            if template.template_await_true(template.check_template_no_bounds,1,"slot_capped",0.7):
+                logs.logger.debug(f"player is overcapped")
+                ASA.strucutres.inventory.drop_all_obj() # as our player is overcapped the gacha will also be overcapped + we have seeds in our inventory which is more important than pellets
+                ASA.player.player_inventory.search_in_inventory("pell")
+                if not template.template_await_true(template.check_template_no_bounds,0.5,"snow_owl_pellet",0.5):
+                    logs.logger.warning(f"GACHA is full of seeds") #warning the gacha is full of seeds as obviously something is wrong 
+                    ASA.player.player_inventory.close()
+                    time.sleep(0.1*settings.sleep_constant)
+                    utils.turn_right(180)
+                    time.sleep(0.1*settings.sleep_constant)
+                    ASA.player.player_inventory.open()
+                    ASA.player.player_inventory.search_in_inventory("seed")
+                    temp = True
+                windows.click(variables.get_pixel_loc("inv_slot_start_x")+50,variables.get_pixel_loc("inv_slot_start_y")+70)
+                for x in range(8):
+                    windows.move_mouse(variables.get_pixel_loc("inv_slot_start_x")+50,variables.get_pixel_loc("inv_slot_start_y")+70)
+                    utils.press_key("DropItem")
+                    time.sleep(0.3*settings.sleep_constant)
                 time.sleep(0.1*settings.sleep_constant)
-                utils.turn_right(180)
-                time.sleep(0.1*settings.sleep_constant)
-                ASA.player.player_inventory.open()
-                ASA.player.player_inventory.search_in_inventory("seed")
-                temp = True
-            windows.click(variables.get_pixel_loc("inv_slot_start_x")+50,variables.get_pixel_loc("inv_slot_start_y")+70)
-            for x in range(8):
-                windows.move_mouse(variables.get_pixel_loc("inv_slot_start_x")+50,variables.get_pixel_loc("inv_slot_start_y")+70)
-                utils.press_key("DropItem")
-                time.sleep(0.3*settings.sleep_constant)
-            time.sleep(0.1*settings.sleep_constant)
 
     ASA.player.player_inventory.close()
     time.sleep(0.2*settings.sleep_constant)
@@ -97,22 +98,23 @@ def drop_off(metadata): #drop off for 150 stacks of seeds
         ASA.strucutres.inventory.open()
         time.sleep(0.3*settings.sleep_constant)
     if ASA.strucutres.inventory.is_open():
-        ASA.player.player_inventory.search_in_inventory("seed")
-        time.sleep(0.2*settings.sleep_constant)
-        ASA.player.player_inventory.transfer_all_inventory()
-        time.sleep(0.2*settings.sleep_constant)
-        if settings.seeds_230:
-            ASA.strucutres.inventory.search_in_object("pell")
-            time.sleep(0.2*settings.sleep_constant)
-            ASA.strucutres.inventory.drop_all_obj()
+        if template.check_template_no_bounds("gacha_empty_costume_slot_1440x320_90x30",0.7):
             ASA.player.player_inventory.search_in_inventory("seed")
             time.sleep(0.2*settings.sleep_constant)
             ASA.player.player_inventory.transfer_all_inventory()
             time.sleep(0.2*settings.sleep_constant)
-        ASA.player.player_inventory.search_in_inventory("pell")
-        time.sleep(0.2*settings.sleep_constant)
-        ASA.player.player_inventory.transfer_all_inventory()
-        time.sleep(0.2*settings.sleep_constant)
+            if settings.seeds_230:
+                ASA.strucutres.inventory.search_in_object("pell")
+                time.sleep(0.2*settings.sleep_constant)
+                ASA.strucutres.inventory.drop_all_obj()
+                ASA.player.player_inventory.search_in_inventory("seed")
+                time.sleep(0.2*settings.sleep_constant)
+                ASA.player.player_inventory.transfer_all_inventory()
+                time.sleep(0.2*settings.sleep_constant)
+            ASA.player.player_inventory.search_in_inventory("pell")
+            time.sleep(0.2*settings.sleep_constant)
+            ASA.player.player_inventory.transfer_all_inventory()
+            time.sleep(0.2*settings.sleep_constant)
 
     ASA.strucutres.inventory.close()
     time.sleep(0.2*settings.sleep_constant)
@@ -144,6 +146,7 @@ def collection(metadata):
             ASA.player.player_state.errorCount += 1
 
     if ASA.strucutres.inventory.is_open():
-        ASA.strucutres.inventory.transfer_all_from()
+        if template.check_template_no_bounds("gacha_empty_costume_slot_1440x320_90x30",0.7):
+            ASA.strucutres.inventory.transfer_all_from()
     ASA.strucutres.inventory.close()
     utils.turn_left(40*turn_constant)

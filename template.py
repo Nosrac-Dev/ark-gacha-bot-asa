@@ -40,7 +40,11 @@ roi_regions = {
     "industrial_grinder":{"start_x":1150, "start_y":270 ,"width":261 ,"height":32},
     "indi_grinder_off":{"start_x":1295, "start_y":1160 ,"width":76 ,"height":33},
     "dedicated_storage":{"start_x":1150, "start_y":268, "width":259, "height":32},
-    "write_text":{"start_x":1100, "start_y":430, "width":351, "height":50}
+    "write_text":{"start_x":1100, "start_y":430, "width":351, "height":50},
+    "gacha_empty_costume_slot_1440x320_90x30":{"start_x":1440, "start_y":320, "width":90, "height":30},
+    "tek_trough_1170x270_230x30":{"start_x":1170, "start_y":270, "width":230, "height":30},
+    "iguanadon_cart_slot_1050_450_60_30":{"start_x":1050, "start_y":450, "width":60, "height":30},
+    "pego_empty_costume_slot_1030x320_90x30":{"start_x":1030, "start_y":320, "width":90, "height":30}
 }
 def template_await_true(func,sleep_amount:float,*args) -> bool:
     count = 0 

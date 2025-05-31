@@ -48,10 +48,11 @@ def pego_pickup(metadata):
             break
 
     if ASA.strucutres.inventory.is_open():# prevents pego being FLUNG
-        ASA.player.player_inventory.drop_all_inv()
-        time.sleep(0.2*settings.sleep_constant)
-        ASA.strucutres.inventory.transfer_all_from()
-        time.sleep(0.2*settings.sleep_constant)
+        if template.check_template_no_bounds("pego_empty_costume_slot_1030x320_90x30",0.7):
+            ASA.player.player_inventory.drop_all_inv()
+            time.sleep(0.2*settings.sleep_constant)
+            ASA.strucutres.inventory.transfer_all_from()
+            time.sleep(0.2*settings.sleep_constant)
         ASA.strucutres.inventory.close() 
         
     time.sleep(0.1*settings.sleep_constant)
