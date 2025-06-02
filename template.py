@@ -44,24 +44,34 @@ roi_regions = {
     "gacha_empty_costume_slot_1440x320_90x30":{"start_x":1440, "start_y":320, "width":90, "height":30},
     "tek_trough_1170x270_230x30":{"start_x":1170, "start_y":270, "width":230, "height":30},
     "iguanadon_cart_slot_1050_450_60_30":{"start_x":1050, "start_y":450, "width":60, "height":30},
-    "pego_empty_costume_slot_1030x320_90x30":{"start_x":1030, "start_y":320, "width":90, "height":30}
+    "pego_empty_costume_slot_1030x320_90x30":{"start_x":1030, "start_y":320, "width":90, "height":30},
+    "bed_spawn_search_130x1265_140x45":{"start_x":130, "start_y":1265, "width":140, "height":45},
+    "bed_spawn_search_330x1265_140x45":{"start_x":330, "start_y":1265, "width":140, "height":45}
 }
+
+    #"bed_spawn_search_130x1265_140x45":{"start_x":130, "start_y":1265, "width":140, "height":45},
+    #"bed_spawn_search_330x1265_140x45":{"start_x":330, "start_y":1265, "width":140, "height":45}
+
 def template_await_true(func,sleep_amount:float,*args) -> bool:
+    logs.logger.debug("Testing for image template")
     count = 0 
     while func(*args) == False:
         if count >= sleep_amount * 20 : 
             break    
         time.sleep(0.05)
         count += 1
+    logs.logger.debug("Testing finished for image template")
     return func(*args)
 
 def template_await_false(func,sleep_amount:float,*args) -> bool:
+    logs.logger.debug("Testing for image template false")
     count = 0 
     while func(*args) == True:
         if count >= sleep_amount * 20 : 
             break    
         time.sleep(0.05)
         count += 1
+    logs.logger.debug("Testing finished for image template false")
     return func(*args)
 
 def check_template(item:str, threshold:float) -> bool:

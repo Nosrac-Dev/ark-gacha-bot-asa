@@ -41,17 +41,33 @@ def spawn_in(bed_name:str):
     if is_open():
         state = "death screen" if is_dead() else "fast travel screen"
         logs.logger.debug(f"char is in the {state}")
-        time.sleep(0.4*settings.sleep_constant)
-        search_bar_x = variables.get_pixel_loc("search_bar_bed_dead_x" if is_dead() else "search_bar_bed_alive_x")
-        windows.click(search_bar_x, variables.get_pixel_loc("search_bar_bed_y")) #search bar y axis is the same for both death/alive 
         
-        utils.ctrl_a() #CTRL A removes all previous data in the search bar 
-        utils.write(bed_name)
-        time.sleep(0.4*settings.sleep_constant)
-        logs.logger.info(f"Trying to click on bed {bed_name} in list")
-        windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-        windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-        windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+        #time.sleep(0.4*settings.sleep_constant)
+        if is_dead():
+            search_bar_x = variables.get_pixel_loc("search_bar_bed_dead_x")
+            search_bar = "bed_spawn_search_130x1265_140x45"
+            search_bar_fake = "grinder"
+        else:
+            search_bar_x = variables.get_pixel_loc("search_bar_bed_alive_x")
+            search_bar = "bed_spawn_search_330x1265_140x45"
+        logs.logger.debug(f"Checking location {search_bar}")
+        if template.template_await_true(template.check_template, 3, search_bar, 0.7):
+            logs.logger.debug(f"Found Bed Search")
+            for x in range(3):
+                time.sleep(0.4*settings.sleep_constant) 
+                windows.click(search_bar_x, variables.get_pixel_loc("search_bar_bed_y")) #search bar y axis is the same for both death/alive    
+                utils.ctrl_a() #CTRL A removes all previous data in the search bar 
+                utils.write(bed_name)
+                time.sleep(5*settings.sleep_constant) 
+                if not template.template_await_false(template.check_template_no_bounds, 1, search_bar, 0.7):
+                    logs.logger.debug(f"Verified Search Criteria")
+                    logs.logger.info(f"Trying to click on bed {bed_name} in list")
+                    windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+                    windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+                    windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+                    break
+                else:
+                    logs.logger.debug(f"Still missing Search Criteria") 
 
         if not template.template_await_true(template.check_teleporter_orange,3): # waiting for the bed to appear as ready to spawn in
             windows.click(variables.get_pixel_loc("search_bar_x"),variables.get_pixel_loc("search_bar_bed_y")) #search bar y axis is the same for both death/alive 
@@ -84,3 +100,6 @@ def spawn_in(bed_name:str):
 
         ASA.player.tribelog.open()
         ASA.player.tribelog.close()
+    else:
+        logs.logger.error(f"MISSED OPENING DEATH SCREEN/BED MENU!!!!!")
+  

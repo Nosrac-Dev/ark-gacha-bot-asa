@@ -18,8 +18,8 @@ global gacha_start_station
 
 last_berry = 0
 berry_station = True
-pego_skip = False
-gacha_start_station = "False"
+pego_collection = True
+gacha_start_station = ""
 
 class base_task(ABC):
     def __init__(self):
@@ -56,8 +56,8 @@ class gacha_station(base_task):
         gacha_metadata = custom_stations.get_station_metadata(self.teleporter_name)
         gacha_metadata.side = self.direction
         logs.logger.info(f"Gacha Start set to: {gacha_start_station}")
-        '''
-        if gacha_start_station != "False":
+        
+        if gacha_start_station != "":
             if gacha_start_station != self.name:
                 logs.logger.info(f"Skipping Station: {self.name}")
                 return
@@ -66,7 +66,7 @@ class gacha_station(base_task):
                 gacha_start_station = ""
         else:
             logs.logger.info(f"Station: {self.name}")
-        '''
+        
 
         player_state.check_state() #Check state and go to render bed if error rate too high or char needs food and water.
 
@@ -138,8 +138,8 @@ class pego_station(base_task):
         pego_metadata = custom_stations.get_station_metadata(self.teleporter_name)
         dropoff_metadata = custom_stations.get_station_metadata(settings.drop_off)     
         
-        if (pego_skip):
-            logs.logger.info(f"Skipping {self.name} because pego_skip setting set to True")
+        if (not pego_collection):
+            logs.logger.info(f"Skipping {self.name} because pego_collection setting set to False")
         else:
             logs.logger.info(f"Pego Station: {self.name}")
         

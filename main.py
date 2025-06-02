@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from typing import Callable
 import asyncio
+import ASA.player
 import logs.botoptions as botoptions
 import pyautogui
 import settings
@@ -17,6 +18,8 @@ import pygetwindow as gw
 import logs.gachalogs as gachalogs
 import logging as logstuff
 from ASA.player import console, player_state
+import ASA.strucutres.bed
+
 
 
 
@@ -190,7 +193,7 @@ async def lag_factor(interaction: discord.Interaction, factor:float):
 @bot.tree.command(name="logging", description="Changes the logging level of the bot (DEBUG, INFO, WARNING, ERROR, CRITICAL)") #Command to adjust the logging level of the bot by changing the logging_level variable in gachalogs file Nosrac 5/29
 async def logging(interaction: discord.Interaction, level:str):
     level = level.upper()
-    if level in ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"):
+    if level in ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL", "TEMPLATE"):
         gachalogs.logging_level = logstuff.getLevelName(level)
     else:
         gachalogs.logging_level = logstuff.getLevelName("INFO")
@@ -248,20 +251,28 @@ async def doubleseed(interaction: discord.Interaction, enable:bool):
     await interaction.response.send_message(f"Flag to use 230 stacks of seeds has been set to {settings.seeds_230}")
 
 @bot.tree.command(name="gacha", description="Gacha starting station name") 
-async def logging(interaction: discord.Interaction, starting_station:str):
+async def gacha(interaction: discord.Interaction, starting_station:str):
     stations.gacha_start_station = starting_station
     await interaction.response.send_message(f"Gacha starting station has been set to {stations.gacha_start_station}")
 
-@bot.tree.command(name="pegos", description="Flag to skip pegos") 
-async def logging(interaction: discord.Interaction, pegoskip:bool):
-    stations.pego_skip = pegoskip
-    await interaction.response.send_message(f"Pego skipping has been set to {stations.pego_skip}")
+@bot.tree.command(name="pego", description="Flag to enable or disable pego crystal collection") 
+async def pego(interaction: discord.Interaction, collection:bool):
+    stations.pego_collection = collection
+    await interaction.response.send_message(f"Pego collection has been set to {stations.pego_collection}")
+
+@bot.tree.command(name="spawn", description="Flag to force spawn in")
+async def spawn(interaction: discord.Interaction):
+    ASA.player.player_state.spawn_force = True
+    #ASA.strucutres.bed.spawn_in(settings.bed_spawn)
+    await interaction.response.send_message(f"Forcing Spawn")
+
+
 
 
 @bot.event
 async def on_ready():
     await bot.tree.sync()
-    
+
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot ready to start')

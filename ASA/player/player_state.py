@@ -18,10 +18,12 @@ import local_player
 global errorCount
 global lastError
 global errorThreshhold
+global spawn_force
 
 errorCount = 0
 lastError = time.time()
 errorThreshhold = 8
+spawn_force = False
 
 def check_disconnected():
     logs.logger.debug(f"check_disconnected")
@@ -48,11 +50,21 @@ def reset_state():
 def check_state(): # mainliy checked at the start of every task to check for food / water on the char
     global errorCount
     global lastError
+    global spawn_force
+
 
     logs.logger.debug(f"Check_State lastError: {time.time() - lastError}  errorCount: {errorCount}")
+    if spawn_force:
+        spawn_force = False
+        logs.logger.debug(f"Forcing Bed spawn on {settings.bed_spawn}")
+        ASA.strucutres.bed.spawn_in(settings.bed_spawn)
+    else:
+        logs.logger.debug(f"Spawn Force is set to {spawn_force}")
+
 
     check_disconnected()
     reset_state()
+            
     buffs = ASA.player.buffs.check_buffs()
     type = buffs.check_buffs()
     if (time.time() - lastError > 300):
