@@ -54,42 +54,28 @@ def spawn_in(bed_name:str):
         if template.template_await_true(template.check_template, 3, search_bar, 0.7):
             logs.logger.debug(f"Found Bed Search")
             for x in range(3):
-                time.sleep(0.4*settings.sleep_constant) 
+                #time.sleep(0.4*settings.sleep_constant) 
                 windows.click(search_bar_x, variables.get_pixel_loc("search_bar_bed_y")) #search bar y axis is the same for both death/alive    
                 utils.ctrl_a() #CTRL A removes all previous data in the search bar 
                 utils.write(bed_name)
-                time.sleep(5*settings.sleep_constant) 
-                if not template.template_await_false(template.check_template_no_bounds, 1, search_bar, 0.7):
+                #time.sleep(5*settings.sleep_constant) 
+                if not template.template_await_false(template.check_template_no_bounds, 3, search_bar, 0.7):
                     logs.logger.debug(f"Verified Search Criteria")
-                    logs.logger.info(f"Trying to click on bed {bed_name} in list")
-                    windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-                    windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-                    windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+                    while not template.template_await_true(template.check_teleporter_orange,3): # waiting for the bed to appear as ready to spawn in
+                        logs.logger.info(f"Trying to click on bed {bed_name} in list {x+1}/3")
+                        for click_count in range(3):     
+                            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
+                        break
                     break
                 else:
                     logs.logger.debug(f"Still missing Search Criteria") 
-
-        if not template.template_await_true(template.check_teleporter_orange,3): # waiting for the bed to appear as ready to spawn in
-            windows.click(variables.get_pixel_loc("search_bar_x"),variables.get_pixel_loc("search_bar_bed_y")) #search bar y axis is the same for both death/alive 
-            utils.ctrl_a()
-            utils.write(bed_name)
-            time.sleep(0.4*settings.sleep_constant) 
-            logs.logger.warning(f"Trying to click on bed {bed_name} in list 2/3")
-            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket
-            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-
-        if not template.template_await_true(template.check_teleporter_orange,3): # waiting for the bed to appear as ready to spawn in
-            logs.logger.warning(f"Trying to click on {bed_name} in list 3/3")
-            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))   #Bitbucket   
-            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
-            windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
 
         if not template.template_await_true(template.check_teleporter_orange,3): # waiting for the bed to appear as ready to spawn in
             logs.logger.error(f"the bed char tried spawning on is not in the ready state or cant be found exiting out of bed screen now")
             #close()
             #return    # no need to continue with this therefore we should just leave func     
                
+        #windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
         windows.click(variables.get_pixel_loc("spawn_button_x"),variables.get_pixel_loc("spawn_button_y"))
 
         if template.template_await_true(template.white_flash,2):

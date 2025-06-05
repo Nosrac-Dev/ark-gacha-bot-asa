@@ -11,6 +11,8 @@ from ASA.player import buffs , console , player_state , tribelog , player_invent
 from ASA.stations import custom_stations
 from bot import config , deposit , gacha , iguanadon , pego 
 from abc import ABC ,abstractmethod
+import ark_bot
+
 global berry_station
 global last_berry
 global pego_skip
@@ -24,6 +26,10 @@ gacha_start_station = ""
 class base_task(ABC):
     def __init__(self):
         self.has_run_before = False
+        find_teleporter_center = ark_bot.ArkNavigationBot('icons1440\\teleporter_center_1080x600_375x375.png', 1267, 1100, 0.4)
+        find_teleporter_postition = ark_bot.ArkNavigationBot('icons1440\\teleporter_target_900x630_375x375.png', 1062, 792, 0.4)
+
+
         
     @abstractmethod
     def execute(self):
@@ -133,6 +139,8 @@ class pego_station(base_task):
         self.teleporter_name = teleporter_name
         self.delay = delay
 
+
+
     def execute(self):
 
         pego_metadata = custom_stations.get_station_metadata(self.teleporter_name)
@@ -147,7 +155,7 @@ class pego_station(base_task):
             
 
             if template.check_template("crystal_in_hotbar",0.7): #Already have crystal in inventory. Redrop them off.
-                teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here 
+                teleporter.teleport_not_default(dropoff_metadata) # everytime you collect you have to drop off makes sense to include it into here               
                 deposit.deposit_dedi_station(dropoff_metadata)
 
             teleporter.teleport_not_default(pego_metadata)

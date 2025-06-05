@@ -9,6 +9,8 @@ import settings
 import ASA.config 
 import ASA.stations.custom_stations
 import ASA.player.tribelog
+import ark_bot
+
 
 def is_open():
     return template.check_template("teleporter_title",0.7)
@@ -54,6 +56,9 @@ def close():
             break
     
 def teleport_not_default(arg):
+    find_teleporter_center = ark_bot.ArkNavigationBot('icons1440\\teleporter_center_1080x600_375x375.png', 1267, 1100, 0.4)
+    find_teleporter_postition = ark_bot.ArkNavigationBot('icons1440\\teleporter_target_900x630_375x375.png', 1062, 792, 0.4)
+
 
     if isinstance(arg, ASA.stations.custom_stations.station_metadata):
         stationdata = arg
@@ -105,7 +110,7 @@ def teleport_not_default(arg):
             close() # closing out as either the TP couldnt be found however we still want to change to the station yaw so we still continue
 
         else:
-            logs.logger.info(f"Spawning on first bed spot in list")
+            logs.logger.info(f"Selecting first spot in list")
             time.sleep(0.2*settings.sleep_constant)
             windows.click(variables.get_pixel_loc("first_bed_slot_x"),variables.get_pixel_loc("first_bed_slot_y"))
             time.sleep(0.2*settings.sleep_constant)
@@ -121,9 +126,20 @@ def teleport_not_default(arg):
             utils.current_pitch = 0
             utils.turn_down(80)
             time.sleep(0.2)
+        
+        utils.set_yaw(stationdata.yaw)
+        if not find_teleporter_postition.run_bot():
+            if find_teleporter_center.run_bot():
+                if not find_teleporter_postition():
+                    #utils.zero()
+                    utils.set_yaw(settings.station_yaw)
+                    utils.press_key("=") # moving forwards
+                    utils.press_key("=") # moving forwards
+                    utils.press_key("=") # moving forwards
+
         utils.turn_up(80)
         time.sleep(0.2) 
-        utils.set_yaw(stationdata.yaw)
+        
         
             
 
