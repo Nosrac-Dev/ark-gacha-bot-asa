@@ -209,13 +209,14 @@ def deposit_dedi_station(dropoff_metadata):
     find_teleporter_center = ark_bot.ArkNavigationBot('icons1440\\teleporter_center_1080x600_375x375.png', 1267, 1100, 0.4)
     find_teleporter_postition = ark_bot.ArkNavigationBot('icons1440\\teleporter_target_900x630_375x375.png', 1062, 792, 0.4)
 
+    '''
     utils.turn_right(180)
     ASA.strucutres.inventory.open()
     if template.template_await_true(template.check_template,2,"industrial_grinder",0.7):
         if template.check_template("indi_grinder_off",0.7):
             windows.click(template.roi_regions["indi_grinder_off"]["start_x"], template.roi_regions["indi_grinder_off"]["start_y"])
         ASA.strucutres.inventory.close()
-        '''
+        
         for x in range(20):
             utils.press_key("+") # moving to corner
             utils.press_key("[")    
@@ -225,10 +226,11 @@ def deposit_dedi_station(dropoff_metadata):
         utils.press_key("Use") #Sit in chair
         time.sleep(1*settings.sleep_constant)
         utils.press_key("Use")
-        '''
+
     else:
         ASA.strucutres.inventory.close()
         utils.turn_right(180)
+    '''
     logs.logger.info(f"BEGIN CENTER SCREEN")
     utils.pitch_zero()
     logs.logger.info(f"END CENTER SCREEN")
