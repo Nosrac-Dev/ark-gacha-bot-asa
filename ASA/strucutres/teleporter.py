@@ -127,6 +127,7 @@ def teleport_not_default(arg):
             utils.turn_down(80)
             time.sleep(0.2)
         
+        
         utils.set_yaw(stationdata.yaw)
         if not find_teleporter_postition.run_bot():
             if find_teleporter_center.run_bot():

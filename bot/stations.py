@@ -56,9 +56,7 @@ class gacha_station(base_task):
         global berry_station
         global last_berry
         global gacha_start_station
-        #if (player_state.check_state() == 1):
-        #    logs.logger.debug(f"Returning to {self.teleporter_name}")
-         #   teleporter.teleport_not_default(self.teleporter_name) 
+      
         gacha_metadata = custom_stations.get_station_metadata(self.teleporter_name)
         gacha_metadata.side = self.direction
         logs.logger.info(f"Gacha Start set to: {gacha_start_station}")

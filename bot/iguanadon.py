@@ -42,8 +42,8 @@ def seed(type):
                 time.sleep(0.2*settings.sleep_constant)
                 ASA.player.player_inventory.drop_all_inv() #doing this second time round to drop everything else that is not needed by the bot
             time.sleep(0.1*settings.sleep_constant)
-            ASA.player.player_inventory.close()
-            time.sleep(0.1*settings.sleep_constant)
+    ASA.player.player_inventory.close()
+    time.sleep(0.1*settings.sleep_constant)
 
     if not template.template_await_true(template.check_template,1,"seed_inv",0.7):
         logs.logger.debug("iguanadon seeding hasnt been spotted re adding berries")
@@ -55,20 +55,23 @@ def seed(type):
             ASA.player.player_inventory.transfer_all_inventory()
             ASA.strucutres.inventory.close()
             template.template_await_true(template.check_template,1,"seed_inv",0.7)
-    utils.press_key("Use")
-    time.sleep(0.6*settings.sleep_constant)
+            utils.press_key("Use") #Protected "Use" to make sure we don't pick up pego on accident
+        else:
+            utils.press_key("Use") #Protected "Use" to make sure we don't pick up pego on accident
+
+    time.sleep(0.2*settings.sleep_constant)   #Bitbucket changed from 0.6 to 0.2 to see if we can speed it up
     ASA.strucutres.inventory.open()
     if ASA.strucutres.inventory.is_open():
         if template.template_await_true(template.check_template,2,"iguanadon_cart_slot_1050_450_60_30",0.7):
             ASA.strucutres.inventory.search_in_object("seed")
             ASA.strucutres.inventory.transfer_all_from()
-            time.sleep(0.3*settings.sleep_constant)
+            time.sleep(0.2*settings.sleep_constant)  #Bitbucket changed from 0.3 to 0.2 to see if we can speed it up
             ASA.strucutres.inventory.close()
-    time.sleep(0.2*settings.sleep_constant)
+            time.sleep(0.2*settings.sleep_constant)
 
 def iguanadon_open(metadata):
     attempt = 0
-    time.sleep(0.2*settings.sleep_constant)
+    #time.sleep(0.2*settings.sleep_constant)
     ASA.strucutres.inventory.open()
     while not ASA.strucutres.inventory.is_open():
         attempt += 1
