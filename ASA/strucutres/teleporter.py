@@ -127,17 +127,18 @@ def teleport_not_default(arg):
             utils.turn_down(80)
             time.sleep(0.2)
         
-        
+
         utils.set_yaw(stationdata.yaw)
+        elapsed_time = time.time()
         if not find_teleporter_postition.run_bot():
             if find_teleporter_center.run_bot():
-                if not find_teleporter_postition():
+                if not find_teleporter_postition().run_bot():
                     #utils.zero()
                     utils.set_yaw(settings.station_yaw)
                     utils.press_key("=") # moving forwards
                     utils.press_key("=") # moving forwards
-                    utils.press_key("=") # moving forwards
-
+                   # utils.press_key("=") # moving forwards
+        logs.logger.info(f"Elapsed AI Time: {time.time() - elapsed_time}")
         utils.turn_up(80)
         time.sleep(0.2) 
         
