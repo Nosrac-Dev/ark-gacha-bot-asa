@@ -18,9 +18,7 @@ import logs.gachalogs as gachalogs
 import logging as logstuff
 from ASA.player import console, player_state
 import ASA.strucutres.bed
-
-
-
+from Transfer import Transfer_Servers
 
 intents = discord.Intents.default()
 pyautogui.FAILSAFE = False

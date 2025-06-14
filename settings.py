@@ -16,7 +16,6 @@ singleplayer = False
 server_number = 0
 crafting = False
 seeds_230 = False
-
 withdraw_server = "0"
 withdraw_bed = "pickup1"
 withdraw_yaw = -133.50
