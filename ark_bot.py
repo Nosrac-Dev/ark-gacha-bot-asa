@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import pyautogui
 import time
-import keyboard
+#import keyboard
 from PIL import ImageGrab
 import threading
 

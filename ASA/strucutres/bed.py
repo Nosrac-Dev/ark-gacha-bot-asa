@@ -13,13 +13,16 @@ import ASA.player.player_state
 
 def is_open():
     return template.check_template("beds_title",0.7) #bed title is found in both death and fast travel screens
-    
+
+def transfer_spawn():
+    return template.check_template("bed_transfer_title",0.7) #bed title is found in both death and fast travel screens
+
 def is_dead():
     return template.check_template("death_regions",0.7)
     
 def close():
     attempts = 0
-    while is_open():
+    while is_open() or transfer_spawn(): #not sure if the transfer_spawn is needed or correct Nos
         attempts += 1
         logs.logger.debug(f"trying to close the bed {attempts} / {ASA.config.teleporter_close_attempts}")
         windows.click(variables.get_pixel_loc("back_button_tp_x"),variables.get_pixel_loc("back_button_tp_y"))
@@ -32,13 +35,14 @@ def close():
             break
             
 
-def spawn_in(bed_name:str):
+def spawn_in(bed_name):
     logs.logger.debug(f"Attempting to spawn in {bed_name}")
-    if not is_open():
+    if not is_open() or transfer_spawn():
+        print("eat implant")
         ASA.player.player_inventory.implant_eat()
         logs.logger.debug(f"Returned from the implant eat function!")
         
-    if is_open():
+    if is_open() or transfer_spawn():
         state = "death screen" if is_dead() else "fast travel screen"
         logs.logger.debug(f"char is in the {state}")
         

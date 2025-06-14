@@ -46,7 +46,13 @@ roi_regions = {
     "iguanadon_cart_slot_1050_450_60_30":{"start_x":1050, "start_y":450, "width":60, "height":30},
     "pego_empty_costume_slot_1030x320_90x30":{"start_x":1030, "start_y":320, "width":90, "height":30},
     "bed_spawn_search_130x1265_140x45":{"start_x":130, "start_y":1265, "width":140, "height":45},
-    "bed_spawn_search_330x1265_140x45":{"start_x":330, "start_y":1265, "width":140, "height":45}
+    "bed_spawn_search_330x1265_140x45":{"start_x":330, "start_y":1265, "width":140, "height":45},
+    "transmitter":{"start_x":1300, "start_y":165 ,"width":250 ,"height":50},
+    "travel_off_Server":{"start_x":1145, "start_y":1045 ,"width":270 ,"height":20},
+    "cluster":{"start_x":1320, "start_y":135 ,"width":155 ,"height":50},
+    "transfer_timer":{"start_x":1212, "start_y":460 ,"width":263 ,"height":51},
+    "transmiter_join":{"start_x":2155, "start_y":1175 ,"width":71 ,"height":27},
+    "bed_transfer_title":{"start_x":500, "start_y":170 ,"width":100 ,"height":65}
 }
 
     #"bed_spawn_search_130x1265_140x45":{"start_x":130, "start_y":1265, "width":140, "height":45},

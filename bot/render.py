@@ -100,7 +100,7 @@ def enter_tekpod():
             logs.logger.error(f"we were unable to get into the tekpod after {attempts} attempts pausing execution to avoid unbreakable loops")
             break
 
-def leave_tekpod():
+def leave_tekpod(yaw):
     logs.logger.debug(f"leave_tekpod")
     global render_flag
     buffs = ASA.player.buffs.check_buffs()
@@ -114,6 +114,6 @@ def leave_tekpod():
         utils.press_key(local_player.get_input_settings("Use"))
         time.sleep(1*settings.sleep_constant)
     utils.current_yaw = settings.render_pushout
-    utils.set_yaw(settings.station_yaw)
+    utils.set_yaw(yaw)
     time.sleep(0.5*settings.sleep_constant)
     render_flag = False

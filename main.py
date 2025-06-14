@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 from typing import Callable
 import asyncio
-import ASA.player
 import logs.botoptions as botoptions
 import pyautogui
 import settings
@@ -49,7 +48,10 @@ async def send_new_logs():
             file.seek(last_position)
             new_logs = file.read()
             if new_logs:
-                await log_channel.send(f"New logs:\n```{new_logs}```")
+                if gachalogs.logging_level >= logstuff.ERROR:
+                    await log_channel.send(f"<@576182444592463892>\n New logs:\n```{new_logs}```")
+                else:    
+                    await log_channel.send(f"New logs:\n```{new_logs}```")
                 last_position = file.tell()
         await asyncio.sleep(5)
 
@@ -91,7 +93,6 @@ async def list_gacha(interaction: discord.Interaction):
 
 
 @bot.tree.command(name="add_pego", description="add a new pego station to the data")
-
 async def add_pego(interaction: discord.Interaction, name: str, teleporter: str, delay: int):
     data = load_json("json_files/pego.json")
 
@@ -148,11 +149,10 @@ async def embed_send(queue_type):
 @bot.tree.command()
 async def start(interaction: discord.Interaction):
     global running_tasks
-  
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot starting up now')
-    
+        await logchn.send(f"<@576182444592463892> Starting Now!")
     # resetting log files
     with open("logs/logs.txt", 'w') as file:
         file.write(f"")
@@ -161,7 +161,7 @@ async def start(interaction: discord.Interaction):
     
     await interaction.response.send_message(f"starting up bot now you have 5 seconds before start")
     time.sleep(5)
-    running_tasks.append(asyncio.create_task(botoptions.task_manager_start()))
+    running_tasks.append(asyncio.create_task(botoptions.task_manager_start(task_manager.main)))
     time.sleep(2)
     running_tasks.append(bot.loop.create_task(embed_send("active_queue")))
     running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))
@@ -170,7 +170,7 @@ async def start(interaction: discord.Interaction):
 async def shutdown(interaction: discord.Interaction):
     await interaction.response.send_message("Shutting down script...")
     print("Shutting down script...")
-    cmd_windows = [win for win in gw.getAllWindows() if "cmd" in win.title.lower() or "system32" in win.title.lower()]
+    cmd_windows = [win for win in gw.getAllWindows() if "cmd" in win.title.lower() or "command prompt" in win.title.lower() or "system32" in win.title.lower()]
 
     if cmd_windows:
         cmd_window = cmd_windows[0]  
@@ -207,10 +207,13 @@ async def log_reset(interaction: discord.Interaction):
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'Logs are resetting')
-    
-    # resetting log files
+    '''
+    # clearing old logs from log file (
     with open("logs/logs.txt", 'w') as file:
         file.write(f"")
+    #)
+    '''
+    await logchn.send(f"{running_tasks}") 
     running_tasks.pop(1) #Removes the first Item from the running_task array (send_new_logs)
     running_tasks.insert(1, bot.loop.create_task(send_new_logs())) #Starts a new (send_new_logs) and adds it to the first slot of the running_task array
 
@@ -266,13 +269,52 @@ async def spawn(interaction: discord.Interaction):
     #ASA.strucutres.bed.spawn_in(settings.bed_spawn)
     await interaction.response.send_message(f"Forcing Spawn")
 
+@bot.tree.command(name="withdraw_server", description="Sets what server items originate from") #Command to change what server the bot gets Nosrac 6/1
+async def withdraw_Server(interaction: discord.Interaction, server:str):
+    settings.withdraw_server = server
+    await interaction.response.send_message(f"Withdraw_server has been set to {settings.withdraw_server}")
+
+@bot.tree.command(name="withdraw_bed", description="Sets what bed on withdraw server the bot will spawn") #Command to change what bed the bot will spawn on to get items Nosrac 6/5
+async def withdraw_bed(interaction: discord.Interaction, bed:str):
+    settings.withdraw_bed = bed
+    await interaction.response.send_message(f"Withdraw_bed has been set to {settings.withdraw_bed}")
+
+@bot.tree.command(name="deposit_server", description="Sets what server items will be delivered to") #Command to change what server items will be delivered to Nosrac 6/1
+async def deposit_server(interaction: discord.Interaction, server:str):
+    settings.deposit_server = server
+    await interaction.response.send_message(f"Deposit_Server has been set to {settings.deposit_server}")
+
+@bot.tree.command(name="deposit_bed", description="Sets what bed on Deposit server the bot will spawn") #Command to change what bed the bot will spawn on to deposit items Nosrac 6/5
+async def deposit_bed(interaction: discord.Interaction, bed:str):
+    settings.deposit_bed = bed
+    await interaction.response.send_message(f"Deposit_bed has been set to {settings.deposit_bed}")
+
+@bot.tree.command(name="start_transfer", description="starts the transfer loop enter 'deposit' or 'withdraw' depending on which serrver you are")
+async def start_transfer(interaction: discord.Interaction, location:str):
+    global running_tasks
+    logchn = bot.get_channel(settings.log_channel_gacha) 
+    if logchn:
+        await logchn.send(f'bot starting up now')
+        await logchn.send(f"<@576182444592463892> Starting Now!")
+    # resetting log files
+    with open("logs/logs.txt", 'w') as file:
+        file.write(f"")
+    running_tasks.append(bot.loop.create_task(send_new_logs()))
+    
+    
+    await interaction.response.send_message(f"starting up bot now you have 5 seconds before start")
+    time.sleep(5)
+    running_tasks.append(asyncio.create_task(botoptions.task_manager_start(Transfer_Servers.main(location))))
+    running_tasks.append(bot.loop.create_task(embed_send("active_queue")))
+    running_tasks.append(bot.loop.create_task(embed_send("waiting_queue")))
+
 
 
 
 @bot.event
 async def on_ready():
     await bot.tree.sync()
-
+    
     logchn = bot.get_channel(settings.log_channel_gacha) 
     if logchn:
         await logchn.send(f'bot ready to start')

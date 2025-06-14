@@ -85,7 +85,7 @@ def check_state(): # mainliy checked at the start of every task to check for foo
             time.sleep(3)
         else:
             time.sleep(30) # assuming 30 seconds should replenish the player back to 100/100
-        bot.render.leave_tekpod()
+        bot.render.leave_tekpod(settings.station_yaw)
         time.sleep(1)
         return 1
     return 0

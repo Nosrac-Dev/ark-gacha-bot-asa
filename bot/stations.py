@@ -232,7 +232,7 @@ class pause(base_task):
         teleporter.teleport_not_default(settings.bed_spawn)
         bot.render.enter_tekpod()
         time.sleep(self.time)
-        bot.render.leave_tekpod()
+        bot.render.leave_tekpod(settings.station_yaw)
         
     def get_priority_level(self):
         return 1
